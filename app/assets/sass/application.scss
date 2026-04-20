@@ -1005,4 +1005,30 @@
   .ncs-search-results__result-title {
     font-size: 1.125rem;
   }
+
+  .ncs-search-results__mobile-filter-toggle {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+    grid-column: 1;
+  }
+
+  .ncs-search-results__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ncs-search-results__filters {
+    display: none;
+  }
+
+  .ncs-search-results__filters.is-visible {
+    display: block;
+  }
+}
+
+@media (min-width: 40.0626em) {
+  .ncs-search-results__mobile-filter-toggle {
+    display: none;
+  }
 }

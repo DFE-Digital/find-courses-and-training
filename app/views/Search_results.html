@@ -74,7 +74,10 @@
   <section class="ncs-search-results__content">
     <div class="govuk-width-container" id="results-grid">
       <div class="ncs-search-results__layout">
-        <aside class="ncs-search-results__filters" aria-label="Filters">
+        <button class="ncs-search-results__mobile-filter-toggle govuk-button govuk-button--secondary" type="button" aria-expanded="false" aria-controls="filters-panel">
+          <span class="ncs-search-results__mobile-filter-toggle-text">Show filters</span>
+        </button>
+        <aside class="ncs-search-results__filters" id="filters-panel" aria-label="Filters">
           <div class="ncs-search-results__filter-box">
             <h2 class="govuk-heading-m ncs-search-results__filter-heading">Filter</h2>
             <div class="ncs-search-results__filter-actions">
@@ -511,5 +514,15 @@
   if (skillsBootcampCheckbox) skillsBootcampCheckbox.addEventListener('change', updateSectorVisibility);
 
   updateSectorVisibility();
+
+  const mobileFilterToggle = document.querySelector('.ncs-search-results__mobile-filter-toggle');
+  const filtersPanel = document.getElementById('filters-panel');
+  if (mobileFilterToggle && filtersPanel) {
+    mobileFilterToggle.addEventListener('click', () => {
+      const isVisible = filtersPanel.classList.toggle('is-visible');
+      mobileFilterToggle.setAttribute('aria-expanded', String(isVisible));
+      mobileFilterToggle.querySelector('.ncs-search-results__mobile-filter-toggle-text').textContent = isVisible ? 'Hide filters' : 'Show filters';
+    });
+  }
 </script>
 {% endblock %}
