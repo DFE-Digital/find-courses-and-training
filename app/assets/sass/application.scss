@@ -1,6 +1,1008 @@
-//
-// For guidance on how to add CSS and SCSS see:
-// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+.govuk-header {
+  font-family: "GDS Transport", arial, sans-serif;
+  font-weight: 100;
+  font-size: 0.875rem;
+  line-height: 1;
+  border-bottom: 10px #fff;
+  background: #1d70b8;
+  color: #fff;
+}
 
-// Add extra styles here
+.govuk-template__body {
+  margin: 0;
+}
+
+.ncs-homepage__department-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.ncs-homepage__department-logo {
+  display: block;
+}
+
+.ncs-homepage__hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  background: #c8d8e8;
+}
+
+.ncs-homepage__hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.ncs-homepage__hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 344px;
+  width: 100%;
+  padding-top: 74px;
+  padding-bottom: 68px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.ncs-homepage__hero-title {
+  font-family: "GDS Transport", arial, sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  color: #1D70B8;
+  margin: 0 0 20px;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.ncs-homepage__hero-title-text {
+  background: rgb(255, 255, 255);
+  display: inline;
+  padding: 0.3rem 0.5rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.ncs-homepage__hero-summary {
+  font-family: "GDS Transport", arial, sans-serif;
+  font-size: 1.1875rem;
+  line-height: 1.5;
+  color: #0b0c0c;
+  margin: 0;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.ncs-homepage__hero-summary-text {
+  background: rgb(255, 255, 255);
+  display: inline;
+  padding: 0.4rem 0.6rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.ncs-homepage__section-row {
+  margin-bottom: 2rem;
+}
+
+.ncs-homepage__advice-panel {
+  background: #f3f2f1;
+  padding: 2rem;
+}
+
+.ncs-homepage__advice-heading {
+  margin-bottom: 0.5rem;
+}
+
+.ncs-homepage__advice-copy {
+  margin-bottom: 1.5rem;
+}
+
+.ncs-homepage__advice-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.ncs-homepage__advice-label {
+  margin-bottom: 0;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ncs-homepage__advice-select {
+  margin-bottom: 0;
+  width: auto;
+  min-width: 280px;
+}
+
+.ncs-homepage__advice-button {
+  background-color: #005a30;
+  margin-bottom: 0;
+}
+
+.ncs-homepage__feature-card {
+  border: 1px solid #b1b4b6;
+}
+
+.ncs-homepage__feature-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  gap: 1rem;
+}
+
+.ncs-homepage__feature-link--purple {
+  background: #912b88;
+}
+
+.ncs-homepage__feature-link--blue {
+  background: #1d70b8;
+}
+
+.ncs-homepage__feature-link--green {
+  background: #00703c;
+}
+
+.ncs-homepage__feature-title {
+  color: #fff;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.ncs-homepage__feature-icon {
+  flex-shrink: 0;
+}
+
+.ncs-homepage__feature-body {
+  padding: 1.25rem;
+}
+
+.ncs-homepage__feature-body--purple {
+  border-bottom: 4px solid #912B88;
+  background-color: #F3F2F1;
+}
+
+.ncs-homepage__feature-body--blue {
+  border-bottom: 4px solid #1d70b8;
+  background-color: #F3F2F1;
+}
+
+.ncs-homepage__feature-body--green {
+  border-bottom: 4px solid #00703c;
+  background-color: #F3F2F1;
+}
+
+.ncs-homepage__feature-copy {
+  margin-bottom: 0;
+}
+
+.ncs-homepage__media-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.ncs-homepage__media-sidebar {
+  flex: 0 0 33.333%;
+  box-sizing: border-box;
+}
+
+.ncs-homepage__adviser-panel {
+  background: #dde8f5;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.ncs-homepage__adviser-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ncs-homepage__adviser-title {
+  margin: 0;
+  color: #003078;
+}
+
+.ncs-homepage__adviser-icon {
+  flex-shrink: 0;
+}
+
+.ncs-homepage__adviser-copy {
+  margin-bottom: 0;
+}
+
+.ncs-homepage__media-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ncs-homepage__video-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.ncs-homepage__video-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ncs-homepage__media-meta {
+  margin-top: 0.5rem;
+  padding-left: calc(33.333% + 30px);
+}
+
+.ncs-homepage__featured-banner {
+  position: relative;
+  overflow: hidden;
+  background: #d0cfc8;
+  min-height: 200px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.ncs-homepage__featured-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.ncs-homepage__featured-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  max-width: 50%;
+}
+
+.ncs-homepage__featured-heading {
+  margin-bottom: 0.5rem;
+}
+
+.ncs-homepage__featured-link {
+  color: #d4351c;
+  text-decoration: underline;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.ncs-homepage__featured-copy {
+  background: rgba(255, 255, 255, 0.85);
+  display: inline;
+  padding: 0.1rem 0.25rem;
+}
+
+.ncs-course-page__service-nav {
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.ncs-course-page__service-nav .govuk-service-navigation__service-name {
+  font-weight: 700;
+}
+
+.ncs-course-page__service-nav .govuk-service-navigation__link {
+  color: #1d70b8;
+}
+
+.ncs-course-page__service-nav .govuk-service-navigation__service-name .govuk-service-navigation__link {
+  color: #0b0c0c;
+}
+
+.ncs-course-page__service-nav .govuk-service-navigation__item--active {
+  border-bottom-color: #1d70b8;
+}
+
+.ncs-course-page__phase-banner {
+  margin-bottom: 0;
+}
+
+.ncs-course-page__hero {
+  background: #00703c;
+  color: #fff;
+}
+
+.ncs-course-page__hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.ncs-course-page__hero-copy {
+  max-width: 760px;
+}
+
+.ncs-course-page__hero-title {
+  color: #fff;
+  margin-bottom: 1.25rem;
+  font-size: 3.5rem;
+}
+
+.ncs-course-page__hero-text {
+  color: #fff;
+  margin-bottom: 0;
+  max-width: 700px;
+  font-size: 1.25rem;
+}
+
+.ncs-course-page__hero-icon-wrap {
+  flex-shrink: 0;
+}
+
+.ncs-course-page__hero-icon {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  display: block;
+}
+
+.ncs-course-page__search-section {
+  background: #eaf2f9;
+}
+
+.ncs-course-page__search-section .govuk-width-container {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.ncs-course-page__search-intro {
+  max-width: 760px;
+}
+
+.ncs-course-page__search-lead {
+  margin-bottom: 1.75rem;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
+.ncs-course-page__search-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 360px) minmax(320px, 470px);
+  gap: 2.5rem 4.25rem;
+  align-items: start;
+}
+
+.ncs-course-page__term-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.ncs-course-page__field {
+  margin-bottom: 1rem;
+}
+
+.ncs-course-page__input {
+  border: 2px solid #0b0c0c;
+  max-width: 100%;
+}
+
+.ncs-course-page__actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.ncs-course-page__button {
+  margin-bottom: 0;
+  background: #00703c;
+  box-shadow: 0 2px 0 #004f2b;
+}
+
+.ncs-course-page__guided-link {
+  font-size: 1.125rem;
+}
+
+.ncs-course-page__guided-content {
+  max-width: 760px;
+}
+
+.ncs-location-autocomplete {
+  position: relative;
+}
+
+.ncs-location-autocomplete__list {
+  position: absolute;
+  z-index: 100;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 2px solid #0b0c0c;
+  border-top: none;
+  background: #fff;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.ncs-location-autocomplete__option {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-family: "GDS Transport", arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.25;
+  border-top: 1px solid #b1b4b6;
+  color: #0b0c0c;
+}
+
+.ncs-location-autocomplete__option:first-child {
+  border-top: none;
+}
+
+.ncs-location-autocomplete__option:hover,
+.ncs-location-autocomplete__option[aria-selected="true"] {
+  background: #1d70b8;
+  color: #fff;
+}
+
+.ncs-location-autocomplete__option--no-results {
+  color: #505a5f;
+  pointer-events: none;
+  font-style: italic;
+}
+
+.ncs-location-autocomplete__option--no-results:hover {
+  background: #fff;
+  color: #505a5f;
+}
+
+.ncs-course-page__cards-section {
+  background: #fff;
+}
+
+.ncs-course-page__cards-section .govuk-width-container {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+
+.ncs-course-page__card {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 388px;
+}
+
+.ncs-course-page__card-image {
+  width: 100%;
+  height: 168px;
+  display: block;
+  object-fit: cover;
+  flex: 0 0 168px;
+}
+
+.ncs-course-page__card-body {
+  background: #f3f2f1;
+  border-bottom: 4px solid #b1b4b6;
+  padding: 1rem 1.1rem 1.1rem;
+  flex: 0 0 220px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.ncs-course-page__card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.ncs-course-page__card-link {
+  font-weight: 700;
+  font-size: 19px;
+  text-decoration-thickness: 2px;
+}
+
+.ncs-course-page__card-text {
+  margin-bottom: 0;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.ncs-course-page__footer {
+  background: #eaf2f9;
+  border-top: 6px solid #1d70b8;
+}
+
+.ncs-course-page__footer .govuk-width-container {
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
+}
+
+.ncs-course-page__footer-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 300px);
+  gap: 2rem 3rem;
+}
+
+.ncs-course-page__footer-column {
+  min-width: 0;
+}
+
+.ncs-course-page__footer-crown {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.ncs-course-page__footer-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+}
+
+.ncs-course-page__footer-title--secondary {
+  margin-top: 2.875rem;
+}
+
+.ncs-course-page__footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid #7db7e8;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 2rem;
+}
+
+.ncs-course-page__footer-links--single {
+  grid-template-columns: 1fr;
+}
+
+.ncs-course-page__footer-links li {
+  margin: 0;
+}
+
+.ncs-course-page__footer-bottom {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #7db7e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.ncs-course-page__licence-title {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.ncs-course-page__licence-copy {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.ncs-course-page__copyright {
+  flex-shrink: 0;
+}
+
+.ncs-course-page__copyright-image {
+  display: block;
+  width: 165px;
+  height: auto;
+}
+
+.ncs-search-results__back-wrap {
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+.ncs-search-results__back-link {
+  margin-bottom: 0;
+}
+
+.ncs-search-results__notice .govuk-width-container {
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+.ncs-search-results__notice-panel {
+  background: #f3f2f1;
+  padding: 1.5rem 1.25rem;
+  max-width: 870px;
+}
+
+.ncs-search-results__notice-title {
+  margin-bottom: 1rem;
+}
+
+.ncs-search-results__content .govuk-width-container {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.ncs-search-results__layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.ncs-search-results__filters {
+  min-width: 0;
+}
+
+.ncs-search-results__filter-box {
+  border: 1px solid #b1b4b6;
+  background: #fff;
+  padding: 1.25rem;
+  margin-bottom: -1px;
+}
+
+.ncs-search-results__filter-box:first-child {
+  padding: 0;
+}
+
+.ncs-search-results__filter-box--footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.ncs-search-results__filter-heading {
+  margin: 0;
+  padding: 1.5rem 1.25rem;
+  background: #f3f2f1;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+}
+
+.ncs-search-results__filter-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 1.25rem 1.75rem;
+}
+
+.ncs-search-results__secondary-button {
+  margin-bottom: 0;
+}
+
+.ncs-search-results__toggle-button {
+  margin-bottom: 1rem;
+}
+
+.ncs-search-results__toggle-button--all {
+  margin-bottom: 1.25rem;
+}
+
+.ncs-search-results__section-content[hidden] {
+  display: none;
+}
+
+.ncs-search-results__section-heading {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+}
+
+.ncs-search-results__checkboxes .govuk-checkboxes__item {
+  margin-bottom: 0.75rem;
+}
+
+.ncs-search-results__checkboxes .govuk-checkboxes__label {
+  font-size: 1rem;
+}
+
+.ncs-search-results__info-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.ncs-search-results__sector-hint {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #505a5f;
+}
+
+.ncs-search-results__select {
+  width: 100%;
+}
+
+.ncs-search-results__results {
+  min-width: 0;
+}
+
+.ncs-search-results__results-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25rem 0 1rem;
+  border-bottom: 1px solid #b1b4b6;
+  margin-bottom: 1.5rem;
+}
+
+.ncs-search-results__results-count {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.ncs-search-results__sort-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ncs-search-results__sort-label {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.ncs-search-results__sort-select {
+  min-width: 120px;
+}
+
+.ncs-search-results__result-card {
+  border: 1px solid #b1b4b6;
+  background: #fff;
+  margin-bottom: 1.5rem;
+  font-family: "GDS Transport", arial, sans-serif;
+}
+
+.ncs-search-results__result-title {
+  margin-bottom: 0;
+  padding: 1rem 1.2rem;
+  background: #f3f2f1;
+  font-size: 1.1875rem;
+  line-height: 1.3157894737;
+}
+
+.ncs-search-results__result-title a {
+  font-weight: 700;
+}
+
+.ncs-search-results__result-list {
+  margin: 0;
+  padding: 0 1.2rem;
+}
+
+.ncs-search-results__row {
+  display: grid;
+  grid-template-columns: 165px minmax(0, 1fr);
+  gap: 1.15rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid #b1b4b6;
+}
+
+.ncs-search-results__row:first-child {
+  border-top: none;
+}
+
+.ncs-search-results__row dt {
+  font-weight: 700;
+}
+
+.ncs-search-results__row dt,
+.ncs-search-results__row dd {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.ncs-search-results__divider-copy {
+  margin: 1.5rem 0;
+}
+
+.ncs-search-results__pagination {
+  margin-top: 2rem;
+}
+
+.ncs-search-results__pagination .govuk-pagination__item--current .govuk-pagination__link {
+  color: #fff;
+}
+
+// Course detail page
+
+.ncs-course-detail__hero {
+  background: #00703c;
+  color: #fff;
+  display: flex;
+  width: 1440px;
+  padding: 70px 240px 55px 240px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  box-sizing: border-box;
+
+  .govuk-width-container {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+  }
+}
+
+.ncs-course-detail__hero-title {
+  color: #fff;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.ncs-course-detail__content {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.ncs-course-detail__card {
+  border: 1px solid #b1b4b6;
+  margin-bottom: 1.75rem;
+}
+
+.ncs-course-detail__card--narrow {
+  max-width: 460px;
+}
+
+.ncs-course-detail__card-header {
+  background: #f3f2f1;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.ncs-course-detail__card-heading {
+  margin-bottom: 0;
+  font-size: 1.1875rem;
+}
+
+.ncs-course-detail__summary-list {
+  margin: 0;
+  padding: 0;
+
+  .govuk-summary-list__row {
+    padding: 0.875rem 1.25rem;
+    border-bottom: 1px solid #b1b4b6;
+    margin-bottom: 0;
+  }
+
+  .govuk-summary-list__row:last-child,
+  .ncs-course-detail__row--last {
+    border-bottom: none;
+  }
+
+  .govuk-summary-list__key {
+    font-weight: 700;
+    width: 30%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .govuk-summary-list__value {
+    width: 70%;
+  }
+}
+
+.ncs-course-detail__value-with-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.ncs-course-detail__side-link {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ncs-course-detail__actions {
+  margin-bottom: 1.25rem;
+}
+
+.ncs-course-detail__cta-button {
+  background-color: #00703c;
+  box-shadow: 0 2px 0 #004f2b;
+  margin-bottom: 0;
+}
+
+.ncs-course-detail__provider-note {
+  max-width: 620px;
+  color: #505a5f;
+}
+
+@media (max-width: 48.0525em) {
+  .ncs-course-page__hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .ncs-course-page__hero-title {
+    font-size: 2.75rem;
+  }
+
+  .ncs-course-page__search-grid,
+  .ncs-course-page__footer-top,
+  .ncs-search-results__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ncs-course-page__footer-title--secondary {
+    margin-top: 0;
+  }
+
+  .ncs-course-page__footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ncs-search-results__results-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ncs-search-results__row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 40.0525em) {
+  .ncs-course-page__hero-title {
+    font-size: 2.25rem;
+  }
+
+  .ncs-course-page__hero-text,
+  .ncs-course-page__search-lead,
+  .ncs-course-page__card-text,
+  .ncs-course-page__guided-link {
+    font-size: 1rem;
+  }
+
+  .ncs-course-page__hero-icon {
+    width: 88px;
+    height: 88px;
+  }
+
+  .ncs-course-page__actions,
+  .ncs-course-page__footer-links {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .ncs-course-page__card-image {
+    height: 120px;
+    flex-basis: 120px;
+  }
+
+  .ncs-course-page__card-body {
+    min-height: 0;
+  }
+
+  .ncs-search-results__filter-heading {
+    font-size: 1.5rem;
+  }
+
+  .ncs-search-results__result-title {
+    font-size: 1.125rem;
+  }
+}

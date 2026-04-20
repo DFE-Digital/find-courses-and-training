@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "/Search_results" }) }}
+{% endblock %}
+
+{% block content %}
+  <section class="ncs-course-detail__hero">
+    <div class="govuk-width-container">
+      <h1 class="govuk-heading-xl ncs-course-detail__hero-title">Creative Writing SMLH01CGP</h1>
+    </div>
+  </section>
+
+  <div class="govuk-width-container ncs-course-detail__content">
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">About the course</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Course type</dt>
+            <dd class="govuk-summary-list__value">Not provided</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Level</dt>
+            <dd class="govuk-summary-list__value">Entry level</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Entry requirements</dt>
+            <dd class="govuk-summary-list__value">A Pre Course Assessment is required before joining this class.</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Cost</dt>
+            <dd class="govuk-summary-list__value">£75.00</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Overview</dt>
+            <dd class="govuk-summary-list__value">Fluency in written and spoken English is needed for this course as well as an existing interest in fiction, poetry and/or drama. Some IT skills would be of benefit.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Location</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Provider</dt>
+            <dd class="govuk-summary-list__value ncs-course-detail__value-with-action">
+              <span>LEWISHAM LONDON BOROUGH COUNCIL</span>
+              <a class="govuk-link ncs-course-detail__side-link" href="#" target="_blank" rel="noopener noreferrer">View website</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Provider location</dt>
+            <dd class="govuk-summary-list__value ncs-course-detail__value-with-action">
+              <span>London</span>
+              <a class="govuk-link ncs-course-detail__side-link" href="https://maps.google.com/?q=London" target="_blank" rel="noopener noreferrer">View on a map</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card ncs-course-detail__card--narrow">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Course details</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Delivery methods</dt>
+            <dd class="govuk-summary-list__value">Classroom based</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Start date</dt>
+            <dd class="govuk-summary-list__value">22 April 2025</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Duration</dt>
+            <dd class="govuk-summary-list__value">2 months</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Hours</dt>
+            <dd class="govuk-summary-list__value">Part time</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="ncs-course-detail__actions">
+      <a href="https://nationalcareers.service.gov.uk/find-a-course" role="button" draggable="false" class="govuk-button ncs-course-detail__cta-button" data-module="govuk-button">
+        Go to course
+      </a>
+    </div>
+
+    <p class="govuk-body ncs-course-detail__provider-note">These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>
+
+  </div>
+{% endblock %}

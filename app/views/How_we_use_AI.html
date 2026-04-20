@@ -1,8 +1,6 @@
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-
 <link href="/public/stylesheets/application.css" rel="stylesheet" type="text/css" />
-
+   {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-template__body">
   <script>
     document.querySelector('.govuk-template__body').className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
@@ -28,8 +26,8 @@
             <a href="https://nationalcareers.service.gov.uk" class="govuk-service-navigation__link">Get careers information, advice and guidance</a>
           </span>
           <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
-            <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="main-navigation" hidden aria-hidden="true">Menu</button>
-            <ul class="govuk-service-navigation__list" id="main-navigation">
+            <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="find-courses-navigation" hidden aria-hidden="true">Menu</button>
+            <ul class="govuk-service-navigation__list" id="find-courses-navigation">
               <li class="govuk-service-navigation__item">
                 <a class="govuk-service-navigation__link" href="/NCS_Homepage">Homepage</a>
               </li>
@@ -62,14 +60,39 @@
         <span class="govuk-phase-banner__text">This is a new service - your <a class="govuk-link" href="https://dferesearch.fra1.qualtrics.com/jfe/form/SV_4TMvchACdXh77Ya">feedback</a> will help us to improve it.</span>
       </p>
     </div>
-
-    <div class="govuk-width-container">
-      {% block beforeContent %}{% endblock %}
+    <div class="govuk-phase-banner govuk-width-container ncs-course-page__phase-banner">
+      {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
     </div>
   </header>
 
-  <main id="main-content" class="{% block mainClass %}{% endblock %}" role="main">
-    {% block content %}{% endblock %}
+  <main id="main-content" class="ncs-course-page" role="main">
+    <section class="ncs-course-page__hero">
+      <div class="govuk-width-container ncs-course-page__hero-inner">
+        <div class="ncs-course-page__hero-copy">
+          <h1 class="govuk-heading-xl ncs-course-page__hero-title">How we use AI</h1>
+          <p class="govuk-body-l ncs-course-page__hero-text">This search uses AI to make it easier for you to find options that match your interests.</p>
+        </div>
+        <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
+          <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+        </div>
+      </div>
+    </section>
+
+ 
+
+    <div class="govuk-width-container">
+      <br><br>
+
+      <div class="ncs-course-page__guided-content govuk-!-padding-bottom-8">
+        <p class="govuk-body">Using AI allows us to show you things related to your search terms and not rely on matching words exactly. For example if you search for "coding" it will also show you courses about "software development" or "programming" because they are similar.</p>
+        <p class="govuk-body">You can also search for more general career aims like "working with children" and still get relevant results.</p>
+        <p class="govuk-body">You can also search for more general career aims like "working with children" and still get relevant results.</p>
+        <p class="govuk-body"> This means you don't need to know a specific subject or course name, and it can even handle a misspelling.</p>
+        <p class="govuk-body"> The AI isn’t creating any of the information that you see in the results. It is also not deciding or suggesting what’s best for you. It’s just making sure you see more options that are relevant to what you're searching for.</p>
+        <p class="govuk-body">Using AI to search your interests, hobbies or preferences, you'll find different options to look into.</p>
+
+      </div>
+    </div>
   </main>
 
   <footer class="ncs-course-page__footer">
@@ -130,4 +153,3 @@
   import { initAll } from 'https://cdn.jsdelivr.net/npm/govuk-frontend@6.1.0/dist/govuk/govuk-frontend.min.js';
   initAll();
 </script>
-{% block pageScripts %}{% endblock %}

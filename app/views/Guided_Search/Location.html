@@ -1,0 +1,172 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+{% endblock %}
+
+{% block mainClass %}ncs-course-page{% endblock %}
+
+{% block content %}
+  <section class="ncs-course-page__hero">
+    <div class="govuk-width-container ncs-course-page__hero-inner">
+      <div class="ncs-course-page__hero-copy">
+        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Where do you want to study?</h1>
+        <p class="govuk-body-l ncs-course-page__hero-text">You can search anywhere in England.</p>
+        <br>
+        <p class="govuk-body-l ncs-course-page__hero-text">Searching with your town, city or postcode can help show courses which are local to you.</p>
+      </div>
+      <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+      </div>
+    </div>
+  </section>
+
+  <div class="govuk-width-container">
+    <br><br>
+
+    <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
+      <p class="govuk-body">In some cases, courses or funding may only be available to learners who live within a specified area. This can include online courses and training.</p>
+      <p class="govuk-body">For more information, you should speak to the course provider.</p>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <form method="post" action="/Guided_Search/Location{{ '?returnTo=' + query.returnTo if query.returnTo }}">
+          <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="location">
+              Enter a town, city or postcode (optional)
+            </label>
+            <div id="event-name-hint" class="govuk-hint">
+              Start typing a town or postcode in England. After 3 characters, choose from a location on the list.
+            </div>
+            <div class="ncs-location-autocomplete">
+              <input class="govuk-input" id="location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox" value="{{ data['location'] }}">
+              <ul class="ncs-location-autocomplete__list" id="location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
+            </div>
+          </div>
+          {{ govukButton({ text: "Continue", isStartButton: false }) }}
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  const LOCATIONS = [
+    "Barnsley (South Yorkshire)", "Bath (Somerset)", "Bedford (Bedfordshire)",
+    "Birmingham (West Midlands)", "Blackburn (Lancashire)", "Blackpool (Lancashire)",
+    "Bolton (Greater Manchester)", "Bournemouth (Dorset)", "Bradford (West Yorkshire)",
+    "Brighton (East Sussex)", "Bristol (Bristol)", "Burnley (Lancashire)",
+    "Cambridge (Cambridgeshire)", "Carlisle (Cumbria)", "Chatham (Kent)",
+    "Chelmsford (Essex)", "Cheltenham (Gloucestershire)", "Chester (Cheshire)",
+    "Chesterfield (Derbyshire)", "Chichester (West Sussex)", "Coventry (West Midlands)",
+    "Crawley (West Sussex)", "Darlington (County Durham)", "Derby (Derbyshire)",
+    "Doncaster (South Yorkshire)", "Durham (County Durham)", "Eastbourne (East Sussex)",
+    "Exeter (Devon)", "Gateshead (Tyne and Wear)", "Gloucester (Gloucestershire)",
+    "Grimsby (Lincolnshire)", "Guildford (Surrey)", "Halifax (West Yorkshire)",
+    "Harrogate (North Yorkshire)", "Hartlepool (County Durham)", "Hastings (East Sussex)",
+    "Hereford (Herefordshire)", "High Wycombe (Buckinghamshire)", "Huddersfield (West Yorkshire)",
+    "Hull (East Riding of Yorkshire)", "Ipswich (Suffolk)", "Lancaster (Lancashire)",
+    "Leeds (West Yorkshire)", "Leicester (Leicestershire)", "Lichfield (Staffordshire)",
+    "Lincoln (Lincolnshire)", "Liverpool (Merseyside)", "Londesborough (East Riding of Yorkshire)",
+    "London (Greater London)", "London Apprentice (Cornwall)", "London Beach (Kent)",
+    "London Colney (Hertfordshire)", "Luton (Bedfordshire)", "Macclesfield (Cheshire)",
+    "Manchester (Greater Manchester)", "Mansfield (Nottinghamshire)", "Middlesbrough (North Yorkshire)",
+    "Milton Keynes (Buckinghamshire)", "Newcastle upon Tyne (Tyne and Wear)", "Newport (Isle of Wight)",
+    "Northampton (Northamptonshire)", "Norwich (Norfolk)", "Nottingham (Nottinghamshire)",
+    "Oldham (Greater Manchester)", "Oxford (Oxfordshire)", "Peterborough (Cambridgeshire)",
+    "Plymouth (Devon)", "Poole (Dorset)", "Portsmouth (Hampshire)", "Preston (Lancashire)",
+    "Reading (Berkshire)", "Rochdale (Greater Manchester)", "Rotherham (South Yorkshire)",
+    "Salford (Greater Manchester)", "Salisbury (Wiltshire)", "Sheffield (South Yorkshire)",
+    "Shrewsbury (Shropshire)", "Slough (Berkshire)", "Southampton (Hampshire)",
+    "Southend-on-Sea (Essex)", "Southport (Merseyside)", "St Albans (Hertfordshire)",
+    "Stoke-on-Trent (Staffordshire)", "Sunderland (Tyne and Wear)", "Swindon (Wiltshire)",
+    "Telford (Shropshire)", "Torquay (Devon)", "Truro (Cornwall)", "Wakefield (West Yorkshire)",
+    "Walsall (West Midlands)", "Warrington (Cheshire)", "Watford (Hertfordshire)",
+    "West Bromwich (West Midlands)", "Wigan (Greater Manchester)", "Winchester (Hampshire)",
+    "Wolverhampton (West Midlands)", "Worcester (Worcestershire)", "Worthing (West Sussex)",
+    "York (North Yorkshire)"
+  ];
+
+  (function () {
+    const input = document.getElementById('location');
+    const list = document.getElementById('location-suggestions');
+    let activeIndex = -1;
+
+
+
+    function showSuggestions(query) {
+      const matches = LOCATIONS.filter(l => l.toLowerCase().includes(query.toLowerCase())).slice(0, 8);
+      list.innerHTML = '';
+      activeIndex = -1;
+
+      if (matches.length === 0) {
+        const li = document.createElement('li');
+        li.className = 'ncs-location-autocomplete__option ncs-location-autocomplete__option--no-results';
+        li.setAttribute('role', 'option');
+        li.setAttribute('aria-disabled', 'true');
+        li.textContent = 'No results found';
+        list.appendChild(li);
+      } else {
+        matches.forEach((location, i) => {
+          const li = document.createElement('li');
+          li.className = 'ncs-location-autocomplete__option';
+          li.setAttribute('role', 'option');
+          li.setAttribute('id', 'location-option-' + i);
+          li.textContent = location;
+          li.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            selectLocation(location);
+          });
+          list.appendChild(li);
+        });
+      }
+
+      list.removeAttribute('hidden');
+      input.setAttribute('aria-expanded', 'true');
+    }
+
+    function selectLocation(location) {
+      input.value = location;
+      list.hidden = true;
+      input.setAttribute('aria-expanded', 'false');
+      activeIndex = -1;
+    }
+
+    function updateActiveItem(newIndex) {
+      const items = list.querySelectorAll('.ncs-location-autocomplete__option');
+      if (activeIndex >= 0 && items[activeIndex]) items[activeIndex].setAttribute('aria-selected', 'false');
+      activeIndex = newIndex;
+      if (activeIndex >= 0 && items[activeIndex]) {
+        items[activeIndex].setAttribute('aria-selected', 'true');
+        input.setAttribute('aria-activedescendant', 'location-option-' + activeIndex);
+      } else {
+        input.removeAttribute('aria-activedescendant');
+      }
+    }
+
+    input.addEventListener('input', () => {
+      if (input.value.length >= 3) showSuggestions(input.value);
+      else { list.hidden = true; input.setAttribute('aria-expanded', 'false'); }
+    });
+
+    input.addEventListener('keydown', (e) => {
+      const items = list.querySelectorAll('.ncs-location-autocomplete__option');
+      if (list.hidden || items.length === 0) return;
+      if (e.key === 'ArrowDown') { e.preventDefault(); updateActiveItem(Math.min(activeIndex + 1, items.length - 1)); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); updateActiveItem(Math.max(activeIndex - 1, 0)); }
+      else if (e.key === 'Enter' && activeIndex >= 0) { e.preventDefault(); selectLocation(items[activeIndex].textContent); }
+      else if (e.key === 'Escape') { list.hidden = true; input.setAttribute('aria-expanded', 'false'); }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!input.contains(e.target) && !list.contains(e.target)) {
+        list.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+{% endblock %}
