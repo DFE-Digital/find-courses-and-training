@@ -364,9 +364,7 @@
   display: block;
 }
 
-.ncs-course-page__search-section {
-  background: #eaf2f9;
-}
+
 
 .ncs-course-page__search-section .govuk-width-container {
   padding-top: 1.75rem;
@@ -525,6 +523,151 @@
   margin-bottom: 0;
   font-size: 19px;
   line-height: 1.4;
+}
+
+.ncs-course-page__intro-section {
+  background: #fff;
+}
+
+.ncs-course-page__intro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 2rem 3rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  align-items: start;
+}
+
+.ncs-course-page__intro-image {
+  width: 630px;
+  height: 212px;
+  display: block;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+}
+
+.ncs-course-page__intro-text {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+.ncs-course-page__option-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.dfe-card {
+  flex: 1 1 calc(50% - 25px);
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  padding: 16px;
+  border-bottom: 4px solid #b1b4b6;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1) !important;
+  position: relative;
+}
+
+.dfe-card-container h2 {
+  margin-bottom: 0.75rem;
+}
+
+.dfe-card-link--header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.ncs-course-page__option-title {
+  margin-bottom: 0.75rem;
+}
+
+.ncs-course-page__option-text {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.ncs-course-page__adviser-aside {
+  background: rgba(86, 148, 202, 0.1);
+  padding: 1.5rem;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.ncs-course-page__adviser-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ncs-course-page__adviser-title {
+  margin: 0;
+  color: #003078;
+}
+
+.ncs-course-page__adviser-icon {
+  flex-shrink: 0;
+}
+
+.ncs-course-page__support-section {
+  background: #EFF5FA;
+}
+
+.ncs-course-page__support-section .govuk-width-container {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.ncs-course-page__support-section .govuk-grid-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin: 0;
+}
+
+.ncs-course-page__support-section .govuk-grid-column-one-half {
+  width: auto;
+  padding: 0;
+  float: none;
+}
+
+.ncs-course-page__support-card {
+  background: #F3F2F1;
+  border-bottom: 4px solid #b1b4b6;
+  padding-bottom: 1.5rem;
+  height: 413px;
+  width: 300px;
+}
+
+.ncs-course-page__support-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.ncs-course-page__support-card-body {
+  height: 245px;
+}
+
+.ncs-course-page__support-card-title {
+  margin-bottom: 0.5rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ncs-course-page__support-card-text {
+  margin-bottom: 0;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .ncs-course-page__footer {
@@ -927,6 +1070,10 @@
 }
 
 @media (max-width: 48.0525em) {
+  .ncs-course-page__intro-layout {
+    grid-template-columns: 1fr;
+  }
+
   .ncs-course-page__hero-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -965,6 +1112,10 @@
 }
 
 @media (max-width: 40.0525em) {
+  .ncs-course-page__option-cards {
+    grid-template-columns: 1fr;
+  }
+
   .ncs-course-page__hero-title {
     font-size: 2.25rem;
   }

@@ -1,20 +1,20 @@
 {% extends "layouts/main.html" %}
 
-{% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "/FindCoursesandTraining" }) }}
-{% endblock %}
-
 {% block mainClass %}ncs-course-page{% endblock %}
 
 {% block content %}
+  <div class="govuk-width-container">
+    {{ govukBackLink({ text: "Back", href: "/FindCoursesandTraining" }) }}
+  </div>
+
   <section class="ncs-course-page__hero">
     <div class="govuk-width-container ncs-course-page__hero-inner">
       <div class="ncs-course-page__hero-copy">
         <h1 class="govuk-heading-xl ncs-course-page__hero-title">Find courses and training</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">Search for courses and training, including apprenticeships and get support with your choices.</p>
+        <p class="govuk-body-l ncs-course-page__hero-text">Give information which will help show you courses and training which best suits you.</p>
       </div>
       <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+        <img src="/public/images/FCat_Logo_large.png" alt="" class="ncs-course-page__hero-icon">
       </div>
     </div>
   </section>
@@ -22,36 +22,38 @@
   <div class="govuk-width-container">
     <div class="ncs-course-page__guided-content govuk-!-padding-bottom-8">
       <h2 class="govuk-heading-l govuk-!-margin-top-6">Guided search</h2>
-      <p class="govuk-body">Whatever your current situation, this tool can help you find the right course or training opportunity.</p>
-      <p class="govuk-body">Using AI to search your interests, hobbies or preferences, you'll find different options to look into.</p>
-      {{ govukButton({ text: "Start now", isStartButton: false, href: "/Guided_Search/Location" }) }}
+      <p class="govuk-body">Over the next few pages, you'll be asked for some information which will help show the course or training opportunities most suitable for you.</p>
+      <p class="govuk-body">These will include questions like your location, interests and the course types you wish to see.</p>
+      <p class="govuk-body">You'll then be shown a list of relevant courses, with the chance to use or change your filters.</p>
+      <h3 class="govuk-heading-m">How long this will take</h3>
+      <p class="govuk-body">We estimate this process will take 5 minutes to complete. However, it can vary from person to person.</p>
+      {{ govukButton({ text: "Start now", href: "/Guided_Search/Location" }) }}
       <p class="govuk-body">Find out <a class="govuk-link" href="/How_we_use_AI">how we use AI</a> to bring you results.</p>
     </div>
   </div>
 
-  <section class="ncs-course-page__cards-section">
+  <section class="ncs-course-page__support-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <article class="ncs-course-page__card">
-            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="ncs-course-page__card-image" role="presentation">
-            <div class="ncs-course-page__card-body">
-              <h2 class="govuk-heading-m ncs-course-page__card-title">
-                <a class="govuk-link govuk-link--no-visited-state ncs-course-page__card-link" href="https://nationalcareers.service.gov.uk/find-a-course">Get course support</a>
+        <div class="govuk-grid-column-one-half">
+          <article class="ncs-course-page__support-card">
+            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="ncs-course-page__support-card-image" role="presentation">
+            <div class="ncs-course-page__support-card-body">
+              <h2 class="govuk-heading-s ncs-course-page__support-card-title">
+                <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/find-a-course">Get course or training support</a>
               </h2>
-              <p class="govuk-body ncs-course-page__card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose a course that suits you.</p>
+              <p class="govuk-body ncs-course-page__support-card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
             </div>
           </article>
         </div>
-
-        <div class="govuk-grid-column-one-third">
-          <article class="ncs-course-page__card">
-            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/apprenticeships-card-desktop.png" alt="" class="ncs-course-page__card-image" role="presentation">
-            <div class="ncs-course-page__card-body">
-              <h2 class="govuk-heading-m ncs-course-page__card-title">
-                <a class="govuk-link govuk-link--no-visited-state ncs-course-page__card-link" href="https://nationalcareers.service.gov.uk/careers-advice">Understand training options</a>
+        <div class="govuk-grid-column-one-half">
+          <article class="ncs-course-page__support-card">
+            <img src="/public/images/UCaTT.png" alt="" class="ncs-course-page__support-card-image" role="presentation">
+            <div class="ncs-course-page__support-card-body">
+              <h2 class="govuk-heading-s ncs-course-page__support-card-title">
+                <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/careers-advice">Understand course and training types</a>
               </h2>
-              <p class="govuk-body ncs-course-page__card-text">Visit Skills for Careers to find out more about the different training options available to you, and which are most suitable.</p>
+              <p class="govuk-body ncs-course-page__support-card-text">Visit Skills for Careers to find out more about the different course types and training options.</p>
             </div>
           </article>
         </div>

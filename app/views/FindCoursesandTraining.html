@@ -7,228 +7,82 @@
     <div class="govuk-width-container ncs-course-page__hero-inner">
       <div class="ncs-course-page__hero-copy">
         <h1 class="govuk-heading-xl ncs-course-page__hero-title">Find courses and training</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">Search for courses and training, including apprenticeships and get support with your choices.</p>
+        <p class="govuk-body-l ncs-course-page__hero-text">Search for courses and training, including apprenticeships, and get support with your choices.</p>
       </div>
       <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+        <img src="/public/images/FCat_Logo_large.png" alt="" class="ncs-course-page__hero-icon">
       </div>
     </div>
   </section>
 
-  <section class="ncs-course-page__search-section">
-    <div class="govuk-width-container">
-      <div class="ncs-course-page__search-intro">
-        <p class="govuk-body ncs-course-page__search-lead">Enter up to three keywords or phrases in the separate boxes. Consider what will bring back courses that interest you, such as "working with animals" or "maths".</p>
-      </div>
-
-      <form class="ncs-course-page__search-form" action="/Search_results" method="get">
-        <div class="ncs-course-page__search-grid">
-          <div class="govuk-form-group ncs-course-page__field">
-            <label class="govuk-label" for="search-location">Enter a town, city or postcode</label>
-            <div class="ncs-location-autocomplete">
-              <input class="govuk-input ncs-course-page__input" id="search-location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox">
-              <ul class="ncs-location-autocomplete__list" id="location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
+  <section class="ncs-course-page__intro-section">
+    <div class="govuk-width-container ncs-course-page__intro-layout">
+      <div class="ncs-course-page__intro-main">
+        <img src="/public/images/FCaT-home-image.jpg" alt="" class="ncs-course-page__intro-image">
+        <p class="govuk-body ncs-course-page__intro-text">Choose how you'd like to find courses and training. Do a quick search and get to your results and filter quickly. For more support, choose guided search to get to a list of courses and training for you.</p>
+        <div class="ncs-course-page__option-cards">
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-s">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/Quick_search">Quick search</a>
+              </h2>
+              <p class="govuk-body">Enter search terms for a faster way to get your results and filter them. This option may be best if you already have ideas, or have used this tool before.</p>
             </div>
           </div>
-
-          <div class="ncs-course-page__term-fields">
-            <div class="govuk-form-group ncs-course-page__field">
-              <label class="govuk-label" for="search-term-1">Search term 1</label>
-              <input class="govuk-input ncs-course-page__input" id="search-term-1" name="searchTerm1" type="text">
-            </div>
-
-            <div class="govuk-form-group ncs-course-page__field">
-              <label class="govuk-label" for="search-term-2">Search term 2</label>
-              <input class="govuk-input ncs-course-page__input" id="search-term-2" name="searchTerm2" type="text">
-            </div>
-
-            <div class="govuk-form-group ncs-course-page__field">
-              <label class="govuk-label" for="search-term-3">Search term 3</label>
-              <input class="govuk-input ncs-course-page__input" id="search-term-3" name="searchTerm3" type="text">
-            </div>
-
-            <div class="ncs-course-page__actions">
-              <button class="govuk-button ncs-course-page__button" data-module="govuk-button" type="submit">Search</button>
-              <a class="govuk-link ncs-course-page__guided-link" href="/Guided_Search/Guided_search_start.html">Guided search</a>
+          <div class="dfe-card">
+            <div class="dfe-card-container">
+              <h2 class="govuk-heading-s">
+                <a class="govuk-link govuk-link--no-visited-state dfe-card-link--header" href="/Guided_Search/Guided_search_start">Guided search</a>
+              </h2>
+              <p class="govuk-body">A step by step way to get your results. With the information you provide, you'll see a list of opportunities to suit your needs.</p>
             </div>
           </div>
         </div>
-      </form>
+      </div>
+
+      <aside class="ncs-course-page__adviser-aside">
+        <div class="ncs-course-page__adviser-header">
+          <h2 class="govuk-heading-m ncs-course-page__adviser-title">Speak to an adviser</h2>
+          <svg class="ncs-course-page__adviser-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57.38 44.9" width="84" height="68" aria-hidden="true" focusable="false">
+            <defs><style>.cls-1{fill:#003078;stroke-width:0px;}</style></defs>
+            <path class="cls-1" d="M50.3,8.5h-8.73c-.3-4.74-4.24-8.5-9.06-8.5H9.09C4.08,0,0,4.08,0,9.09v14.12c0,4.64,3.5,8.49,8.01,9.02v11.18l10.56-11.12h1.71c1.03,2.63,3.59,4.5,6.59,4.5h14.81l7.7,8.11v-8.11h.92c3.91,0,7.09-3.17,7.09-7.09v-14.12c0-3.91-3.17-7.09-7.09-7.09ZM16.84,28.3l-4.84,5.1v-5.1h-2.92c-2.8,0-5.09-2.28-5.09-5.08v-14.12c0-2.8,2.28-5.09,5.09-5.09h23.43c2.8,0,5.09,2.28,5.09,5.09v14.12c0,2.8-2.28,5.08-5.09,5.08h-15.67Z"/>
+            <path class="cls-1" d="M11.49,12.45c-1.71,0-3.09,1.39-3.09,3.09s1.39,3.09,3.09,3.09,3.09-1.39,3.09-3.09-1.39-3.09-3.09-3.09Z"/>
+            <path class="cls-1" d="M20.74,12.45c-1.71,0-3.09,1.39-3.09,3.09s1.39,3.09,3.09,3.09,3.09-1.39,3.09-3.09-1.39-3.09-3.09-3.09Z"/>
+            <circle class="cls-1" cx="29.99" cy="15.55" r="3.09"/>
+          </svg>
+        </div>
+        <p class="govuk-body">Wherever you are with your decisions, you can <a class="govuk-link" href="#">contact us</a> to get advice from a careers adviser.</p>
+        <p class="govuk-body">Call <a class="govuk-link" href="tel:08001009000">0800 100 900</a> or <a class="govuk-link" href="#">use webchat</a> to talk online.</p>
+      </aside>
     </div>
   </section>
 
-  <section class="ncs-course-page__cards-section">
+  <section class="ncs-course-page__support-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-third">
-          <article class="ncs-course-page__card">
-            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="ncs-course-page__card-image" role="presentation">
-            <div class="ncs-course-page__card-body">
-              <h2 class="govuk-heading-m ncs-course-page__card-title">
-                <a class="govuk-link govuk-link--no-visited-state ncs-course-page__card-link" href="https://nationalcareers.service.gov.uk/find-a-course">Get course support</a>
+        <div class="govuk-grid-column-one-half">
+          <article class="ncs-course-page__support-card">
+            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="ncs-course-page__support-card-image" role="presentation">
+            <div class="ncs-course-page__support-card-body">
+              <h2 class="govuk-heading-s ncs-course-page__support-card-title">
+                <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/find-a-course">Get course or training support</a>
               </h2>
-              <p class="govuk-body ncs-course-page__card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose a course that suits you.</p>
+              <p class="govuk-body ncs-course-page__support-card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
             </div>
           </article>
         </div>
-
-        <div class="govuk-grid-column-one-third">
-          <article class="ncs-course-page__card">
-            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/search-all-courses-card-desktop.png" alt="" class="ncs-course-page__card-image" role="presentation">
-            <div class="ncs-course-page__card-body">
-              <h2 class="govuk-heading-m ncs-course-page__card-title">
-                <a class="govuk-link govuk-link--no-visited-state ncs-course-page__card-link" href="https://nationalcareers.service.gov.uk/find-a-course">Search all courses and training</a>
+        <div class="govuk-grid-column-one-half">
+          <article class="ncs-course-page__support-card">
+            <img src="/public/images/UCaTT.png" alt="" class="ncs-course-page__support-card-image" role="presentation">
+            <div class="ncs-course-page__support-card-body">
+              <h2 class="govuk-heading-s ncs-course-page__support-card-title">
+                <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/careers-advice">Understand course and training types</a>
               </h2>
-              <p class="govuk-body ncs-course-page__card-text">Search all courses and training without entering a keyword to search by. You can apply filters to refine your results.</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="govuk-grid-column-one-third">
-          <article class="ncs-course-page__card">
-            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/apprenticeships-card-desktop.png" alt="" class="ncs-course-page__card-image" role="presentation">
-            <div class="ncs-course-page__card-body">
-              <h2 class="govuk-heading-m ncs-course-page__card-title">
-                <a class="govuk-link govuk-link--no-visited-state ncs-course-page__card-link" href="https://nationalcareers.service.gov.uk/careers-advice">Understand training options</a>
-              </h2>
-              <p class="govuk-body ncs-course-page__card-text">Visit Skills for Careers to find out more about the different training options available to you, and which are most suitable.</p>
+              <p class="govuk-body ncs-course-page__support-card-text">Visit Skills for Careers to find out more about the different course types and training options.</p>
             </div>
           </article>
         </div>
       </div>
     </div>
   </section>
-{% endblock %}
-
-{% block pageScripts %}
-<script>
-  const LOCATIONS = [
-    "Barnsley (South Yorkshire)", "Bath (Somerset)", "Bedford (Bedfordshire)",
-    "Birmingham (West Midlands)", "Blackburn (Lancashire)", "Blackpool (Lancashire)",
-    "Bolton (Greater Manchester)", "Bournemouth (Dorset)", "Bradford (West Yorkshire)",
-    "Brighton (East Sussex)", "Bristol (Bristol)", "Burnley (Lancashire)",
-    "Cambridge (Cambridgeshire)", "Carlisle (Cumbria)", "Chatham (Kent)",
-    "Chelmsford (Essex)", "Cheltenham (Gloucestershire)", "Chester (Cheshire)",
-    "Chesterfield (Derbyshire)", "Chichester (West Sussex)", "Coventry (West Midlands)",
-    "Crawley (West Sussex)", "Darlington (County Durham)", "Derby (Derbyshire)",
-    "Doncaster (South Yorkshire)", "Durham (County Durham)", "Eastbourne (East Sussex)",
-    "Exeter (Devon)", "Gateshead (Tyne and Wear)", "Gloucester (Gloucestershire)",
-    "Grimsby (Lincolnshire)", "Guildford (Surrey)", "Halifax (West Yorkshire)",
-    "Harrogate (North Yorkshire)", "Hartlepool (County Durham)", "Hastings (East Sussex)",
-    "Hereford (Herefordshire)", "High Wycombe (Buckinghamshire)", "Huddersfield (West Yorkshire)",
-    "Hull (East Riding of Yorkshire)", "Ipswich (Suffolk)", "Lancaster (Lancashire)",
-    "Leeds (West Yorkshire)", "Leicester (Leicestershire)", "Lichfield (Staffordshire)",
-    "Lincoln (Lincolnshire)", "Liverpool (Merseyside)", "Londesborough (East Riding of Yorkshire)",
-    "London (Greater London)", "London Apprentice (Cornwall)", "London Beach (Kent)",
-    "London Colney (Hertfordshire)", "Luton (Bedfordshire)", "Macclesfield (Cheshire)",
-    "Manchester (Greater Manchester)", "Mansfield (Nottinghamshire)", "Middlesbrough (North Yorkshire)",
-    "Milton Keynes (Buckinghamshire)", "Newcastle upon Tyne (Tyne and Wear)", "Newport (Isle of Wight)",
-    "Northampton (Northamptonshire)", "Norwich (Norfolk)", "Nottingham (Nottinghamshire)",
-    "Oldham (Greater Manchester)", "Oxford (Oxfordshire)", "Peterborough (Cambridgeshire)",
-    "Plymouth (Devon)", "Poole (Dorset)", "Portsmouth (Hampshire)", "Preston (Lancashire)",
-    "Reading (Berkshire)", "Rochdale (Greater Manchester)", "Rotherham (South Yorkshire)",
-    "Salford (Greater Manchester)", "Salisbury (Wiltshire)", "Sheffield (South Yorkshire)",
-    "Shrewsbury (Shropshire)", "Slough (Berkshire)", "Southampton (Hampshire)",
-    "Southend-on-Sea (Essex)", "Southport (Merseyside)", "St Albans (Hertfordshire)",
-    "Stoke-on-Trent (Staffordshire)", "Sunderland (Tyne and Wear)", "Swindon (Wiltshire)",
-    "Telford (Shropshire)", "Torquay (Devon)", "Truro (Cornwall)", "Wakefield (West Yorkshire)",
-    "Walsall (West Midlands)", "Warrington (Cheshire)", "Watford (Hertfordshire)",
-    "West Bromwich (West Midlands)", "Wigan (Greater Manchester)", "Winchester (Hampshire)",
-    "Wolverhampton (West Midlands)", "Worcester (Worcestershire)", "Worthing (West Sussex)",
-    "York (North Yorkshire)"
-  ];
-
-  (function () {
-    const input = document.getElementById('search-location');
-    const list = document.getElementById('location-suggestions');
-    let activeIndex = -1;
-
-    function showSuggestions(query) {
-      const matches = LOCATIONS.filter(l => l.toLowerCase().includes(query.toLowerCase())).slice(0, 8);
-      list.innerHTML = '';
-      activeIndex = -1;
-
-      if (matches.length === 0) {
-        const li = document.createElement('li');
-        li.className = 'ncs-location-autocomplete__option ncs-location-autocomplete__option--no-results';
-        li.setAttribute('role', 'option');
-        li.setAttribute('aria-disabled', 'true');
-        li.textContent = 'No results found';
-        list.appendChild(li);
-      } else {
-        matches.forEach((location, i) => {
-          const li = document.createElement('li');
-          li.className = 'ncs-location-autocomplete__option';
-          li.setAttribute('role', 'option');
-          li.setAttribute('id', 'location-option-' + i);
-          li.textContent = location;
-          li.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            selectLocation(location);
-          });
-          list.appendChild(li);
-        });
-      }
-
-      list.removeAttribute('hidden');
-      input.setAttribute('aria-expanded', 'true');
-    }
-
-    function selectLocation(location) {
-      input.value = location;
-      list.hidden = true;
-      input.setAttribute('aria-expanded', 'false');
-      activeIndex = -1;
-    }
-
-    function updateActiveItem(newIndex) {
-      const items = list.querySelectorAll('.ncs-location-autocomplete__option');
-      if (activeIndex >= 0 && items[activeIndex]) {
-        items[activeIndex].setAttribute('aria-selected', 'false');
-      }
-      activeIndex = newIndex;
-      if (activeIndex >= 0 && items[activeIndex]) {
-        items[activeIndex].setAttribute('aria-selected', 'true');
-        input.setAttribute('aria-activedescendant', 'location-option-' + activeIndex);
-      } else {
-        input.removeAttribute('aria-activedescendant');
-      }
-    }
-
-    input.addEventListener('input', () => {
-      if (input.value.length >= 3) {
-        showSuggestions(input.value);
-      } else {
-        list.hidden = true;
-        input.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    input.addEventListener('keydown', (e) => {
-      const items = list.querySelectorAll('.ncs-location-autocomplete__option');
-      if (list.hidden || items.length === 0) return;
-
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        updateActiveItem(Math.min(activeIndex + 1, items.length - 1));
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        updateActiveItem(Math.max(activeIndex - 1, 0));
-      } else if (e.key === 'Enter' && activeIndex >= 0) {
-        e.preventDefault();
-        selectLocation(items[activeIndex].textContent);
-      } else if (e.key === 'Escape') {
-        list.hidden = true;
-        input.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!input.contains(e.target) && !list.contains(e.target)) {
-        list.hidden = true;
-        input.setAttribute('aria-expanded', 'false');
-      }
-    });
-  })();
-</script>
 {% endblock %}
