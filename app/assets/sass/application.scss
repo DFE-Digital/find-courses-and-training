@@ -1,7 +1,7 @@
 .govuk-header {
   font-family: "GDS Transport", arial, sans-serif;
   font-weight: 100;
-  font-size: 0.875rem;
+  font-size: 14px;
   line-height: 1;
   border-bottom: 10px #fff;
   background: #1d70b8;
@@ -58,7 +58,7 @@
 .ncs-homepage__hero-title {
   font-family: "GDS Transport", arial, sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 40px;
   line-height: 1.15;
   color: #1D70B8;
   margin: 0 0 20px;
@@ -76,7 +76,7 @@
 
 .ncs-homepage__hero-summary {
   font-family: "GDS Transport", arial, sans-serif;
-  font-size: 1.1875rem;
+  font-size: 19px;
   line-height: 1.5;
   color: #0b0c0c;
   margin: 0;
@@ -340,17 +340,31 @@
   max-width: 760px;
 }
 
+.ncs-course-page__hero-inner--compact {
+  padding-top: 70px;
+  padding-bottom: 55px;
+}
+
+.ncs-course-page__hero-inner--compact .ncs-course-page__hero-copy {
+  max-width: 100%;
+  flex: 1;
+}
+
+.ncs-course-page__hero-copy--wide {
+  max-width: 780px;
+}
+
 .ncs-course-page__hero-title {
   color: #fff;
   margin-bottom: 1.25rem;
-  font-size: 3.5rem;
+  font-size: 56px;
 }
 
 .ncs-course-page__hero-text {
   color: #fff;
   margin-bottom: 0;
   max-width: 700px;
-  font-size: 1.25rem;
+  font-size: 24px;
 }
 
 .ncs-course-page__hero-icon-wrap {
@@ -366,6 +380,10 @@
 
 
 
+.ncs-course-page__search-section {
+  background: #EFF5FA;
+}
+
 .ncs-course-page__search-section .govuk-width-container {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
@@ -375,9 +393,13 @@
   max-width: 760px;
 }
 
+#event-name-hint {
+  white-space: nowrap;
+}
+
 .ncs-course-page__search-lead {
   margin-bottom: 1.75rem;
-  font-size: 1.125rem;
+  font-size: 18px;
   line-height: 1.45;
 }
 
@@ -405,18 +427,23 @@
 .ncs-course-page__actions {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 0.5rem;
 }
 
-.ncs-course-page__button {
+.ncs-course-page__button,
+.ncs-course-page__clear-button {
   margin-bottom: 0;
+}
+
+.ncs-course-page__button {
   background: #00703c;
   box-shadow: 0 2px 0 #004f2b;
 }
 
 .ncs-course-page__guided-link {
-  font-size: 1.125rem;
+  font-size: 18px;
 }
 
 .ncs-course-page__guided-content {
@@ -447,7 +474,7 @@
   padding: 0.5rem 0.75rem;
   cursor: pointer;
   font-family: "GDS Transport", arial, sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.25;
   border-top: 1px solid #b1b4b6;
   color: #0b0c0c;
@@ -509,7 +536,7 @@
 
 .ncs-course-page__card-title {
   margin-bottom: 0.75rem;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.25;
 }
 
@@ -548,7 +575,7 @@
 
 .ncs-course-page__intro-text {
   margin-bottom: 1.5rem;
-  font-size: 1.125rem;
+  font-size: 18px;
 }
 
 .ncs-course-page__option-cards {
@@ -586,7 +613,7 @@
 
 .ncs-course-page__option-text {
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .ncs-course-page__adviser-aside {
@@ -697,7 +724,7 @@
 
 .ncs-course-page__footer-title {
   margin-bottom: 1.5rem;
-  font-size: 1.875rem;
+  font-size: 30px;
 }
 
 .ncs-course-page__footer-title--secondary {
@@ -734,12 +761,12 @@
 
 .ncs-course-page__licence-title {
   margin-bottom: 0.5rem;
-  font-size: 2rem;
+  font-size: 32px;
 }
 
 .ncs-course-page__licence-copy {
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 .ncs-course-page__copyright {
@@ -814,7 +841,7 @@
   margin: 0;
   padding: 1.5rem 1.25rem;
   background: #f3f2f1;
-  font-size: 1.1875rem;
+  font-size: 19px;
   line-height: 1.3157894737;
 }
 
@@ -844,7 +871,7 @@
 
 .ncs-search-results__section-heading {
   margin-bottom: 0.75rem;
-  font-size: 1.125rem;
+  font-size: 24px;
 }
 
 .ncs-search-results__checkboxes .govuk-checkboxes__item {
@@ -852,7 +879,7 @@
 }
 
 .ncs-search-results__checkboxes .govuk-checkboxes__label {
-  font-size: 1rem;
+  font-size: 19px;
 }
 
 .ncs-search-results__info-link {
@@ -886,7 +913,7 @@
 
 .ncs-search-results__results-count {
   margin-bottom: 0;
-  font-size: 1.25rem;
+  font-size: 20px;
 }
 
 .ncs-search-results__sort-wrap {
@@ -915,7 +942,7 @@
   margin-bottom: 0;
   padding: 1rem 1.2rem;
   background: #f3f2f1;
-  font-size: 1.1875rem;
+  font-size: 19px;
   line-height: 1.3157894737;
 }
 
@@ -947,7 +974,7 @@
 .ncs-search-results__row dt,
 .ncs-search-results__row dd {
   margin: 0;
-  font-size: 1rem;
+  font-size: 19px;
   line-height: 1.35;
 }
 
@@ -1001,7 +1028,7 @@
 }
 
 .ncs-course-detail__card--narrow {
-  max-width: 460px;
+  max-width: 510px;
 }
 
 .ncs-course-detail__card-header {
@@ -1012,7 +1039,7 @@
 
 .ncs-course-detail__card-heading {
   margin-bottom: 0;
-  font-size: 1.1875rem;
+  font-size: 19px;
 }
 
 .ncs-course-detail__summary-list {
@@ -1020,7 +1047,7 @@
   padding: 0;
 
   .govuk-summary-list__row {
-    padding: 0.875rem 1.25rem;
+    padding: 1.25rem 1.25rem;
     border-bottom: 1px solid #b1b4b6;
     margin-bottom: 0;
   }
@@ -1032,14 +1059,20 @@
 
   .govuk-summary-list__key {
     font-weight: 700;
-    width: 30%;
+    width: 45%;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 
   .govuk-summary-list__value {
     width: 70%;
+    padding-right: 20px;
   }
+}
+
+.ncs-course-detail__card--narrow .govuk-summary-list__value {
+  text-align: right;
+  padding-right: 20px;
 }
 
 .ncs-course-detail__value-with-action {
@@ -1082,7 +1115,7 @@
   }
 
   .ncs-course-page__hero-title {
-    font-size: 2.75rem;
+    font-size: 44px;
   }
 
   .ncs-course-page__search-grid,
@@ -1117,14 +1150,14 @@
   }
 
   .ncs-course-page__hero-title {
-    font-size: 2.25rem;
+    font-size: 36px;
   }
 
   .ncs-course-page__hero-text,
   .ncs-course-page__search-lead,
   .ncs-course-page__card-text,
   .ncs-course-page__guided-link {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .ncs-course-page__hero-icon {
@@ -1150,11 +1183,11 @@
   }
 
   .ncs-search-results__filter-heading {
-    font-size: 1.5rem;
+    font-size: 24px;
   }
 
   .ncs-search-results__result-title {
-    font-size: 1.125rem;
+    font-size: 18px;
   }
 
   .ncs-search-results__mobile-filter-toggle {

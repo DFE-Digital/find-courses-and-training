@@ -14,6 +14,15 @@ const redirectOrReturn = (req, res, normalPath) => {
   res.redirect(req.query.returnTo === 'check-answers' ? '/Guided_Search/Check_your_answers' : normalPath)
 }
 
+// Clear all session data when returning to the homepage or find courses landing page.
+const clearSession = (req, res, next) => {
+  req.session.data = {}
+  next()
+}
+
+router.get('/NCS_Homepage', clearSession)
+router.get('/FindCoursesandTraining', clearSession)
+
 // Receives the Search button from Check your answers.
 // Sets a flag so the results page knows to open filters by default, then redirects to the GET handler.
 router.post('/Search_results', function (req, res) {
@@ -93,34 +102,18 @@ router.post('/Guided_Search/Interests', function (req, res) {
 })
 
 // Builds and renders the Check your answers summary list from session data.
-// Conditionally includes the Apprenticeships/Skills Bootcamps row (hidden if the user
-// only selected 'skills and experience' or 'Entry level' on the qualification page)
-// and the Sectors row (only shown if the user said Yes or not sure to apprenticeships).
 router.get('/Guided_Search/Check_your_answers', function (req, res) {
   const d = req.session.data
   const toArray = v => [].concat(v || []).filter(Boolean)
   const change = (href, label) => ({ items: [{ href: href + '?returnTo=check-answers', text: 'Change', visuallyHiddenText: label }] })
 
-  const skipOnly = ['Gain skills and experience (without a qualification)', 'Entry level']
-  const qualSelected = toArray(d['qualification'])
-  const skippedAppsOrSBC = qualSelected.length > 0 && qualSelected.every(v => skipOnly.includes(v))
-
   const rows = [
     { key: { text: 'Location' }, value: { text: d['location'] || 'Not answered' }, actions: change('/Guided_Search/Location', 'location') },
     { key: { text: 'Travel distance' }, value: { text: d['distance'] || 'Not answered' }, actions: change('/Guided_Search/Distance', 'travel distance') },
     { key: { text: 'Search terms' }, value: { text: [d['interest1'], d['interest2'], d['interest3']].filter(Boolean).join(', ') || 'Not answered' }, actions: change('/Guided_Search/Interests', 'search terms') },
-    { key: { text: 'Qualification level' }, value: { text: qualSelected.join(', ') || 'Not answered' }, actions: change('/Guided_Search/Qualification_Level', 'qualification level') }
+    { key: { text: 'Qualification level' }, value: { text: toArray(d['qualification']).join(', ') || 'Not answered' }, actions: change('/Guided_Search/Qualification_Level', 'qualification level') },
+    { key: { text: 'Age' }, value: { text: d['age'] || 'Not answered' }, actions: change('/Guided_Search/Age', 'age') }
   ]
-
-  if (!skippedAppsOrSBC) {
-    rows.push({ key: { text: 'Interested in Apprenticeships or Skills Bootcamps' }, value: { text: d['apps-or-sbc'] || 'Not answered' }, actions: change('/Guided_Search/Apps_or_SBC', 'apprenticeships or skills bootcamps') })
-  }
-
-  if (d['apps-or-sbc'] === 'Yes or not sure') {
-    rows.push({ key: { text: 'Sectors' }, value: { text: toArray(d['sector']).join(', ') || 'Not answered' }, actions: change('/Guided_Search/Sectors', 'sectors') })
-  }
-
-  rows.push({ key: { text: 'Age' }, value: { text: d['age'] || 'Not answered' }, actions: change('/Guided_Search/Age', 'age') })
 
   res.render('Guided_Search/Check_your_answers', { summaryRows: rows })
 })
@@ -150,19 +143,8 @@ router.post('/Guided_Search/Apps_or_SBC', function (req, res) {
   }
 })
 
-// Saves the selected qualification levels.
-// If returning from Check your answers, always goes back there.
-// Otherwise: if the user only selected 'skills and experience' or 'Entry level'
-// (which don't require an apprenticeship/SBC question), skip Apps or SBC and go
-// straight to Age; otherwise go to Apps or SBC.
+// Saves the selected qualification levels and always moves to Age.
 router.post('/Qualification_Level', function (req, res) {
   req.session.data['qualification'] = req.body['qualification'] || []
-  const selected = [].concat(req.session.data['qualification'])
-  const skipOnly = ['Gain skills and experience (without a qualification)', 'Entry level']
-  const hasOther = selected.some(v => !skipOnly.includes(v))
-  if (req.query.returnTo === 'check-answers') {
-    res.redirect('/Guided_Search/Check_your_answers')
-  } else {
-    res.redirect(hasOther ? '/Guided_Search/Apps_or_SBC' : '/Guided_Search/Age')
-  }
+  redirectOrReturn(req, res, '/Guided_Search/Age')
 })

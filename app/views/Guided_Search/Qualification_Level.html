@@ -10,7 +10,7 @@
     <div class="govuk-width-container ncs-course-page__hero-inner">
       <div class="ncs-course-page__hero-copy">
         <h1 class="govuk-heading-xl ncs-course-page__hero-title">What qualification level are you looking for?</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">You can look for courses to gain a specific qualification, or you can get skills and experience without a qualification. 
+        <p class="govuk-body-l ncs-course-page__hero-text">You can look for courses to gain a specific qualification, or you can get skills and experience without a qualification.
 </p>
       </div>
       <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
@@ -22,10 +22,8 @@
     <br><br>
 
     <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
-      <p class="govuk-body">Qualification levels build on previous skills and knowledge. Some qualifications like apprenticeships or vocational qualifications can be studied at different levels, where others are set levels, such as GCSEs.</p>
-      <p class="govuk-body">You do not always need to start at the lowest level, depending on your existing skills, experience and qualifications.</p>
-      <a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link" rel="noreferrer noopener" target="_blank">What qualification levels mean (opens in new tab)</a>
-
+      <p class="govuk-body">You don't always need to start at the lowest level, depending on your existing skills, experience and qualifications.</p>
+      <p class="govuk-body"><a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link" rel="noreferrer noopener" target="_blank">What qualification levels mean (opens in new tab)</a></p>
     </div>
     <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
@@ -68,6 +66,13 @@
         <input class="govuk-checkboxes__input" id="qualification-5" name="qualification" type="checkbox" value="Level 4 to 8 (like diplomas and degrees)" {% if data['qualification'] and (data['qualification'] == "Level 4 to 8 (like diplomas and degrees)" or "Level 4 to 8 (like diplomas and degrees)" in data['qualification']) %}checked{% endif %}>
         <label class="govuk-label govuk-checkboxes__label" for="qualification-5">
           Level 4 to 8 (like diplomas and degrees)
+        </label>
+      </div>
+      <div class="govuk-checkboxes__divider">or</div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="qualification-6" name="qualification" type="checkbox" value="I'm not sure" {% if data['qualification'] and (data['qualification'] == "I'm not sure" or "I'm not sure" in data['qualification']) %}checked{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="qualification-6">
+          I'm not sure
         </label>
       </div>
     </div>

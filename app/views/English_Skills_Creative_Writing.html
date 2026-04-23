@@ -1,16 +1,27 @@
 {% extends "layouts/main.html" %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "/Search_results" }) }}
+  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
 {% endblock %}
 
 {% block content %}
-  <section class="ncs-course-detail__hero">
-    <div class="govuk-width-container">
-      <h1 class="govuk-heading-xl ncs-course-detail__hero-title">English Skills: Creative Writing</h1>
+   <section class="ncs-course-page__hero">
+    <div class="govuk-width-container ncs-course-page__hero-inner ncs-course-page__hero-inner--compact">
+      <div class="ncs-course-page__hero-copy">
+        <h1 class="govuk-heading-xl ncs-course-page__hero-title">English Skills: Creative Writing</h1>
+      </div>
+      
     </div>
   </section>
-
+<section class="ncs-search-results__notice">
+    <div class="govuk-width-container">
+      <div class="ncs-search-results__notice-panel">
+        <h2 class="govuk-heading-m ncs-search-results__notice-title">Eligibility and funding</h2>
+        <p class="govuk-body">All information shown within these results is taken from a third party. You can check with the course or training provider for rules about funding and eligibility.</p>
+        <p class="govuk-body"><a class="govuk-link" href="#results-grid" id="dismiss-notice">Dismiss</a></p>
+      </div>
+    </div>
+  </section>
   <div class="govuk-width-container ncs-course-detail__content">
 
     <div class="govuk-summary-card">
@@ -70,29 +81,33 @@
       </div>
     </div>
 
-    <div class="govuk-summary-card ncs-course-detail__card--narrow">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Course details</h2>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Delivery methods</dt>
-            <dd class="govuk-summary-list__value">Classroom based</dd>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Course details</h2>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Start date</dt>
-            <dd class="govuk-summary-list__value">22 April 2025</dd>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Delivery methods</dt>
+                <dd class="govuk-summary-list__value">Classroom based</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Start date</dt>
+                <dd class="govuk-summary-list__value">22 April 2025</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Duration</dt>
+                <dd class="govuk-summary-list__value">2 months</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Hours</dt>
+                <dd class="govuk-summary-list__value">Part time</dd>
+              </div>
+            </dl>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Duration</dt>
-            <dd class="govuk-summary-list__value">2 months</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Hours</dt>
-            <dd class="govuk-summary-list__value">Part time</dd>
-          </div>
-        </dl>
+        </div>
       </div>
     </div>
 

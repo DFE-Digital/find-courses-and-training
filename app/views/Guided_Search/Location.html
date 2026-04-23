@@ -10,10 +10,8 @@
   <section class="ncs-course-page__hero">
     <div class="govuk-width-container ncs-course-page__hero-inner">
       <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Where do you want to study?</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">You can search anywhere in England.</p>
-        <br>
-        <p class="govuk-body-l ncs-course-page__hero-text">Searching with your town, city or postcode can help show courses which are local to you.</p>
+        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Where would you like to do your course or training?</h1>
+        <p class="govuk-body-l ncs-course-page__hero-text">By giving a location, you'll see results of courses available within a set area.</p>
       </div>
       <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
         <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
@@ -25,8 +23,8 @@
     <br><br>
 
     <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
-      <p class="govuk-body">In some cases, courses or funding may only be available to learners who live within a specified area. This can include online courses and training.</p>
-      <p class="govuk-body">For more information, you should speak to the course provider.</p>
+      <p class="govuk-body">You can search a town, city or postcode anywhere in England.</p>
+      <p class="govuk-body">You'll then be able to set a distance you can travel on the next page. This will mean the courses you're shown are more relevant to you.</p>
     </div>
 
     <div class="govuk-grid-row">
@@ -35,7 +33,7 @@
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="location">
-              Enter a town, city or postcode (optional)
+              Enter a town, city or postcode in England (optional)
             </label>
             <div id="event-name-hint" class="govuk-hint">
               Start typing a town or postcode in England. After 3 characters, choose from a location on the list.
@@ -48,6 +46,10 @@
           {{ govukButton({ text: "Continue", isStartButton: false }) }}
         </form>
       </div>
+    </div>
+    <div class="ncs-course-page__guided-content">
+      <p class="govuk-body">In some cases, courses or funding may only be available to learners who live within a specified area. This can include online courses and training.</p>
+      <p class="govuk-body">For more information, you should speak to the course provider.</p>
     </div>
   </div>
 {% endblock %}

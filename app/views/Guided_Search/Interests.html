@@ -10,8 +10,8 @@
   <section class="ncs-course-page__hero">
     <div class="govuk-width-container ncs-course-page__hero-inner">
       <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">What courses, subjects, jobs or careers interest you?</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">Be as specific or as broad as you like. The terms do not have to link to each other, they can all be totally different things if you'd prefer.</p>
+        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Add search terms</h1>
+        <p class="govuk-body-l ncs-course-page__hero-text">Search for courses and training by telling us up to 3 key search terms.</p>
       </div>
       <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
         <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
@@ -21,7 +21,9 @@
 
   <div class="govuk-width-container">
     <div class="ncs-course-page__guided-content govuk-!-padding-top-6 govuk-!-padding-bottom-4">
-      <p class="govuk-body">Search for things like school subjects, practical skills, hobbies and interests to find courses that could be right for you.</p>
+      <p class="govuk-body">You can search by things like school subjects, practical skills, hobbies and interests to find courses and training that could be right for you.</p>
+      <p class="govuk-body">Be as specific or as broad as you like. The terms do not have to link to each other, they can all be totally different things if you’d prefer.</p>
+      <p class="govuk-body">The search terms search will use AI, helping to bring back results most relevant to you.</p>
       <p class="govuk-body">For example, you could enter:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>maths</li>
@@ -47,6 +49,7 @@
             <input class="govuk-input" id="interest-3" name="interest3" type="text" value="{{ data['interest3'] }}">
           </div>
           {{ govukButton({ text: "Continue", isStartButton: false }) }}
+           <p class="govuk-body">Find out <a class="govuk-link" href="/How_we_use_AI">how we use AI</a> to bring you results.</p>
         </form>
       </div>
     </div>
