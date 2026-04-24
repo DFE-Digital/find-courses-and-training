@@ -4,56 +4,58 @@
   {{ govukBackLink({ text: "Back", href: "/FindCoursesandTraining" }) }}
 {% endblock %}
 
-{% block mainClass %}ncs-course-page{% endblock %}
+{% block mainClass %}fcat-course-page{% endblock %}
 
 {% block content %}
-  <section class="ncs-course-page__hero">
-    <div class="govuk-width-container ncs-course-page__hero-inner">
-      <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Find courses and training</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">Give information which will help show you courses and training which best suits you.</p>
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Find courses and training</h1>
+        <p class="govuk-body-l fcat-course-page__hero-text">Give information which will help show you courses and training which best suits you.</p>
       </div>
-      <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="fcat-course-page__hero-icon">
       </div>
     </div>
   </section>
 
-  <div class="govuk-width-container">
-    <div class="ncs-course-page__guided-content govuk-!-padding-bottom-8">
-      <h2 class="govuk-heading-l govuk-!-margin-top-6">Guided search</h2>
-      <p class="govuk-body">Over the next few pages, you'll be asked for some information which will help show the course or training opportunities most suitable for you.</p>
-      <p class="govuk-body">These will include questions like your location, interests and the course types you wish to see.</p>
-      <p class="govuk-body">You'll then be shown a list of relevant courses, with the chance to use or change your filters.</p>
-      <h3 class="govuk-heading-m">How long this will take</h3>
-      <p class="govuk-body">We estimate this process will take 5 minutes to complete. However, it can vary from person to person.</p>
-      {{ govukButton({ text: "Start now", href: "/Guided_Search/Location" }) }}
-      <p class="govuk-body">Find out <a class="govuk-link" href="/How_we_use_AI">how we use AI</a> to bring you results.</p>
+  <div class="govuk-width-container govuk-!-padding-bottom-8">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l govuk-!-margin-top-6">Guided search</h2>
+        <p class="govuk-body">Over the next few pages, you'll be asked for some information which will help show the course or training opportunities most suitable for you.</p>
+        <p class="govuk-body">These will include questions like your location, interests and the course types you wish to see.</p>
+        <p class="govuk-body">You'll then be shown a list of relevant courses, with the chance to use or change your filters.</p>
+        <h3 class="govuk-heading-m">How long this will take</h3>
+        <p class="govuk-body">We estimate this process will take 5 minutes to complete. However, it can vary from person to person.</p>
+        {{ govukButton({ text: "Start now", href: "/Guided_Search/Location" }) }}
+        <p class="govuk-body">Find out <a class="govuk-link" href="/How_we_use_AI">how we use AI</a> to bring you results.</p>
+      </div>
     </div>
   </div>
 
-  <section class="ncs-course-page__support-section">
+  <section class="fcat-course-page__support-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half">
-          <article class="ncs-course-page__support-card">
-            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="ncs-course-page__support-card-image" role="presentation">
-            <div class="ncs-course-page__support-card-body">
-              <h2 class="govuk-heading-s ncs-course-page__support-card-title">
+          <article class="fcat-course-page__support-card">
+            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="fcat-course-page__support-card-image" role="presentation">
+            <div class="fcat-course-page__support-card-body">
+              <h2 class="govuk-heading-s fcat-course-page__support-card-title">
                 <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/find-a-course">Get course or training support</a>
               </h2>
-              <p class="govuk-body ncs-course-page__support-card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
+              <p class="govuk-body fcat-course-page__support-card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
             </div>
           </article>
         </div>
         <div class="govuk-grid-column-one-half">
-          <article class="ncs-course-page__support-card">
-            <img src="/public/images/UCaTT.png" alt="" class="ncs-course-page__support-card-image" role="presentation">
-            <div class="ncs-course-page__support-card-body">
-              <h2 class="govuk-heading-s ncs-course-page__support-card-title">
+          <article class="fcat-course-page__support-card">
+            <img src="/public/images/UCaTT.png" alt="" class="fcat-course-page__support-card-image" role="presentation">
+            <div class="fcat-course-page__support-card-body">
+              <h2 class="govuk-heading-s fcat-course-page__support-card-title">
                 <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/careers-advice">Understand course and training types</a>
               </h2>
-              <p class="govuk-body ncs-course-page__support-card-text">Visit Skills for Careers to find out more about the different course types and training options.</p>
+              <p class="govuk-body fcat-course-page__support-card-text">Visit Skills for Careers to find out more about the different course types and training options.</p>
             </div>
           </article>
         </div>

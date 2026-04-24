@@ -4,24 +4,24 @@
   {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
 {% endblock %}
 
-{% block mainClass %}ncs-course-page{% endblock %}
+{% block mainClass %}fcat-course-page{% endblock %}
 
 {% block content %}
-  <section class="ncs-course-page__hero">
-    <div class="govuk-width-container ncs-course-page__hero-inner">
-      <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Find courses and training</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">Search for courses and training by telling us your location and up to 3 key search terms.</p>
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Find courses and training</h1>
+        <p class="govuk-body-l fcat-course-page__hero-text">Search for courses and training by telling us your location and up to 3 key search terms.</p>
       </div>
-      <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="fcat-course-page__hero-icon">
       </div>
     </div>
   </section>
 
-  <section class="ncs-course-page__search-section">
+  <section class="fcat-course-page__search-section">
     <div class="govuk-width-container">
-      <div class="ncs-course-page__search-intro">
+      <div class="fcat-course-page__search-intro">
         <h2 class="govuk-heading-l">Quick search</h2>
         <p class="govuk-body">You can search by things like school subjects, practical skills, hobbies and interests to find courses and training that could be right for you.</p>
         <p class="govuk-body">Be as specific or as broad as you like. The terms do not have to link to each other, they can all be totally different things if you'd prefer.</p>
@@ -30,35 +30,35 @@
         <p class="govuk-body">By entering your location, you'll see opportunities closer to you.</p>
       </div>
 
-      <form class="ncs-course-page__search-form" action="/Search_results" method="get">
-        <div class="ncs-course-page__search-grid">
-          <div class="govuk-form-group ncs-course-page__field">
+      <form class="fcat-course-page__search-form" action="/Search_results" method="get">
+        <div class="fcat-course-page__search-grid">
+          <div class="govuk-form-group fcat-course-page__field">
             <label class="govuk-label" for="search-location">Enter a town, city or postcode in England</label>
-            <div class="ncs-location-autocomplete">
-              <input class="govuk-input ncs-course-page__input" id="search-location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox">
-              <ul class="ncs-location-autocomplete__list" id="location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
+            <div class="fcat-location-autocomplete">
+              <input class="govuk-input fcat-course-page__input" id="search-location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox">
+              <ul class="fcat-location-autocomplete__list" id="location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
             </div>
           </div>
 
-          <div class="ncs-course-page__term-fields">
-            <div class="govuk-form-group ncs-course-page__field">
+          <div class="fcat-course-page__term-fields">
+            <div class="govuk-form-group fcat-course-page__field">
               <label class="govuk-label" for="search-term-1">Search term 1 (optional)</label>
-              <input class="govuk-input ncs-course-page__input" id="search-term-1" name="searchTerm1" type="text">
+              <input class="govuk-input fcat-course-page__input" id="search-term-1" name="searchTerm1" type="text">
             </div>
 
-            <div class="govuk-form-group ncs-course-page__field">
+            <div class="govuk-form-group fcat-course-page__field">
               <label class="govuk-label" for="search-term-2">Search term 2 (optional)</label>
-              <input class="govuk-input ncs-course-page__input" id="search-term-2" name="searchTerm2" type="text">
+              <input class="govuk-input fcat-course-page__input" id="search-term-2" name="searchTerm2" type="text">
             </div>
 
-            <div class="govuk-form-group ncs-course-page__field">
+            <div class="govuk-form-group fcat-course-page__field">
               <label class="govuk-label" for="search-term-3">Search term 3 (optional)</label>
-              <input class="govuk-input ncs-course-page__input" id="search-term-3" name="searchTerm3" type="text">
+              <input class="govuk-input fcat-course-page__input" id="search-term-3" name="searchTerm3" type="text">
             </div>
 
-            <div class="ncs-course-page__actions">
-              <button class="govuk-button ncs-course-page__button" data-module="govuk-button" type="submit">Search</button>
-              <a class="govuk-link ncs-course-page__guided-link" href="/How_we_use_AI">How we use AI</a>
+            <div class="fcat-course-page__actions">
+              <button class="govuk-button fcat-course-page__button" data-module="govuk-button" type="submit">Search</button>
+              <a class="govuk-link fcat-course-page__guided-link" href="/How_we_use_AI">How we use AI</a>
             </div>
           </div>
         </div>
@@ -66,28 +66,28 @@
     </div>
   </section>
 
-  <section class="ncs-course-page__support-section">
+  <section class="fcat-course-page__support-section">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half">
-          <article class="ncs-course-page__support-card">
-            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="ncs-course-page__support-card-image" role="presentation">
-            <div class="ncs-course-page__support-card-body">
-              <h2 class="govuk-heading-s ncs-course-page__support-card-title">
+          <article class="fcat-course-page__support-card">
+            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="fcat-course-page__support-card-image" role="presentation">
+            <div class="fcat-course-page__support-card-body">
+              <h2 class="govuk-heading-s fcat-course-page__support-card-title">
                 <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/find-a-course">Get course or training support</a>
               </h2>
-              <p class="govuk-body ncs-course-page__support-card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
+              <p class="govuk-body fcat-course-page__support-card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
             </div>
           </article>
         </div>
         <div class="govuk-grid-column-one-half">
-          <article class="ncs-course-page__support-card">
-            <img src="/public/images/UCaTT.png" alt="" class="ncs-course-page__support-card-image" role="presentation">
-            <div class="ncs-course-page__support-card-body">
-              <h2 class="govuk-heading-s ncs-course-page__support-card-title">
+          <article class="fcat-course-page__support-card">
+            <img src="/public/images/UCaTT.png" alt="" class="fcat-course-page__support-card-image" role="presentation">
+            <div class="fcat-course-page__support-card-body">
+              <h2 class="govuk-heading-s fcat-course-page__support-card-title">
                 <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/careers-advice">Understand course and training types</a>
               </h2>
-              <p class="govuk-body ncs-course-page__support-card-text">Visit Skills for Careers to find out more about the different course types and training options.</p>
+              <p class="govuk-body fcat-course-page__support-card-text">Visit Skills for Careers to find out more about the different course types and training options.</p>
             </div>
           </article>
         </div>
@@ -146,7 +146,7 @@
 
       if (matches.length === 0) {
         const li = document.createElement('li');
-        li.className = 'ncs-location-autocomplete__option ncs-location-autocomplete__option--no-results';
+        li.className = 'fcat-location-autocomplete__option fcat-location-autocomplete__option--no-results';
         li.setAttribute('role', 'option');
         li.setAttribute('aria-disabled', 'true');
         li.textContent = 'No results found';
@@ -154,7 +154,7 @@
       } else {
         matches.forEach((location, i) => {
           const li = document.createElement('li');
-          li.className = 'ncs-location-autocomplete__option';
+          li.className = 'fcat-location-autocomplete__option';
           li.setAttribute('role', 'option');
           li.setAttribute('id', 'location-option-' + i);
           li.textContent = location;
@@ -178,7 +178,7 @@
     }
 
     function updateActiveItem(newIndex) {
-      const items = list.querySelectorAll('.ncs-location-autocomplete__option');
+      const items = list.querySelectorAll('.fcat-location-autocomplete__option');
       if (activeIndex >= 0 && items[activeIndex]) {
         items[activeIndex].setAttribute('aria-selected', 'false');
       }
@@ -201,7 +201,7 @@
     });
 
     input.addEventListener('keydown', (e) => {
-      const items = list.querySelectorAll('.ncs-location-autocomplete__option');
+      const items = list.querySelectorAll('.fcat-location-autocomplete__option');
       if (list.hidden || items.length === 0) return;
 
       if (e.key === 'ArrowDown') {

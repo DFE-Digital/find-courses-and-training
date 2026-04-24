@@ -5,24 +5,19 @@
 {% endblock %}
 
 {% block content %}
-  <section class="ncs-course-page__hero">
-    <div class="govuk-width-container ncs-course-page__hero-inner ncs-course-page__hero-inner--compact">
-      <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Creative Writing SMLH01CGP</h1>
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner fcat-course-page__hero-inner--compact">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Creative Writing SMLH01CGP</h1>
       </div>
       
     </div>
   </section>
-<section class="ncs-search-results__notice">
-    <div class="govuk-width-container">
-      <div class="ncs-search-results__notice-panel">
-        <h2 class="govuk-heading-m ncs-search-results__notice-title">Eligibility and funding</h2>
-        <p class="govuk-body">All information shown within these results is taken from a third party. You can check with the course or training provider for rules about funding and eligibility.</p>
-        <p class="govuk-body"><a class="govuk-link" href="#results-grid" id="dismiss-notice">Dismiss</a></p>
-      </div>
-    </div>
-  </section>
-  <div class="govuk-width-container ncs-course-detail__content">
+  <div class="govuk-width-container">
+    {% set eligibilityHtml %}<h2 class="govuk-heading-m">Eligibility and funding</h2><p class="govuk-body">All information shown within these results is taken from a third party. You can check with the course or training provider for rules about funding and eligibility.</p>{% endset %}
+    {{ govukInsetText({ html: eligibilityHtml }) }}
+  </div>
+  <div class="govuk-width-container fcat-course-detail__content">
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
@@ -62,16 +57,16 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Provider</dt>
-            <dd class="govuk-summary-list__value ncs-course-detail__value-with-action">
+            <dd class="govuk-summary-list__value fcat-course-detail__value-with-action">
               <span>LEWISHAM LONDON BOROUGH COUNCIL</span>
-              <a class="govuk-link ncs-course-detail__side-link" href="#" target="_blank" rel="noopener noreferrer">View website</a>
+              <a class="govuk-link fcat-course-detail__side-link" href="#" target="_blank" rel="noopener noreferrer">View website</a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Provider location</dt>
-            <dd class="govuk-summary-list__value ncs-course-detail__value-with-action">
+            <dd class="govuk-summary-list__value fcat-course-detail__value-with-action">
               <span>Grove Park Centre,<br>Coopers Lane School,<br>Pragnell Road,<br>London,<br>SE12 0LF</span>
-              <a class="govuk-link ncs-course-detail__side-link" href="https://maps.google.com/?q=London" target="_blank" rel="noopener noreferrer">View on a map</a>
+              <a class="govuk-link fcat-course-detail__side-link" href="https://maps.google.com/?q=London" target="_blank" rel="noopener noreferrer">View on a map</a>
             </dd>
           </div>
         </dl>
@@ -108,13 +103,11 @@
       </div>
     </div>
 
-    <div class="ncs-course-detail__actions">
-      <a href="https://nationalcareers.service.gov.uk/find-a-course" role="button" draggable="false" class="govuk-button ncs-course-detail__cta-button" data-module="govuk-button">
-        Go to course
-      </a>
+    <div class="fcat-course-detail__actions">
+      {{ govukButton({ text: "Go to course", href: "https://nationalcareers.service.gov.uk/find-a-course", classes: "fcat-course-detail__cta-button" }) }}
     </div>
 
-    <p class="govuk-body ncs-course-detail__provider-note">These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>
+    <p class="govuk-body fcat-course-detail__provider-note">These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>
 
   </div>
 {% endblock %}

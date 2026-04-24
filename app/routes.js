@@ -20,7 +20,7 @@ const clearSession = (req, res, next) => {
   next()
 }
 
-router.get('/NCS_Homepage', clearSession)
+router.get('/FCAT_Homepage', clearSession)
 router.get('/FindCoursesandTraining', clearSession)
 
 // Receives the Search button from Check your answers.
@@ -144,7 +144,7 @@ router.post('/Guided_Search/Apps_or_SBC', function (req, res) {
 })
 
 // Saves the selected qualification levels and always moves to Age.
-router.post('/Qualification_Level', function (req, res) {
+router.post('/Guided_Search/Qualification_Level', function (req, res) {
   req.session.data['qualification'] = req.body['qualification'] || []
   redirectOrReturn(req, res, '/Guided_Search/Age')
 })

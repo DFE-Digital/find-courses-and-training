@@ -1,0 +1,172 @@
+{% extends "layouts/fcat-homepage.html" %}
+
+{% block content %}
+<div class="fcat-homepage__hero">
+  <img src="https://cdn.nationalcareers.service.gov.uk/media/headers/homepage-desktop-header.png" alt="" class="fcat-homepage__hero-image">
+  <div class="govuk-width-container fcat-homepage__hero-content">
+    <h1 class="fcat-homepage__hero-title">
+      <span class="fcat-homepage__hero-title-text">Get careers information,<br>advice and guidance</span>
+    </h1>
+    <p class="fcat-homepage__hero-summary">
+      <span class="fcat-homepage__hero-summary-text">We provide careers information, advice and guidance. We<br>can help you make decisions at all stages in your career.</span>
+    </p>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+
+    <div class="govuk-grid-row fcat-homepage__section-row">
+      <div class="govuk-grid-column-full">
+        <div class="fcat-homepage__advice-panel">
+          <h2 class="govuk-heading-l fcat-homepage__advice-heading">Get relevant careers advice</h2>
+          <p class="govuk-body fcat-homepage__advice-copy">Select the options that best fit your situation to see relevant careers advice articles and information.</p>
+          <div class="fcat-homepage__advice-controls">
+            <label class="govuk-label fcat-homepage__advice-label" for="work-status">I'm</label>
+            <select class="govuk-select fcat-homepage__advice-select" id="work-status" name="work-status" onchange="updateSituation()">
+              <option value="">select your education or work status</option>
+              <option value="education">in education</option>
+              <option value="employed">employed</option>
+              <option value="not-in-work">not in work</option>
+            </select>
+            <label class="govuk-label fcat-homepage__advice-label" for="situation">and</label>
+            <select class="govuk-select fcat-homepage__advice-select" id="situation" name="situation" disabled>
+              <option value="">select your situation</option>
+            </select>
+          </div>
+          {{ govukButton({ text: "See advice", classes: "fcat-homepage__advice-button", attributes: { onclick: "seeAdvice()" } }) }}
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row fcat-homepage__section-row">
+      <div class="govuk-grid-column-one-third">
+        <div class="fcat-homepage__feature-card">
+          <a href="https://nationalcareers.service.gov.uk/discover-your-skills-and-careers" class="fcat-homepage__feature-link fcat-homepage__feature-link--purple">
+            <h2 class="govuk-heading-m fcat-homepage__feature-title">Take a skills assessment</h2>
+            <img src="https://cdn.nationalcareers.service.gov.uk/media/checkbox.svg" alt="" width="56" height="56" class="fcat-homepage__feature-icon">
+          </a>
+          <div class="fcat-homepage__feature-body fcat-homepage__feature-body--purple">
+            <p class="govuk-body fcat-homepage__feature-copy">Answer questions about your interests and see some careers that might suit you.</p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="fcat-homepage__feature-card">
+          <a href="https://nationalcareers.service.gov.uk/explore-careers" class="fcat-homepage__feature-link fcat-homepage__feature-link--blue">
+            <h2 class="govuk-heading-m fcat-homepage__feature-title">Explore careers</h2>
+            <img src="https://cdn.nationalcareers.service.gov.uk/media/compass.svg" alt="" width="56" height="56" class="fcat-homepage__feature-icon">
+          </a>
+          <div class="fcat-homepage__feature-body fcat-homepage__feature-body--blue">
+            <p class="govuk-body fcat-homepage__feature-copy">Browse hundreds of job profiles to discover what different roles involve.</p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="fcat-homepage__feature-card">
+          <a href="/FindCoursesandTraining" class="fcat-homepage__feature-link fcat-homepage__feature-link--green">
+            <h2 class="govuk-heading-m fcat-homepage__feature-title">Find courses and training</h2>
+            <img src="/public/images/FCaT_Logo_small.png" alt="" width="56" height="56" class="fcat-homepage__feature-icon">
+          </a>
+          <div class="fcat-homepage__feature-body fcat-homepage__feature-body--green">
+            <p class="govuk-body fcat-homepage__feature-copy">Search for online and classroom courses near you to develop your skills.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fcat-homepage__section-row">
+      <div class="fcat-homepage__media-layout">
+        <div class="fcat-homepage__media-sidebar">
+          <div class="fcat-homepage__adviser-panel">
+            <div class="fcat-homepage__adviser-header">
+              <h2 class="govuk-heading-l fcat-homepage__adviser-title">Speak to an adviser</h2>
+              <img src="https://cdn.nationalcareers.service.gov.uk/media/speak-to-an-adviser.svg" alt="" width="72" height="72" class="fcat-homepage__adviser-icon">
+            </div>
+            <p class="govuk-body">Wherever you are with your decisions, you can <a class="govuk-link" href="https://nationalcareers.service.gov.uk/contact-us">contact us</a> to get advice from a careers adviser.</p>
+            <p class="govuk-body fcat-homepage__adviser-copy">Call <a class="govuk-link" href="tel:0800100900"><strong>0800 100 900</strong></a> or <a class="govuk-link" href="https://nationalcareers.service.gov.uk/webchat/chat">use webchat</a> to talk online.</p>
+          </div>
+        </div>
+        <div class="fcat-homepage__media-content">
+          <h2 class="govuk-heading-l">Meet Katy</h2>
+          <p class="govuk-body"><a class="govuk-link" href="https://nationalcareers.service.gov.uk/job-profiles/admin-assistant">Admin assistant Katy</a> has worked in administration for over 10 years, supporting people in a range of sectors.</p>
+          <div class="fcat-homepage__video-frame">
+            <iframe class="fcat-homepage__video-embed" src="https://www.youtube-nocookie.com/embed/Czjyffo9vis" title="Admin assistant: Katy's story - National Careers Service" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="fcat-homepage__media-meta">
+        <p class="govuk-body govuk-!-margin-top-2">1 minute 40 second watch</p>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">View transcript</span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">My name is Katy. I am a services support assistant for Breast Cancer Now. I've done a bit of office management as well, including administrative duties for theatre.</p>
+            <p class="govuk-body">My current role involves being that first point of contact for any person diagnosed with breast cancer who wants to access our services.</p>
+            <p class="govuk-body">My favourite thing about my job is helping people do what they want to be able to do. Being able to support people to expand the service we provide is really rewarding for me.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row fcat-homepage__section-row">
+      <div class="govuk-grid-column-full">
+        <div class="fcat-homepage__featured-banner">
+          <img src="https://cdn.nationalcareers.service.gov.uk/media/homepage/homepage-featured-banner/how-to-deal-with-setbacks-featured-banner-desktop.png" alt="" class="fcat-homepage__featured-image">
+          <div class="fcat-homepage__featured-content">
+            <h2 class="govuk-heading-l fcat-homepage__featured-heading">
+              <a href="https://nationalcareers.service.gov.uk/careers-advice/how-to-bounce-back-in-a-tough-jobs-market" class="fcat-homepage__featured-link">How to deal with setbacks in your career</a>
+            </h2>
+            <p class="govuk-body fcat-homepage__featured-copy">Get tips on how to <a class="govuk-link" href="https://nationalcareers.service.gov.uk/careers-advice/how-to-bounce-back-in-a-tough-jobs-market">deal with a setback in your career</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  const cookieBannerForm = document.querySelector('form[action="/cookie-handler"]');
+  if (cookieBannerForm) {
+    cookieBannerForm.querySelectorAll('button[type="submit"]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        cookieBannerForm.hidden = true;
+      });
+    });
+  }
+</script>
+<script>
+  const situations = {
+    education: ["I'm in university","I'm in college or sixth form","I'm in secondary school"],
+    employed: ["I want to change career","I want to progress in my career","I'm at risk of redundancy"],
+    "not-in-work": ["I want to return to work after a break","I want to prepare to get a job","I want to change career"]
+  };
+  function updateSituation() {
+    const status = document.getElementById('work-status').value;
+    const sel = document.getElementById('situation');
+    sel.innerHTML = '<option value="">select your situation</option>';
+    if (status && situations[status]) {
+      situations[status].forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.toLowerCase().replace(/\s+/g,'-');
+        opt.textContent = s;
+        sel.appendChild(opt);
+      });
+      sel.disabled = false;
+    } else {
+      sel.disabled = true;
+    }
+  }
+  function seeAdvice() {
+    const status = document.getElementById('work-status').value;
+    const situation = document.getElementById('situation').value;
+    if (status && situation) {
+      window.location.href = 'https://nationalcareers.service.gov.uk/careers-advice?status=' + status + '&situation=' + situation;
+    }
+  }
+</script>
+{% endblock %}

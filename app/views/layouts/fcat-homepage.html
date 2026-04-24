@@ -1,14 +1,7 @@
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/select/macro.njk" import govukSelect %}
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "govuk/components/details/macro.njk" import govukDetails %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 <link href="/public/stylesheets/application.css" rel="stylesheet" type="text/css" />
 
@@ -34,10 +27,10 @@
       serviceName: "Get careers information, advice and guidance",
       serviceUrl: "https://nationalcareers.service.gov.uk",
       navigation: [
-        { href: "/FCAT_Homepage", text: "Homepage" },
+        { href: "/FCAT_Homepage", text: "Homepage", active: true },
         { href: "https://nationalcareers.service.gov.uk/explore-careers", text: "Explore careers" },
         { href: "https://nationalcareers.service.gov.uk/discover-your-skills-and-careers", text: "Skills assessment" },
-        { href: "/FindCoursesandTraining", text: "Find courses and training", active: true },
+        { href: "/FindCoursesandTraining", text: "Find courses and training" },
         { href: "https://nationalcareers.service.gov.uk/careers-advice", text: "Careers advice" },
         { href: "https://nationalcareers.service.gov.uk/contact-us", text: "Contact us" }
       ]
@@ -46,18 +39,12 @@
     <div class="govuk-width-container">
       {{ govukPhaseBanner({
         tag: { text: "Beta" },
-        html: 'This is a new service - your <a class="govuk-link" href="https://dferesearch.fra1.qualtrics.com/jfe/form/SV_4TMvchACdXh77Ya">feedback</a> will help us to improve it.'
+        html: 'How could we improve this service? Your <a class="govuk-link" href="https://dferesearch.fra1.qualtrics.com/jfe/form/SV_4TMvchACdXh77Ya">feedback</a> will help.'
       }) }}
-    </div>
-
-    <div class="govuk-width-container">
-      {% block beforeContent %}{% endblock %}
     </div>
   </header>
 
-  <main id="main-content" class="{% block mainClass %}{% endblock %}" role="main">
-    {% block content %}{% endblock %}
-  </main>
+  {% block content %}{% endblock %}
 
   <footer class="govuk-template__footer">
     <div class="govuk-footer">
@@ -84,7 +71,6 @@
               <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="https://nationalcareers.service.gov.uk/help/cookies">Privacy and cookies</a></li>
               <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="https://nationalcareers.service.gov.uk/help/accessibility">Accessibility statement</a></li>
               <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="https://nationalcareers.service.gov.uk/help/terms-and-conditions">Terms and conditions</a></li>
-              <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="https://nationalcareers.service.gov.uk/help/information-sources">Information sources</a></li>
             </ul>
             <ul class="govuk-footer__inline-list">
               <li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="https://www.myworldofwork.co.uk/">Scotland</a></li>

@@ -4,17 +4,17 @@
   {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
 {% endblock %}
 
-{% block mainClass %}ncs-course-page{% endblock %}
+{% block mainClass %}fcat-course-page{% endblock %}
 
 {% block content %}
-  <section class="ncs-course-page__hero">
-    <div class="govuk-width-container ncs-course-page__hero-inner">
-      <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">What sectors are you interested in?</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">These sectors will filter any apprenticeships and Skills Bootcamps in your results.</p>
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">What sectors are you interested in?</h1>
+        <p class="govuk-body-l fcat-course-page__hero-text">These sectors will filter any apprenticeships and Skills Bootcamps in your results.</p>
       </div>
-      <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="fcat-course-page__hero-icon">
       </div>
     </div>
   </section>
@@ -23,110 +23,33 @@
     <div class="govuk-!-margin-top-6 govuk-!-margin-bottom-8">
       <form method="post" action="/Guided_Search/Sectors{{ '?returnTo=' + query.returnTo if query.returnTo }}">
         <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="sectors-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
-                Sectors
-              </h2>
-            </legend>
-            <div id="sectors-hint" class="govuk-hint">
-              Select all that apply
-            </div>
-            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-agriculture" name="sector" type="checkbox" value="Agriculture, environment and animal care" {% if data['sector'] and (data['sector'] == "Agriculture, environment and animal care" or "Agriculture, environment and animal care" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-agriculture">
-                  Agriculture, environment and animal care
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-business" name="sector" type="checkbox" value="Business and administration" {% if data['sector'] and (data['sector'] == "Business and administration" or "Business and administration" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-business">
-                  Business and administration
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-care" name="sector" type="checkbox" value="Care services" {% if data['sector'] and (data['sector'] == "Care services" or "Care services" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-care">
-                  Care services
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-catering" name="sector" type="checkbox" value="Catering and hospitality" {% if data['sector'] and (data['sector'] == "Catering and hospitality" or "Catering and hospitality" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-catering">
-                  Catering and hospitality
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-construction" name="sector" type="checkbox" value="Construction and the built environment" {% if data['sector'] and (data['sector'] == "Construction and the built environment" or "Construction and the built environment" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-construction">
-                  Construction and the built environment
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-creative" name="sector" type="checkbox" value="Creative and design" {% if data['sector'] and (data['sector'] == "Creative and design" or "Creative and design" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-creative">
-                  Creative and design
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-digital" name="sector" type="checkbox" value="Digital" {% if data['sector'] and (data['sector'] == "Digital" or "Digital" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-digital">
-                  Digital
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-education" name="sector" type="checkbox" value="Education and early years" {% if data['sector'] and (data['sector'] == "Education and early years" or "Education and early years" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-education">
-                  Education and early years
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-engineering" name="sector" type="checkbox" value="Engineering and manufacturing" {% if data['sector'] and (data['sector'] == "Engineering and manufacturing" or "Engineering and manufacturing" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-engineering">
-                  Engineering and manufacturing
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-hair" name="sector" type="checkbox" value="Hair and beauty" {% if data['sector'] and (data['sector'] == "Hair and beauty" or "Hair and beauty" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-hair">
-                  Hair and beauty
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-health" name="sector" type="checkbox" value="Health and science" {% if data['sector'] and (data['sector'] == "Health and science" or "Health and science" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-health">
-                  Health and science
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-legal" name="sector" type="checkbox" value="Legal finance and accounting" {% if data['sector'] and (data['sector'] == "Legal finance and accounting" or "Legal finance and accounting" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-legal">
-                  Legal, finance and accounting
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-protective" name="sector" type="checkbox" value="Protective services" {% if data['sector'] and (data['sector'] == "Protective services" or "Protective services" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-protective">
-                  Protective services
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-sales" name="sector" type="checkbox" value="Sales marketing and procurement" {% if data['sector'] and (data['sector'] == "Sales marketing and procurement" or "Sales marketing and procurement" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-sales">
-                  Sales, marketing and procurement
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="sector-transport" name="sector" type="checkbox" value="Transport and logistics" {% if data['sector'] and (data['sector'] == "Transport and logistics" or "Transport and logistics" in data['sector']) %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="sector-transport">
-                  Transport and logistics
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+        {{ govukCheckboxes({
+          name: "sector",
+          fieldset: {
+            legend: {
+              text: "Sectors",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: { text: "Select all that apply" },
+          items: [
+            { value: "Agriculture, environment and animal care", text: "Agriculture, environment and animal care", checked: data['sector'] and (data['sector'] == "Agriculture, environment and animal care" or "Agriculture, environment and animal care" in data['sector']) },
+            { value: "Business and administration", text: "Business and administration", checked: data['sector'] and (data['sector'] == "Business and administration" or "Business and administration" in data['sector']) },
+            { value: "Care services", text: "Care services", checked: data['sector'] and (data['sector'] == "Care services" or "Care services" in data['sector']) },
+            { value: "Catering and hospitality", text: "Catering and hospitality", checked: data['sector'] and (data['sector'] == "Catering and hospitality" or "Catering and hospitality" in data['sector']) },
+            { value: "Construction and the built environment", text: "Construction and the built environment", checked: data['sector'] and (data['sector'] == "Construction and the built environment" or "Construction and the built environment" in data['sector']) },
+            { value: "Creative and design", text: "Creative and design", checked: data['sector'] and (data['sector'] == "Creative and design" or "Creative and design" in data['sector']) },
+            { value: "Digital", text: "Digital", checked: data['sector'] and (data['sector'] == "Digital" or "Digital" in data['sector']) },
+            { value: "Education and early years", text: "Education and early years", checked: data['sector'] and (data['sector'] == "Education and early years" or "Education and early years" in data['sector']) },
+            { value: "Engineering and manufacturing", text: "Engineering and manufacturing", checked: data['sector'] and (data['sector'] == "Engineering and manufacturing" or "Engineering and manufacturing" in data['sector']) },
+            { value: "Hair and beauty", text: "Hair and beauty", checked: data['sector'] and (data['sector'] == "Hair and beauty" or "Hair and beauty" in data['sector']) },
+            { value: "Health and science", text: "Health and science", checked: data['sector'] and (data['sector'] == "Health and science" or "Health and science" in data['sector']) },
+            { value: "Legal finance and accounting", text: "Legal, finance and accounting", checked: data['sector'] and (data['sector'] == "Legal finance and accounting" or "Legal finance and accounting" in data['sector']) },
+            { value: "Protective services", text: "Protective services", checked: data['sector'] and (data['sector'] == "Protective services" or "Protective services" in data['sector']) },
+            { value: "Sales marketing and procurement", text: "Sales, marketing and procurement", checked: data['sector'] and (data['sector'] == "Sales marketing and procurement" or "Sales marketing and procurement" in data['sector']) },
+            { value: "Transport and logistics", text: "Transport and logistics", checked: data['sector'] and (data['sector'] == "Transport and logistics" or "Transport and logistics" in data['sector']) }
+          ]
+        }) }}
         {{ govukButton({ text: "Continue", isStartButton: false }) }}
       </form>
     </div>
