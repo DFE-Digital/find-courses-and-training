@@ -23,7 +23,7 @@
           <p class="govuk-body fcat-homepage__advice-copy">Select the options that best fit your situation to see relevant careers advice articles and information.</p>
           <div class="fcat-homepage__advice-controls">
             <label class="govuk-label fcat-homepage__advice-label" for="work-status">I'm</label>
-            <select class="govuk-select fcat-homepage__advice-select" id="work-status" name="work-status" onchange="updateSituation()">
+            <select class="govuk-select fcat-homepage__advice-select" id="work-status" name="work-status">
               <option value="">select your education or work status</option>
               <option value="education">in education</option>
               <option value="employed">employed</option>
@@ -34,7 +34,7 @@
               <option value="">select your situation</option>
             </select>
           </div>
-          {{ govukButton({ text: "See advice", classes: "fcat-homepage__advice-button", attributes: { onclick: "seeAdvice()" } }) }}
+          {{ govukButton({ text: "See advice", classes: "fcat-homepage__advice-button", attributes: { id: "see-advice-button" } }) }}
         </div>
       </div>
     </div>
@@ -168,5 +168,8 @@
       window.location.href = 'https://nationalcareers.service.gov.uk/careers-advice?status=' + status + '&situation=' + situation;
     }
   }
+
+  document.getElementById('work-status').addEventListener('change', updateSituation);
+  document.getElementById('see-advice-button').addEventListener('click', seeAdvice);
 </script>
 {% endblock %}
