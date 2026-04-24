@@ -1,7 +1,5 @@
 {% extends "layouts/main.html" %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
