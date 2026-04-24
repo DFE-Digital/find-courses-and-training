@@ -136,60 +136,69 @@
 
 .fcat-homepage__feature-card {
   border: 1px solid #b1b4b6;
+  border-bottom-width: 5px;
+  background-color: #f3f2f1;
 }
 
-.fcat-homepage__feature-link {
+.fcat-homepage__feature-card--purple {
+  border-bottom-color: #912b88;
+}
+
+.fcat-homepage__feature-card--blue {
+  border-bottom-color: #1d70b8;
+}
+
+.fcat-homepage__feature-card--green {
+  border-bottom-color: #00703c;
+}
+
+.fcat-homepage__feature-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.25rem;
-  text-decoration: none;
   gap: 1rem;
+  min-height: 96px;
+  padding: 1.25rem;
 }
 
-.fcat-homepage__feature-link--purple {
+.fcat-homepage__feature-header--purple {
   background: #912b88;
 }
 
-.fcat-homepage__feature-link--blue {
+.fcat-homepage__feature-header--blue {
   background: #1d70b8;
 }
 
-.fcat-homepage__feature-link--green {
+.fcat-homepage__feature-header--green {
   background: #00703c;
 }
 
 .fcat-homepage__feature-title {
-  color: #fff;
   margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.fcat-homepage__feature-link,
+.fcat-homepage__feature-link:link,
+.fcat-homepage__feature-link:visited {
+  color: #fff;
   text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
 }
 
 .fcat-homepage__feature-icon {
   flex-shrink: 0;
-}
-
-.fcat-homepage__feature-body {
-  padding: 1.25rem;
-}
-
-.fcat-homepage__feature-body--purple {
-  border-bottom: 4px solid #912B88;
-  background-color: #F3F2F1;
-}
-
-.fcat-homepage__feature-body--blue {
-  border-bottom: 4px solid #1d70b8;
-  background-color: #F3F2F1;
-}
-
-.fcat-homepage__feature-body--green {
-  border-bottom: 4px solid #00703c;
-  background-color: #F3F2F1;
+  width: 56px;
+  height: 56px;
 }
 
 .fcat-homepage__feature-copy {
   margin-bottom: 0;
+  padding: 1.25rem;
+  font-size: 19px;
+  line-height: 1.45;
 }
 
 .fcat-homepage__media-layout {
@@ -298,30 +307,6 @@
   padding: 0.1rem 0.25rem;
 }
 
-.fcat-course-page__service-nav {
-  border-bottom: 1px solid #b1b4b6;
-}
-
-.fcat-course-page__service-nav .govuk-service-navigation__service-name {
-  font-weight: 700;
-}
-
-.fcat-course-page__service-nav .govuk-service-navigation__link {
-  color: #1d70b8;
-}
-
-.fcat-course-page__service-nav .govuk-service-navigation__service-name .govuk-service-navigation__link {
-  color: #0b0c0c;
-}
-
-.fcat-course-page__service-nav .govuk-service-navigation__item--active {
-  border-bottom-color: #1d70b8;
-}
-
-.fcat-course-page__phase-banner {
-  margin-bottom: 0;
-}
-
 .fcat-course-page__hero {
   background: #00703c;
   color: #fff;
@@ -397,12 +382,6 @@
   white-space: nowrap;
 }
 
-.fcat-course-page__search-lead {
-  margin-bottom: 1.75rem;
-  font-size: 18px;
-  line-height: 1.45;
-}
-
 .fcat-course-page__search-grid {
   display: grid;
   grid-template-columns: minmax(250px, 360px) minmax(320px, 470px);
@@ -444,10 +423,6 @@
 
 .fcat-course-page__guided-link {
   font-size: 18px;
-}
-
-.fcat-course-page__guided-content {
-  max-width: 760px;
 }
 
 .fcat-location-autocomplete {
@@ -499,57 +474,6 @@
 .fcat-location-autocomplete__option--no-results:hover {
   background: #fff;
   color: #505a5f;
-}
-
-.fcat-course-page__cards-section {
-  background: #fff;
-}
-
-.fcat-course-page__cards-section .govuk-width-container {
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
-}
-
-.fcat-course-page__card {
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  height: 388px;
-}
-
-.fcat-course-page__card-image {
-  width: 100%;
-  height: 168px;
-  display: block;
-  object-fit: cover;
-  flex: 0 0 168px;
-}
-
-.fcat-course-page__card-body {
-  background: #f3f2f1;
-  border-bottom: 4px solid #b1b4b6;
-  padding: 1rem 1.1rem 1.1rem;
-  flex: 0 0 220px;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.fcat-course-page__card-title {
-  margin-bottom: 0.75rem;
-  font-size: 16px;
-  line-height: 1.25;
-}
-
-.fcat-course-page__card-link {
-  font-weight: 700;
-  font-size: 19px;
-  text-decoration-thickness: 2px;
-}
-
-.fcat-course-page__card-text {
-  margin-bottom: 0;
-  font-size: 19px;
-  line-height: 1.4;
 }
 
 .fcat-course-page__intro-section {
@@ -607,15 +531,6 @@
   left: 0;
 }
 
-.fcat-course-page__option-title {
-  margin-bottom: 0.75rem;
-}
-
-.fcat-course-page__option-text {
-  margin-bottom: 0;
-  font-size: 16px;
-}
-
 .fcat-course-page__adviser-aside {
   background: rgba(86, 148, 202, 0.1);
   padding: 1.5rem;
@@ -660,147 +575,96 @@
 }
 
 .fcat-course-page__support-section .govuk-grid-column-one-half {
-  width: auto;
+  width: 300px;
   padding: 0;
   float: none;
 }
 
+.fcat-course-page__support-section .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
 .fcat-course-page__support-card {
-  background: #F3F2F1;
-  border-bottom: 4px solid #b1b4b6;
-  padding-bottom: 1.5rem;
-  height: 413px;
   width: 300px;
+  font-family: "GDS Transport", Arial, sans-serif;
 }
 
 .fcat-course-page__support-card-image {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
   display: block;
-  margin-bottom: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .fcat-course-page__support-card-body {
-  height: 245px;
+  background: #f3f2f1;
+  border-bottom: 3px solid #b1b4b6;
+  height: 179px;
+  padding: 15px 20px;
 }
 
 .fcat-course-page__support-card-title {
-  margin-bottom: 0.5rem;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-bottom: 0;
+  color: #3670b3;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: left;
+}
+
+.fcat-course-page__support-card-title .govuk-link {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.fcat-course-page__support-card-title .govuk-link:hover {
+  text-decoration-thickness: 3px;
 }
 
 .fcat-course-page__support-card-text {
   margin-bottom: 0;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
-.fcat-course-page__footer {
-  background: #eaf2f9;
-  border-top: 6px solid #1d70b8;
-}
-
-.fcat-course-page__footer .govuk-width-container {
-  padding-top: 2.75rem;
-  padding-bottom: 2.75rem;
-}
-
-.fcat-course-page__footer-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 300px);
-  gap: 2rem 3rem;
-}
-
-.fcat-course-page__footer-column {
-  min-width: 0;
-}
-
-.fcat-course-page__footer-crown {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.fcat-course-page__footer-title {
-  margin-bottom: 1.5rem;
-  font-size: 30px;
-}
-
-.fcat-course-page__footer-title--secondary {
-  margin-top: 2.875rem;
-}
-
-.fcat-course-page__footer-links {
-  list-style: none;
-  margin: 0;
-  padding: 1.25rem 0 0;
-  border-top: 1px solid #7db7e8;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem 2rem;
-}
-
-.fcat-course-page__footer-links--single {
-  grid-template-columns: 1fr;
-}
-
-.fcat-course-page__footer-links li {
-  margin: 0;
-}
-
-.fcat-course-page__footer-bottom {
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid #7db7e8;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 2rem;
-}
-
-.fcat-course-page__licence-title {
-  margin-bottom: 0.5rem;
-  font-size: 32px;
-}
-
-.fcat-course-page__licence-copy {
-  margin-bottom: 0;
-  font-size: 16px;
-}
-
-.fcat-course-page__copyright {
-  flex-shrink: 0;
-}
-
-.fcat-course-page__copyright-image {
-  display: block;
-  width: 165px;
-  height: auto;
-}
-
-.fcat-search-results__back-wrap {
-  padding-top: 0.75rem;
-  padding-bottom: 0.25rem;
-}
-
-.fcat-search-results__back-link {
+.fcat-course-page__support-card .card-content {
+  margin-top: 15px;
   margin-bottom: 0;
 }
 
-.fcat-search-results__notice .govuk-width-container {
-  padding-top: 1.25rem;
-  padding-bottom: 1rem;
+.fcat-quick-search .fcat-course-page__search-section {
+  background: #fff;
 }
 
-.fcat-search-results__notice-panel {
-  background: #f3f2f1;
-  padding: 1.5rem 1.25rem;
-  max-width: 870px;
+.fcat-quick-search .fcat-course-page__search-section .govuk-width-container {
+  padding-top: 1.75rem;
+  padding-bottom: 2rem;
 }
 
-.fcat-search-results__notice-title {
-  margin-bottom: 1rem;
+.fcat-quick-search .fcat-course-page__search-section .govuk-grid-row + .govuk-grid-row {
+  margin-top: 1.25rem;
+}
+
+.fcat-quick-search .fcat-course-page__search-section .govuk-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.fcat-quick-search .fcat-course-page__search-section .govuk-input {
+  max-width: 500px;
+}
+
+.fcat-quick-search .fcat-course-page__support-section .govuk-width-container {
+  padding-top: 3.75rem;
+  padding-bottom: 4.25rem;
+}
+
+.fcat-quick-search .fcat-course-page__support-section .card-container {
+  gap: 30px;
 }
 
 .fcat-search-results__content .govuk-width-container {
@@ -853,10 +717,6 @@
   padding: 1.5rem 1.25rem 1.75rem;
 }
 
-.fcat-search-results__secondary-button {
-  margin-bottom: 0;
-}
-
 .fcat-search-results__toggle-button {
   margin-bottom: 1rem;
 }
@@ -893,10 +753,6 @@
   color: #505a5f;
 }
 
-.fcat-search-results__select {
-  width: 100%;
-}
-
 .fcat-search-results__results {
   min-width: 0;
 }
@@ -922,157 +778,27 @@
   gap: 0.75rem;
 }
 
-.fcat-search-results__sort-label {
-  margin-bottom: 0;
-  font-weight: 700;
-}
-
-.fcat-search-results__sort-select {
-  min-width: 120px;
-}
-
 .fcat-search-results__result-card {
-  border: 1px solid #b1b4b6;
-  background: #fff;
   margin-bottom: 1.5rem;
-  font-family: "GDS Transport", arial, sans-serif;
 }
 
 .fcat-search-results__result-title {
   margin-bottom: 0;
-  padding: 1rem 1.2rem;
-  background: #f3f2f1;
-  font-size: 19px;
-  line-height: 1.3157894737;
 }
 
 .fcat-search-results__result-title a {
   font-weight: 700;
 }
 
-.fcat-search-results__result-list {
-  margin: 0;
-  padding: 0 1.2rem;
-}
-
-.fcat-search-results__row {
-  display: grid;
-  grid-template-columns: 165px minmax(0, 1fr);
-  gap: 1.15rem;
-  padding: 0.7rem 0;
-  border-top: 1px solid #b1b4b6;
-}
-
-.fcat-search-results__row:first-child {
-  border-top: none;
-}
-
-.fcat-search-results__row dt {
-  font-weight: 700;
-}
-
-.fcat-search-results__row dt,
-.fcat-search-results__row dd {
-  margin: 0;
-  font-size: 19px;
-  line-height: 1.35;
-}
-
 .fcat-search-results__divider-copy {
   margin: 1.5rem 0;
 }
 
-.fcat-search-results__pagination {
-  margin-top: 2rem;
-}
-
-.fcat-search-results__pagination .govuk-pagination__item--current .govuk-pagination__link {
-  color: #fff;
-}
-
 // Course detail page
-
-.fcat-course-detail__hero {
-  background: #00703c;
-  color: #fff;
-  display: flex;
-  width: 1440px;
-  padding: 70px 240px 55px 240px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  box-sizing: border-box;
-
-  .govuk-width-container {
-    padding: 0;
-    margin: 0;
-    max-width: none;
-    width: 100%;
-  }
-}
-
-.fcat-course-detail__hero-title {
-  color: #fff;
-  margin-bottom: 0;
-  text-align: left;
-}
 
 .fcat-course-detail__content {
   padding-top: 2rem;
   padding-bottom: 3rem;
-}
-
-.fcat-course-detail__card {
-  border: 1px solid #b1b4b6;
-  margin-bottom: 1.75rem;
-}
-
-.fcat-course-detail__card--narrow {
-  max-width: 510px;
-}
-
-.fcat-course-detail__card-header {
-  background: #f3f2f1;
-  padding: 0.875rem 1.25rem;
-  border-bottom: 1px solid #b1b4b6;
-}
-
-.fcat-course-detail__card-heading {
-  margin-bottom: 0;
-  font-size: 19px;
-}
-
-.fcat-course-detail__summary-list {
-  margin: 0;
-  padding: 0;
-
-  .govuk-summary-list__row {
-    padding: 1.25rem 1.25rem;
-    border-bottom: 1px solid #b1b4b6;
-    margin-bottom: 0;
-  }
-
-  .govuk-summary-list__row:last-child,
-  .fcat-course-detail__row--last {
-    border-bottom: none;
-  }
-
-  .govuk-summary-list__key {
-    font-weight: 700;
-    width: 45%;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
-  .govuk-summary-list__value {
-    width: 70%;
-    padding-right: 20px;
-  }
-}
-
-.fcat-course-detail__card--narrow .govuk-summary-list__value {
-  text-align: right;
-  padding-right: 20px;
 }
 
 .fcat-course-detail__value-with-action {
@@ -1119,18 +845,8 @@
   }
 
   .fcat-course-page__search-grid,
-  .fcat-course-page__footer-top,
   .fcat-search-results__layout {
     grid-template-columns: 1fr;
-  }
-
-  .fcat-course-page__footer-title--secondary {
-    margin-top: 0;
-  }
-
-  .fcat-course-page__footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .fcat-search-results__results-toolbar {
@@ -1138,10 +854,6 @@
     align-items: flex-start;
   }
 
-  .fcat-search-results__row {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
 }
 
 @media (max-width: 40.0525em) {
@@ -1154,8 +866,6 @@
   }
 
   .fcat-course-page__hero-text,
-  .fcat-course-page__search-lead,
-  .fcat-course-page__card-text,
   .fcat-course-page__guided-link {
     font-size: 16px;
   }
@@ -1165,21 +875,10 @@
     height: 88px;
   }
 
-  .fcat-course-page__actions,
-  .fcat-course-page__footer-links {
-    grid-template-columns: 1fr;
+  .fcat-course-page__actions {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-  }
-
-  .fcat-course-page__card-image {
-    height: 120px;
-    flex-basis: 120px;
-  }
-
-  .fcat-course-page__card-body {
-    min-height: 0;
   }
 
   .fcat-search-results__filter-heading {

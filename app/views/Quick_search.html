@@ -4,7 +4,7 @@
   {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
 {% endblock %}
 
-{% block mainClass %}fcat-course-page{% endblock %}
+{% block mainClass %}fcat-course-page fcat-quick-search{% endblock %}
 
 {% block content %}
   <section class="fcat-course-page__hero">
@@ -21,44 +21,48 @@
 
   <section class="fcat-course-page__search-section">
     <div class="govuk-width-container">
-      <div class="fcat-course-page__search-intro">
-        <h2 class="govuk-heading-l">Quick search</h2>
-        <p class="govuk-body">You can search by things like school subjects, practical skills, hobbies and interests to find courses and training that could be right for you.</p>
-        <p class="govuk-body">Be as specific or as broad as you like. The terms do not have to link to each other, they can all be totally different things if you'd prefer.</p>
-        <p class="govuk-body">By entering search terms, you'll filter the courses and training to those you'll enjoy most.</p>
-        <p class="govuk-body">Enter words or phrases of things that interest you, such as "working with animals" or "maths".</p>
-        <p class="govuk-body">By entering your location, you'll see opportunities closer to you.</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-two-thirds">
+          <h2 class="govuk-heading-l">Quick search</h2>
+          <p class="govuk-body">You can search by things like school subjects, practical skills, hobbies and interests to find courses and training that could be right for you.</p>
+          <p class="govuk-body">Be as specific or as broad as you like. The terms do not have to link to each other, they can all be totally different things if you'd prefer.</p>
+          <p class="govuk-body">By entering search terms, you'll filter the courses and training to those you'll enjoy most.</p>
+          <p class="govuk-body">Enter words or phrases of things that interest you, such as "working with animals" or "maths".</p>
+          <p class="govuk-body">By entering your location, you'll see opportunities closer to you.</p>
+        </div>
       </div>
-
-      <form class="fcat-course-page__search-form" action="/Search_results" method="get">
-        <div class="fcat-course-page__search-grid">
-          <div class="govuk-form-group fcat-course-page__field">
-            <label class="govuk-label" for="search-location">Enter a town, city or postcode in England</label>
-            <div class="fcat-location-autocomplete">
-              <input class="govuk-input fcat-course-page__input" id="search-location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox">
-              <ul class="fcat-location-autocomplete__list" id="location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
+<div class="govuk-!-padding-bottom-6"></div>
+      <form action="/Search_results" method="get">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third fcat-quick-search__location-column">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="search-location">Enter a town, city or postcode in England</label>
+              <div class="fcat-location-autocomplete">
+                <input class="govuk-input" id="search-location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox">
+                <ul class="fcat-location-autocomplete__list" id="location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
+              </div>
             </div>
           </div>
 
-          <div class="fcat-course-page__term-fields">
-            <div class="govuk-form-group fcat-course-page__field">
+          <div class="govuk-grid-column-two-thirds fcat-quick-search__terms-column">
+            <div class="govuk-form-group">
               <label class="govuk-label" for="search-term-1">Search term 1 (optional)</label>
-              <input class="govuk-input fcat-course-page__input" id="search-term-1" name="searchTerm1" type="text">
+              <input class="govuk-input" id="search-term-1" name="searchTerm1" type="text">
             </div>
 
-            <div class="govuk-form-group fcat-course-page__field">
+            <div class="govuk-form-group">
               <label class="govuk-label" for="search-term-2">Search term 2 (optional)</label>
-              <input class="govuk-input fcat-course-page__input" id="search-term-2" name="searchTerm2" type="text">
+              <input class="govuk-input" id="search-term-2" name="searchTerm2" type="text">
             </div>
 
-            <div class="govuk-form-group fcat-course-page__field">
+            <div class="govuk-form-group">
               <label class="govuk-label" for="search-term-3">Search term 3 (optional)</label>
-              <input class="govuk-input fcat-course-page__input" id="search-term-3" name="searchTerm3" type="text">
+              <input class="govuk-input" id="search-term-3" name="searchTerm3" type="text">
             </div>
 
-            <div class="fcat-course-page__actions">
-              <button class="govuk-button fcat-course-page__button" data-module="govuk-button" type="submit">Search</button>
-              <a class="govuk-link fcat-course-page__guided-link" href="/How_we_use_AI">How we use AI</a>
+            <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button" type="submit">Search</button>
+              <a class="govuk-link" href="/How_we_use_AI">How we use AI</a>
             </div>
           </div>
         </div>
@@ -66,30 +70,42 @@
     </div>
   </section>
 
-  <section class="fcat-course-page__support-section">
+  <section class="fcat-course-page__support-section fac-card-container">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half">
-          <article class="fcat-course-page__support-card">
-            <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="fcat-course-page__support-card-image" role="presentation">
-            <div class="fcat-course-page__support-card-body">
-              <h2 class="govuk-heading-s fcat-course-page__support-card-title">
-                <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/find-a-course">Get course or training support</a>
-              </h2>
-              <p class="govuk-body fcat-course-page__support-card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
-            </div>
-          </article>
-        </div>
-        <div class="govuk-grid-column-one-half">
-          <article class="fcat-course-page__support-card">
-            <img src="/public/images/UCaTT.png" alt="" class="fcat-course-page__support-card-image" role="presentation">
-            <div class="fcat-course-page__support-card-body">
-              <h2 class="govuk-heading-s fcat-course-page__support-card-title">
-                <a class="govuk-link govuk-link--no-visited-state" href="https://nationalcareers.service.gov.uk/careers-advice">Understand course and training types</a>
-              </h2>
-              <p class="govuk-body fcat-course-page__support-card-text">Visit Skills for Careers to find out more about the different course types and training options.</p>
-            </div>
-          </article>
+        <div class="govuk-grid-column-full">
+          <div class="card-container">
+            <article class="ncs-card-with-image card-with-image-default-size fcat-course-page__support-card">
+              <div class="card-image">
+                <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="ncs-card-with-image-d fcat-course-page__support-card-image" role="presentation">
+              </div>
+              <div class="card-content-section card-content-default-size fcat-course-page__support-card-body">
+                <div class="card-header">
+                  <h2 class="fcat-course-page__support-card-title">
+                    <a href="https://nationalcareers.service.gov.uk/find-a-course">Get course or training support</a>
+                  </h2>
+                </div>
+                <div class="card-content">
+                  <p class="govuk-body fcat-course-page__support-card-text">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
+                </div>
+              </div>
+            </article>
+            <article class="ncs-card-with-image card-with-image-default-size fcat-course-page__support-card">
+              <div class="card-image">
+                <img src="/public/images/UCaTT.png" alt="" class="ncs-card-with-image-d fcat-course-page__support-card-image" role="presentation">
+              </div>
+              <div class="card-content-section card-content-default-size fcat-course-page__support-card-body">
+                <div class="card-header">
+                  <h2 class="fcat-course-page__support-card-title">
+                    <a href="https://nationalcareers.service.gov.uk/careers-advice">Understand course and training types</a>
+                  </h2>
+                </div>
+                <div class="card-content">
+                  <p class="govuk-body fcat-course-page__support-card-text">Visit Skills for Careers to find out more about the different course types and training options.</p>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </div>

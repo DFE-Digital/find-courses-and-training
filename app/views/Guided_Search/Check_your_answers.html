@@ -22,26 +22,17 @@
       </div>
     </div>
   </section>
-  <div class="govuk-width-container">
-
-    <div class="fcat-course-page__guided-content govuk-!-padding-bottom-4">
-    </div>
-
-      {{ govukSummaryList({ rows: summaryRows }) }}
-
-      
-
+  <div class="govuk-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-full-width">
+        {{ govukSummaryList({ rows: summaryRows }) }}
         <p class="govuk-body">Find out <a class="govuk-link" href="/How_we_use_AI">how we use AI</a> to bring you results.</p>
-
-
-      <form action="/Search_results" method="post" novalidate>
-
-        {{ govukButton({
-          text: "Search"
-        }) }}
-
-      </form>
-
+        <form action="/Search_results" method="post" novalidate>
+          {{ govukButton({
+            text: "Search"
+          }) }}
+        </form>
+      </div>
     </div>
   </div>
 {% endblock %}
