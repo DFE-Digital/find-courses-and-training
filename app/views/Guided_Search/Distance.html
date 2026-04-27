@@ -1,67 +1,50 @@
 {% extends "layouts/main.html" %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Location" }) }}
 {% endblock %}
 
-{% block mainClass %}ncs-course-page{% endblock %}
+{% block mainClass %}{% endblock %}
 
 {% block content %}
-  <section class="ncs-course-page__hero">
-    <div class="govuk-width-container ncs-course-page__hero-inner">
-      <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">How far would you be able to travel?</h1>
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">How far would you be able to travel?</h1>
       </div>
-      <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="fcat-course-page__hero-icon">
       </div>
     </div>
   </section>
 
-  <div class="govuk-width-container">
-
-    <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
-    </div>
+  <div class="govuk-width-container govuk-!-margin-top-6">
+    <p class="govuk-body">How far do you want to travel from <strong>{{ data['location'] }}</strong>?</p>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
         <form method="post" action="/Guided_Search/Distance{{ '?returnTo=' + query.returnTo if query.returnTo }}">
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="distance-1" name="distance" type="radio" value="2" {% if data['distance'] == "2" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="distance-1">Up to 2 miles</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="distance-2" name="distance" type="radio" value="5" {% if data['distance'] == "5" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="distance-2">Up to 5 miles</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="distance-3" name="distance" type="radio" value="10" {% if data['distance'] == "10" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="distance-3">Up to 10 miles</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="distance-4" name="distance" type="radio" value="15" {% if data['distance'] == "15" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="distance-4">Up to 15 miles</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="distance-5" name="distance" type="radio" value="30" {% if data['distance'] == "30" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="distance-5">Up to 30 miles</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="distance-6" name="distance" type="radio" value="anywhere" {% if data['distance'] == "anywhere" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="distance-6">Search anywhere in England</label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          {{ govukButton({ text: "Continue", isStartButton: false }) }}
+          {{ govukRadios({
+            name: "distance",
+            fieldset: {
+              legend: {
+                text: "How far would you be able to travel?",
+                classes: "govuk-visually-hidden"
+              }
+            },
+            items: [
+              { value: "2", text: "Up to 2 miles", checked: data['distance'] == "2" },
+              { value: "5", text: "Up to 5 miles", checked: data['distance'] == "5" },
+              { value: "10", text: "Up to 10 miles", checked: data['distance'] == "10" },
+              { value: "15", text: "Up to 15 miles", checked: data['distance'] == "15" },
+              { value: "30", text: "Up to 30 miles", checked: data['distance'] == "30" },
+              { value: "anywhere", text: "Search anywhere in England", checked: data['distance'] == "anywhere" }
+            ]
+          }) }}
+          {{ govukButton({ text: "Continue" }) }}
         </form>
       </div>
     </div>
   </div>
 {% endblock %}
-
-

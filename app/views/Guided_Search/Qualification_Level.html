@@ -1,82 +1,56 @@
 {% extends "layouts/main.html" %}
 
 {% block beforeContent %}
-    {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Interests" }) }}
 {% endblock %}
-{% block mainClass %}ncs-course-page{% endblock %}
+
+{% block mainClass %}{% endblock %}
 
 {% block content %}
-<section class="ncs-course-page__hero">
-    <div class="govuk-width-container ncs-course-page__hero-inner">
-      <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">What qualification level are you looking for?</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">You can look for courses to gain a specific qualification, or you can get skills and experience without a qualification. 
-</p>
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">What qualification level are you looking for?</h1>
+        <p class="govuk-body-l fcat-course-page__hero-text">You can look for courses to gain a specific qualification, or you can get skills and experience without a qualification.</p>
       </div>
-      <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="fcat-course-page__hero-icon">
       </div>
     </div>
   </section>
-<div class="govuk-width-container">
-    <br><br>
 
-    <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
-      <p class="govuk-body">Qualification levels build on previous skills and knowledge. Some qualifications like apprenticeships or vocational qualifications can be studied at different levels, where others are set levels, such as GCSEs.</p>
-      <p class="govuk-body">You do not always need to start at the lowest level, depending on your existing skills, experience and qualifications.</p>
-      <a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link" rel="noreferrer noopener" target="_blank">What qualification levels mean (opens in new tab)</a>
+  <div class="govuk-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-!-padding-bottom-4">
+          <p class="govuk-body">You don't always need to start at the lowest level, depending on your existing skills, experience and qualifications.</p>
+          <p class="govuk-body"><a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link" rel="noreferrer noopener" target="_blank">What qualification levels mean (opens in a new tab)</a></p>
+        </div>
 
-    </div>
-    <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h1 class="govuk-fieldset__heading">
-          Qualification level
-      </h1>
-    </legend>
-    <div id="waste-hint" class="govuk-hint">
-      Select all that apply
-    </div>
-    <form method="post" action="/Qualification_Level{{ '?returnTo=' + query.returnTo if query.returnTo }}">
-    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="qualification" name="qualification" type="checkbox" value="Gain skills and experience (without a qualification)" {% if data['qualification'] and (data['qualification'] == "Gain skills and experience (without a qualification)" or "Gain skills and experience (without a qualification)" in data['qualification']) %}checked{% endif %}>
-        <label class="govuk-label govuk-checkboxes__label" for="qualification">
-            Gain skills and experience (without a qualification)
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="qualification-2" name="qualification" type="checkbox" value="Entry level" {% if data['qualification'] and (data['qualification'] == "Entry level" or "Entry level" in data['qualification']) %}checked{% endif %}>
-        <label class="govuk-label govuk-checkboxes__label" for="qualification-2">
-            Entry Level (like functional skills)
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="qualification-3" name="qualification" type="checkbox" value="Level 1 or 2 (like GCSEs)" {% if data['qualification'] and (data['qualification'] == "Level 1 or 2 (like GCSEs)" or "Level 1 or 2 (like GCSEs)" in data['qualification']) %}checked{% endif %}>
-        <label class="govuk-label govuk-checkboxes__label" for="qualification-3">
-          Level 1 or 2 (like GCSEs)
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="qualification-4" name="qualification" type="checkbox" value="Level 3 (like BTECs and A levels)" {% if data['qualification'] and (data['qualification'] == "Level 3 (like BTECs and A levels)" or "Level 3 (like BTECs and A levels)" in data['qualification']) %}checked{% endif %}>
-        <label class="govuk-label govuk-checkboxes__label" for="qualification-4">
-          Level 3 (like BTECs and A levels)
-        </label>
-      </div>
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="qualification-5" name="qualification" type="checkbox" value="Level 4 to 8 (like diplomas and degrees)" {% if data['qualification'] and (data['qualification'] == "Level 4 to 8 (like diplomas and degrees)" or "Level 4 to 8 (like diplomas and degrees)" in data['qualification']) %}checked{% endif %}>
-        <label class="govuk-label govuk-checkboxes__label" for="qualification-5">
-          Level 4 to 8 (like diplomas and degrees)
-        </label>
+        <form method="post" action="/Guided_Search/Qualification_Level{{ '?returnTo=' + query.returnTo if query.returnTo }}">
+          <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+          {{ govukCheckboxes({
+            name: "qualification",
+            fieldset: {
+              legend: {
+                text: "Qualification level",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: { text: "Select all that apply" },
+            items: [
+              { value: "Gain skills and experience (without a qualification)", text: "Gain skills and experience (without a qualification)", checked: data['qualification'] and (data['qualification'] == "Gain skills and experience (without a qualification)" or "Gain skills and experience (without a qualification)" in data['qualification']) },
+              { value: "Entry level", text: "Entry Level (like functional skills)", checked: data['qualification'] and (data['qualification'] == "Entry level" or "Entry level" in data['qualification']) },
+              { value: "Level 1 or 2 (like GCSEs)", text: "Level 1 or 2 (like GCSEs)", checked: data['qualification'] and (data['qualification'] == "Level 1 or 2 (like GCSEs)" or "Level 1 or 2 (like GCSEs)" in data['qualification']) },
+              { value: "Level 3 (like BTECs and A levels)", text: "Level 3 (like BTECs and A levels)", checked: data['qualification'] and (data['qualification'] == "Level 3 (like BTECs and A levels)" or "Level 3 (like BTECs and A levels)" in data['qualification']) },
+              { value: "Level 4 to 8 (like diplomas and degrees)", text: "Level 4 to 8 (like diplomas and degrees)", checked: data['qualification'] and (data['qualification'] == "Level 4 to 8 (like diplomas and degrees)" or "Level 4 to 8 (like diplomas and degrees)" in data['qualification']) },
+              { divider: "or" },
+              { value: "I'm not sure", text: "I'm not sure", checked: data['qualification'] and (data['qualification'] == "I'm not sure" or "I'm not sure" in data['qualification']) }
+            ]
+          }) }}
+          {{ govukButton({ text: "Continue" }) }}
+        </form>
       </div>
     </div>
-  </fieldset>
-
-</div>
-            {{ govukButton({ text: "Continue", isStartButton: false }) }}
-    </form>
-
-</div>
-
+  </div>
 {% endblock %}

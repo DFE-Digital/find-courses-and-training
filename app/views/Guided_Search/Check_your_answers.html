@@ -1,52 +1,36 @@
 {% extends "layouts/main.html" %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Age" }) }}
 {% endblock %}
 
-{% block mainClass %}ncs-course-page{% endblock %}
-
-{% block containerStart %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-{% endblock %}
+{% block mainClass %}{% endblock %}
 
 {% block content %}
-<section class="ncs-course-page__hero">
-    <div class="govuk-width-container ncs-course-page__hero-inner">
-      <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Check your answers</h1>
+<section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Check your answers</h1>
+        <p class="govuk-body-l fcat-course-page__hero-text">This is the information you have given us so far, and will be used to pre-filter the search results on the next page.</p>
+
       </div>
-      <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="fcat-course-page__hero-icon">
       </div>
     </div>
   </section>
-  <div class="govuk-width-container">
-
-    <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
-    </div>
-
-      {{ govukSummaryList({ rows: summaryRows }) }}
-
-      
-
+  <div class="govuk-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-full-width">
+        {{ govukSummaryList({ rows: summaryRows }) }}
         <p class="govuk-body">Find out <a class="govuk-link" href="/How_we_use_AI">how we use AI</a> to bring you results.</p>
-
-
-      <form action="/Search_results" method="post" novalidate>
-
-        {{ govukButton({
-          text: "Search"
-        }) }}
-
-      </form>
-
+        <form action="/Search_results" method="post" novalidate>
+          {{ govukButton({
+            text: "Search"
+          }) }}
+        </form>
+      </div>
     </div>
   </div>
 {% endblock %}

@@ -5,98 +5,202 @@
 {% endblock %}
 
 {% block content %}
-  <section class="ncs-course-detail__hero">
-    <div class="govuk-width-container">
-      <h1 class="govuk-heading-xl ncs-course-detail__hero-title">Creative Writing and English (BA) (Hons)</h1>
+   <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner fcat-course-page__hero-inner--compact">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Creative Writing and English (BA) (Hons)</h1>
+      </div>
     </div>
   </section>
+  <div class="govuk-width-container">
+    {% set eligibilityHtml %}<h2 class="govuk-heading-m">Eligibility and funding</h2><p class="govuk-body">All information shown within these results is taken from a third party. You can check with the course or training provider for rules about funding and eligibility.</p>{% endset %}
+    {{ govukInsetText({ html: eligibilityHtml }) }}
+  </div>
 
-  <div class="govuk-width-container ncs-course-detail__content">
+  <div class="govuk-width-container fcat-course-detail__content">
 
-    <div class="ncs-course-detail__card">
-      <div class="ncs-course-detail__card-header">
-        <h2 class="govuk-heading-s ncs-course-detail__card-heading">About the course</h2>
+   
+    <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      About the course
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Course type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Degree<br>
+            <a class="govuk-link" href="https://www.skillsforcareers.education.gov.uk/pages/training-choice/higher-education" target="_blank" rel="noopener noreferrer">Learn about Degrees (opens in a new tab)</a>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
       </div>
-      <dl class="govuk-summary-list ncs-course-detail__summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Course type</dt>
-          <dd class="govuk-summary-list__value">
-            Essential Skills<br>
-            <a class="govuk-link" href="https://nationalcareers.service.gov.uk/find-a-course/about-essential-skills" target="_blank" rel="noopener noreferrer">Learn about Essential Skills (opens in a new tab)</a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Level</dt>
-          <dd class="govuk-summary-list__value">1</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Entry requirements</dt>
-          <dd class="govuk-summary-list__value">You will need to be working at Entry 3 or above and will need to do an English initial assessment to check your level.</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Cost</dt>
-          <dd class="govuk-summary-list__value">£204.60</dd>
-        </div>
-        <div class="govuk-summary-list__row ncs-course-detail__row--last">
-          <dt class="govuk-summary-list__key">Overview</dt>
-          <dd class="govuk-summary-list__value">Are you looking for inspiration to write your own poems or stories? Would you like to know more about how poetry and fiction work, and receive feedback on your drafts in a supportive workshop environment? If your English lets you down and gets in the way of your creativity, this is the course for you.</dd>
-        </div>
-      </dl>
-    </div>
-
-    <div class="ncs-course-detail__card">
-      <div class="ncs-course-detail__card-header">
-        <h2 class="govuk-heading-s ncs-course-detail__card-heading">Location</h2>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Level
+        </dt>
+        <dd class="govuk-summary-list__value">
+          6        
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"></span></a>
+        </dd>
       </div>
-      <dl class="govuk-summary-list ncs-course-detail__summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Provider</dt>
-          <dd class="govuk-summary-list__value ncs-course-detail__value-with-action">
-            <span>RICHMOND AND HILLCROFT ADULT AND COMMUNITY COLLEGE</span>
-            <a class="govuk-link ncs-course-detail__side-link" href="https://www.racc.ac.uk/" target="_blank" rel="noopener noreferrer">View website</a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row ncs-course-detail__row--last">
-          <dt class="govuk-summary-list__key">Provider location</dt>
-          <dd class="govuk-summary-list__value ncs-course-detail__value-with-action">
-            <span>Parkshot,<br>Richmond,<br>Surrey,<br>TW9 2RE</span>
-            <a class="govuk-link ncs-course-detail__side-link" href="https://maps.google.com/?q=Parkshot,Richmond,Surrey,TW9+2RE" target="_blank" rel="noopener noreferrer">View on a map</a>
-          </dd>
-        </div>
-      </dl>
-    </div>
-
-    <div class="ncs-course-detail__card ncs-course-detail__card--narrow">
-      <div class="ncs-course-detail__card-header">
-        <h2 class="govuk-heading-s ncs-course-detail__card-heading">Course details</h2>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Entry requirements
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
       </div>
-      <dl class="govuk-summary-list ncs-course-detail__summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Delivery methods</dt>
-          <dd class="govuk-summary-list__value">Classroom based</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Start date</dt>
-          <dd class="govuk-summary-list__value">22 April 2025</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Duration</dt>
-          <dd class="govuk-summary-list__value">2 months</dd>
-        </div>
-        <div class="govuk-summary-list__row ncs-course-detail__row--last">
-          <dt class="govuk-summary-list__key">Hours</dt>
-          <dd class="govuk-summary-list__value">Part time</dd>
-        </div>
-      </dl>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Tuition fee
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Awarding organisation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          THE UNIVERSITY OF WESTMINSTER
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Overview
+        </dt>
+        <dd class="govuk-summary-list__value">
+          You will need to visit the institution’s website for information about this course.
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+    <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Location
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          University
+        </dt>
+        <dd class="govuk-summary-list__value">
+          THE UNIVERSITY OF WESTMINSTER
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View website<span class="govuk-visually-hidden"> </span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Campus name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Regent Campus        
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"></span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Campus address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Regent campus
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">View on a map<span class="govuk-visually-hidden"> </span></a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+ <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Course details
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Delivery method
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Classroom based 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not provided        
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"></span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Duration
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 years
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Hours
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Full time
+        </dd>
+        <dd class="govuk-summary-list__actions">
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+</div>
+</div>
+   
+
+    <div class="fcat-course-detail__actions">
+      {{ govukButton({ text: "Go to course", href: "https://nationalcareers.service.gov.uk/find-a-course", classes: "fcat-course-detail__cta-button" }) }}
     </div>
 
-    <div class="ncs-course-detail__actions">
-      <a href="https://nationalcareers.service.gov.uk/find-a-course" role="button" draggable="false" class="govuk-button ncs-course-detail__cta-button" data-module="govuk-button">
-        Go to course
-      </a>
-    </div>
-
-    <p class="govuk-body ncs-course-detail__provider-note">These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>
+    <p class="govuk-body fcat-course-detail__provider-note">These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>
 
   </div>
 {% endblock %}

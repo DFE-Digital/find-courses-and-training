@@ -1,56 +1,52 @@
 {% extends "layouts/main.html" %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Distance" }) }}
 {% endblock %}
 
-{% block mainClass %}ncs-course-page{% endblock %}
+{% block mainClass %}{% endblock %}
 
 {% block content %}
-  <section class="ncs-course-page__hero">
-    <div class="govuk-width-container ncs-course-page__hero-inner">
-      <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Would you like to see apprenticeships or Skills Bootcamps?</h1>
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Would you like to see apprenticeships or Skills Bootcamps?</h1>
       </div>
-      <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="fcat-course-page__hero-icon">
       </div>
     </div>
   </section>
 
   <div class="govuk-width-container">
-
-    <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
+    <div class="govuk-grid-row govuk-!-margin-top-6 govuk-!-padding-bottom-4">
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">Apprenticeships are real jobs that combine work with training and study. You'll earn a wage, gain skills and have the opportunity to put what you learn into practice.</p>
+        <p class="govuk-body">Skills Bootcamps teach you skills for specific careers and sectors with a guaranteed job interview at the end.</p>
+        <a href="https://www.skillsforcareers.education.gov.uk/your-training-options" class="govuk-link" rel="noreferrer noopener" target="_blank">Find out more about training options (opens in a new tab)</a>
+      </div>
     </div>
 
-    <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
-      <p class="govuk-body">Apprenticeships are real jobs that combine work with training and study. You'll earn a wage, gain skills and have the opportunity to put what you learn into practice.</p>
-      <p class="govuk-body">Skills Bootcamps teach you skills for specific careers and sectors with a guaranteed job interview at the end.</p>
-      <a href="https://www.skillsforcareers.education.gov.uk/your-training-options" class="govuk-link" rel="noreferrer noopener" target="_blank">Find out more about training options (opens in new tab)</a>
-
-    </div>
-    <div class="govuk-grid-row">
+    <div class="govuk-grid-row govuk-!-margin-top-4">
       <div class="govuk-grid-column-one-half">
         <form method="post" action="/Guided_Search/Apps_or_SBC{{ '?returnTo=' + query.returnTo if query.returnTo }}">
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="apps-or-sbc-1" name="apps-or-sbc" type="radio" value="Yes or not sure" {% if data['apps-or-sbc'] == "Yes or not sure" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="apps-or-sbc-1">Yes or not sure (you'll be asked to choose sectors you'd like to search by)</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="apps-or-sbc-2" name="apps-or-sbc" type="radio" value="No" {% if data['apps-or-sbc'] == "No" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="apps-or-sbc-2">No</label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+          {{ govukRadios({
+            name: "apps-or-sbc",
+            fieldset: {
+              legend: {
+                text: "Would you like to see apprenticeships or Skills Bootcamps?",
+                classes: "govuk-visually-hidden"
+              }
+            },
+            items: [
+              { value: "Yes or not sure", text: "Yes or not sure (you'll be asked to choose sectors you'd like to search by)", checked: data['apps-or-sbc'] == "Yes or not sure" },
+              { value: "No", text: "No", checked: data['apps-or-sbc'] == "No" }
+            ]
+          }) }}
           {{ govukButton({ text: "Continue", isStartButton: false }) }}
         </form>
       </div>
     </div>
   </div>
 {% endblock %}
-

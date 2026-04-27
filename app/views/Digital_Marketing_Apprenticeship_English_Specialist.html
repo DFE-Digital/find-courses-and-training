@@ -5,98 +5,139 @@
 {% endblock %}
 
 {% block content %}
-  <section class="ncs-course-detail__hero">
-    <div class="govuk-width-container">
-      <h1 class="govuk-heading-xl ncs-course-detail__hero-title">Digital Marketing Apprenticeship - English Specialist</h1>
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner fcat-course-page__hero-inner--compact">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Digital Marketing Apprenticeship - English Specialist</h1>
+      </div>
     </div>
   </section>
+  <div class="govuk-width-container">
+    {% set eligibilityHtml %}<h2 class="govuk-heading-m">Eligibility and funding</h2><p class="govuk-body">All information on this page has been provided by a third party. You can check with the course or training provider for guidance about funding and eligibility.</p>{% endset %}
+    {{ govukInsetText({ html: eligibilityHtml }) }}
+  </div>
 
-  <div class="govuk-width-container ncs-course-detail__content">
+  <div class="govuk-width-container fcat-course-detail__content">
 
-    <div class="ncs-course-detail__card">
-      <div class="ncs-course-detail__card-header">
-        <h2 class="govuk-heading-s ncs-course-detail__card-heading">About the course</h2>
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">About the course</h2>
       </div>
-      <dl class="govuk-summary-list ncs-course-detail__summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Course type</dt>
-          <dd class="govuk-summary-list__value">
-            Essential Skills<br>
-            <a class="govuk-link" href="https://nationalcareers.service.gov.uk/find-a-course/about-essential-skills" target="_blank" rel="noopener noreferrer">Learn about Essential Skills (opens in a new tab)</a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Level</dt>
-          <dd class="govuk-summary-list__value">1</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Entry requirements</dt>
-          <dd class="govuk-summary-list__value">You will need to be working at Entry 3 or above and will need to do an English initial assessment to check your level.</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Cost</dt>
-          <dd class="govuk-summary-list__value">£204.60</dd>
-        </div>
-        <div class="govuk-summary-list__row ncs-course-detail__row--last">
-          <dt class="govuk-summary-list__key">Overview</dt>
-          <dd class="govuk-summary-list__value">Are you looking for inspiration to write your own poems or stories? Would you like to know more about how poetry and fiction work, and receive feedback on your drafts in a supportive workshop environment? If your English lets you down and gets in the way of your creativity, this is the course for you.</dd>
-        </div>
-      </dl>
-    </div>
-
-    <div class="ncs-course-detail__card">
-      <div class="ncs-course-detail__card-header">
-        <h2 class="govuk-heading-s ncs-course-detail__card-heading">Location</h2>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Course type</dt>
+            <dd class="govuk-summary-list__value">
+              Apprenticeship<br>
+              <a class="govuk-link" href="https://www.skillsforcareers.education.gov.uk/pages/training-choice/apprenticeship" target="_blank" rel="noopener noreferrer">Learn about Apprenticeships (opens in a new tab)</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Level</dt>
+            <dd class="govuk-summary-list__value">3</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Entry requirements</dt>
+            <dd class="govuk-summary-list__value">Essential: GCSE 3 GCSEs or equivalent Grade At least Grade 4</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Wage</dt>
+            <dd class="govuk-summary-list__value">£14,722.50 a year</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Positions available</dt>
+            <dd class="govuk-summary-list__value">1</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Overview</dt>
+            <dd class="govuk-summary-list__value">We're looking for a Digital Marketing Apprentice to join our team and complete the Multi-Channel Marketer Apprenticeship with NowSkills. You'll work closely with our digital team, supporting blog writing, case study creation, landing page writing, social media support across Meta, TikTok, LinkedIn and more.</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Description</dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Help write engaging ad copy, social media captions, and marketing content</li>
+                <li>Support content creation, including blogs, case studies, and website copy</li>
+                <li>Create images and short videos using tools such as Canva</li>
+                <li>Support organic social media management</li>
+                <li>Learn how to research keywords, audiences, and trends</li>
+                <li>Support landing page ideas and basic testing to improve results</li>
+                <li>Ensure brand tone and messaging are consistent across different clients</li>
+                <li>Assist with paid advertising campaigns across platforms such as Google Ads, Meta (Facebook &amp; Instagram), LinkedIn and TikTok</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
       </div>
-      <dl class="govuk-summary-list ncs-course-detail__summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Provider</dt>
-          <dd class="govuk-summary-list__value ncs-course-detail__value-with-action">
-            <span>RICHMOND AND HILLCROFT ADULT AND COMMUNITY COLLEGE</span>
-            <a class="govuk-link ncs-course-detail__side-link" href="https://www.racc.ac.uk/" target="_blank" rel="noopener noreferrer">View website</a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row ncs-course-detail__row--last">
-          <dt class="govuk-summary-list__key">Provider location</dt>
-          <dd class="govuk-summary-list__value ncs-course-detail__value-with-action">
-            <span>Parkshot,<br>Richmond,<br>Surrey,<br>TW9 2RE</span>
-            <a class="govuk-link ncs-course-detail__side-link" href="https://maps.google.com/?q=Parkshot,Richmond,Surrey,TW9+2RE" target="_blank" rel="noopener noreferrer">View on a map</a>
-          </dd>
-        </div>
-      </dl>
     </div>
 
-    <div class="ncs-course-detail__card ncs-course-detail__card--narrow">
-      <div class="ncs-course-detail__card-header">
-        <h2 class="govuk-heading-s ncs-course-detail__card-heading">Course details</h2>
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Location</h2>
       </div>
-      <dl class="govuk-summary-list ncs-course-detail__summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Delivery methods</dt>
-          <dd class="govuk-summary-list__value">Classroom based</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Start date</dt>
-          <dd class="govuk-summary-list__value">22 April 2025</dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Duration</dt>
-          <dd class="govuk-summary-list__value">2 months</dd>
-        </div>
-        <div class="govuk-summary-list__row ncs-course-detail__row--last">
-          <dt class="govuk-summary-list__key">Hours</dt>
-          <dd class="govuk-summary-list__value">Part time</dd>
-        </div>
-      </dl>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Employer</dt>
+            <dd class="govuk-summary-list__value fcat-course-detail__value-with-action">
+              <span>CHILDSEY LIMITED</span>
+              <a class="govuk-link fcat-course-detail__side-link" href="#" target="_blank" rel="noopener noreferrer">View website</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Employer address</dt>
+            <dd class="govuk-summary-list__value fcat-course-detail__value-with-action">
+              <span>Nantwich Court 5A,<br>Hospital Street,<br>Nantwich,<br>CW5 5RH</span>
+              <a class="govuk-link fcat-course-detail__side-link" href="https://maps.google.com/?q=Nantwich+Court+5A,Hospital+Street,Nantwich,CW5+5RH" target="_blank" rel="noopener noreferrer">View on a map</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">About this employer</dt>
+            <dd class="govuk-summary-list__value">Childsey is a growing digital marketing agency based in the heart of Nantwich, Cheshire. We work with a wide range of clients to deliver creative, data-driven marketing campaigns that make a real difference to their businesses.</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Training provider</dt>
+            <dd class="govuk-summary-list__value">NOWSKILLS LIMITED</dd>
+          </div>
+        </dl>
+      </div>
     </div>
 
-    <div class="ncs-course-detail__actions">
-      <a href="https://nationalcareers.service.gov.uk/find-a-course" role="button" draggable="false" class="govuk-button ncs-course-detail__cta-button" data-module="govuk-button">
-        Go to course
-      </a>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Course details</h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Delivery methods</dt>
+                <dd class="govuk-summary-list__value">Work based</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Start date</dt>
+                <dd class="govuk-summary-list__value">3 May 2026</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Duration</dt>
+                <dd class="govuk-summary-list__value">1 year 4 months</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Hours</dt>
+                <dd class="govuk-summary-list__value">Full time</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <p class="govuk-body ncs-course-detail__provider-note">These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>
+    <div class="fcat-course-detail__actions">
+      {{ govukButton({ text: "Go to Apprenticeship", href: "https://nationalcareers.service.gov.uk/find-a-course", classes: "fcat-course-detail__cta-button" }) }}
+    </div>
+
+    <p class="govuk-body fcat-course-detail__provider-note">These details are added by the training provider. For further information or if you need support with this apprenticeship, you should contact the provider directly.</p>
 
   </div>
 {% endblock %}

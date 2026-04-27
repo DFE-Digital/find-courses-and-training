@@ -1,76 +1,55 @@
 {% extends "layouts/main.html" %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Qualification_Level" }) }}
 {% endblock %}
 
-{% block mainClass %}ncs-course-page{% endblock %}
+{% block mainClass %}{% endblock %}
 
 {% block content %}
-  <section class="ncs-course-page__hero">
-    <div class="govuk-width-container ncs-course-page__hero-inner">
-      <div class="ncs-course-page__hero-copy">
-        <h1 class="govuk-heading-xl ncs-course-page__hero-title">Your age</h1>
-        <p class="govuk-body-l ncs-course-page__hero-text">This is optional but telling us means you will see more relevant results.</p>
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy fcat-course-page__hero-copy--wide">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">What age will you be when starting the course or training?</h1>
+        <p class="govuk-body-l fcat-course-page__hero-text">You can search by the age you'll be when you plan to take the course if you're looking for the future.</p>
       </div>
-      <div class="ncs-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="ncs-course-page__hero-icon">
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="fcat-course-page__hero-icon">
       </div>
     </div>
   </section>
 
-  <div class="govuk-width-container">
-
-    <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
-    </div>
-
-    <div class="ncs-course-page__guided-content govuk-!-padding-bottom-4">
-      <p class="govuk-body">You can search by the age you'll be when you plan to take the course if you're looking for the future.</p>
-      <p class="govuk-body">Not all education and training courses are available to everyone.</p>
-      <p class="govuk-body">This is often linked to age. As well as what qualifications you already have or your employment status.</p>
-      <a href="https://www.skillsforcareers.education.gov.uk/your-training-options" class="govuk-link" rel="noreferrer noopener" target="_blank">Discover the different training options (opens in new tab)</a>
-
-    </div>
+  <div class="govuk-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-!-padding-bottom-4">
+          <p class="govuk-body">Not all education and training courses are available to everyone.</p>
+          <p class="govuk-body">This is often linked to age. As well as what qualifications you already have or your employment status.</p>
+          <p class="govuk-body">This is optional but telling us means you will see more relevant results.</p>
+          <p class="govuk-body"><a href="https://www.skillsforcareers.education.gov.uk/your-training-options" class="govuk-link" rel="noreferrer noopener" target="_blank">Discover the different training options (opens in a new tab)</a></p>
+        </div>
+
         <form method="post" action="/Guided_Search/Age{{ '?returnTo=' + query.returnTo if query.returnTo }}">
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                   How old are you? (optional)
-                </h1>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-1" name="age" type="radio" value="16 or 17" {% if data['age'] == "16 or 17" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="age-1">16 or 17</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-2" name="age" type="radio" value="18" {% if data['age'] == "18" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="age-2">18</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-3" name="age" type="radio" value="19" {% if data['age'] == "19" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="age-3">19</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-4" name="age" type="radio" value="20 - 24" {% if data['age'] == "20 - 24" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="age-4">20 - 24</label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-5" name="age" type="radio" value="25 or older" {% if data['age'] == "25 or older" %}checked{% endif %}>
-                  <label class="govuk-label govuk-radios__label" for="age-5">25 or older</label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+          {{ govukRadios({
+            name: "age",
+            fieldset: {
+              legend: {
+                text: "How old are you? (optional)",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              { value: "16 or 17", text: "16 or 17", checked: data['age'] == "16 or 17" },
+              { value: "18", text: "18", checked: data['age'] == "18" },
+              { value: "19", text: "19", checked: data['age'] == "19" },
+              { value: "20 - 24", text: "20 - 24", checked: data['age'] == "20 - 24" },
+              { value: "25 or older", text: "25 or older", checked: data['age'] == "25 or older" }
+            ]
+          }) }}
           {{ govukButton({ text: "Continue", isStartButton: false }) }}
         </form>
       </div>
     </div>
   </div>
 {% endblock %}
-
-

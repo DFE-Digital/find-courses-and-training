@@ -1,0 +1,242 @@
+{% extends "layouts/main.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "/FindCoursesandTraining" }) }}
+{% endblock %}
+
+{% block mainClass %}fcat-quick-search{% endblock %}
+
+{% block content %}
+  <section class="fcat-course-page__hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Find courses and training</h1>
+        <p class="govuk-body-l fcat-course-page__hero-text">Search for courses and training by telling us your location and up to 3 key search terms.</p>
+      </div>
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="Magnifying glass with sparkles, representing AI-powered search" class="fcat-course-page__hero-icon">
+      </div>
+    </div>
+  </section>
+
+  <section class="fcat-course-page__search-section">
+    <div class="govuk-width-container">
+      <div class="fcat-course-page__search-intro">
+        <h2 class="govuk-heading-l">Quick search</h2>
+        <p class="govuk-body">You can search by things like school subjects, practical skills, hobbies and interests to find courses and training that could be right for you.</p>
+        <p class="govuk-body">Be as specific or as broad as you like. The terms do not have to link to each other, they can all be totally different things if you'd prefer.</p>
+        <p class="govuk-body">By entering search terms, you'll filter the courses and training to those you'll enjoy most.<br>Enter words or phrases of things that interest you, such as "working with animals" or "maths".</p>
+        <p class="govuk-body">By entering your location, you'll see opportunities closer to you.</p>
+      </div>
+
+      <form action="/Search_results" method="get">
+        <div class="fcat-course-page__search-grid">
+          <div class="govuk-form-group fcat-course-page__field">
+            <label class="govuk-label" for="search-location">Enter a town, city or postcode in England</label>
+            <div class="fcat-location-autocomplete">
+              <input class="govuk-input fcat-course-page__input" id="search-location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox">
+              <ul class="fcat-location-autocomplete__list" id="location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
+            </div>
+          </div>
+
+          <div class="fcat-course-page__term-fields">
+            <div class="govuk-form-group fcat-course-page__field">
+              <label class="govuk-label" for="search-term-1">Search term 1</label>
+              <input class="govuk-input fcat-course-page__input" id="search-term-1" name="searchTerm1" type="text">
+            </div>
+
+            <div class="govuk-form-group fcat-course-page__field">
+              <label class="govuk-label" for="search-term-2">Search term 2</label>
+              <input class="govuk-input fcat-course-page__input" id="search-term-2" name="searchTerm2" type="text">
+            </div>
+
+            <div class="govuk-form-group fcat-course-page__field">
+              <label class="govuk-label" for="search-term-3">Search term 3</label>
+              <input class="govuk-input fcat-course-page__input" id="search-term-3" name="searchTerm3" type="text">
+            </div>
+
+            <div class="fcat-course-page__actions">
+              <button class="govuk-button fcat-course-page__button" data-module="govuk-button" type="submit">Search</button>
+              <a class="govuk-link fcat-course-page__guided-link" href="/How_we_use_AI">How we use AI</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+ <section class="fcat-course-page__support-section">
+    <div class="govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="card-container">
+              <article class="ncs-card-with-image card-with-image-default-size fcat-course-page__support-card">
+                <div class="card-image">
+                  <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="ncs-card-with-image-d fcat-course-page__support-card-image" role="presentation">
+                </div>
+                <div class="card-content-section card-content-default-size fcat-course-page__support-card-body">
+                  <div class="card-header">
+                    <h2 class="fcat-course-page__support-card-title">
+                      <a href="https://nationalcareers.service.gov.uk/find-a-course/course-support">Get course or training support</a>
+                    </h2>
+                  </div>
+                  <div class="card-content">
+                    <p class="govuk-body govuk-!-margin-bottom-0">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
+                  </div>
+                </div>
+              </article>
+              <article class="ncs-card-with-image card-with-image-default-size fcat-course-page__support-card">
+                <div class="card-image">
+                  <img src="/public/images/UCaTT.png" alt="" class="ncs-card-with-image-d fcat-course-page__support-card-image" role="presentation">
+                </div>
+                <div class="card-content-section card-content-default-size fcat-course-page__support-card-body">
+                  <div class="card-header">
+                    <h2 class="fcat-course-page__support-card-title">
+                      <a href="https://nationalcareers.service.gov.uk/careers-advice">Understand course and training types</a>
+                    </h2>
+                  </div>
+                  <div class="card-content">
+                    <p class="govuk-body govuk-!-margin-bottom-0">Visit Skills for Careers to find out more about the different course types and training options.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  const LOCATIONS = [
+    "Barnsley (South Yorkshire)", "Bath (Somerset)", "Bedford (Bedfordshire)",
+    "Birmingham (West Midlands)", "Blackburn (Lancashire)", "Blackpool (Lancashire)",
+    "Bolton (Greater Manchester)", "Bournemouth (Dorset)", "Bradford (West Yorkshire)",
+    "Brighton (East Sussex)", "Bristol (Bristol)", "Burnley (Lancashire)",
+    "Cambridge (Cambridgeshire)", "Carlisle (Cumbria)", "Chatham (Kent)",
+    "Chelmsford (Essex)", "Cheltenham (Gloucestershire)", "Chester (Cheshire)",
+    "Chesterfield (Derbyshire)", "Chichester (West Sussex)", "Coventry (West Midlands)",
+    "Crawley (West Sussex)", "Darlington (County Durham)", "Derby (Derbyshire)",
+    "Doncaster (South Yorkshire)", "Durham (County Durham)", "Eastbourne (East Sussex)",
+    "Exeter (Devon)", "Gateshead (Tyne and Wear)", "Gloucester (Gloucestershire)",
+    "Grimsby (Lincolnshire)", "Guildford (Surrey)", "Halifax (West Yorkshire)",
+    "Harrogate (North Yorkshire)", "Hartlepool (County Durham)", "Hastings (East Sussex)",
+    "Hereford (Herefordshire)", "High Wycombe (Buckinghamshire)", "Huddersfield (West Yorkshire)",
+    "Hull (East Riding of Yorkshire)", "Ipswich (Suffolk)", "Lancaster (Lancashire)",
+    "Leeds (West Yorkshire)", "Leicester (Leicestershire)", "Lichfield (Staffordshire)",
+    "Lincoln (Lincolnshire)", "Liverpool (Merseyside)", "Londesborough (East Riding of Yorkshire)",
+    "London (Greater London)", "London Apprentice (Cornwall)", "London Beach (Kent)",
+    "London Colney (Hertfordshire)", "Luton (Bedfordshire)", "Macclesfield (Cheshire)",
+    "Manchester (Greater Manchester)", "Mansfield (Nottinghamshire)", "Middlesbrough (North Yorkshire)",
+    "Milton Keynes (Buckinghamshire)", "Newcastle upon Tyne (Tyne and Wear)", "Newport (Isle of Wight)",
+    "Northampton (Northamptonshire)", "Norwich (Norfolk)", "Nottingham (Nottinghamshire)",
+    "Oldham (Greater Manchester)", "Oxford (Oxfordshire)", "Peterborough (Cambridgeshire)",
+    "Plymouth (Devon)", "Poole (Dorset)", "Portsmouth (Hampshire)", "Preston (Lancashire)",
+    "Reading (Berkshire)", "Rochdale (Greater Manchester)", "Rotherham (South Yorkshire)",
+    "Salford (Greater Manchester)", "Salisbury (Wiltshire)", "Sheffield (South Yorkshire)",
+    "Shrewsbury (Shropshire)", "Slough (Berkshire)", "Southampton (Hampshire)",
+    "Southend-on-Sea (Essex)", "Southport (Merseyside)", "St Albans (Hertfordshire)",
+    "Stoke-on-Trent (Staffordshire)", "Sunderland (Tyne and Wear)", "Swindon (Wiltshire)",
+    "Telford (Shropshire)", "Torquay (Devon)", "Truro (Cornwall)", "Wakefield (West Yorkshire)",
+    "Walsall (West Midlands)", "Warrington (Cheshire)", "Watford (Hertfordshire)",
+    "West Bromwich (West Midlands)", "Wigan (Greater Manchester)", "Winchester (Hampshire)",
+    "Wolverhampton (West Midlands)", "Worcester (Worcestershire)", "Worthing (West Sussex)",
+    "York (North Yorkshire)"
+  ];
+
+  (function () {
+    const input = document.getElementById('search-location');
+    const list = document.getElementById('location-suggestions');
+    let activeIndex = -1;
+
+    function showSuggestions(query) {
+      const matches = LOCATIONS.filter(l => l.toLowerCase().includes(query.toLowerCase())).slice(0, 8);
+      list.innerHTML = '';
+      activeIndex = -1;
+
+      if (matches.length === 0) {
+        const li = document.createElement('li');
+        li.className = 'fcat-location-autocomplete__option fcat-location-autocomplete__option--no-results';
+        li.setAttribute('role', 'option');
+        li.setAttribute('aria-disabled', 'true');
+        li.textContent = 'No results found';
+        list.appendChild(li);
+      } else {
+        matches.forEach((location, i) => {
+          const li = document.createElement('li');
+          li.className = 'fcat-location-autocomplete__option';
+          li.setAttribute('role', 'option');
+          li.setAttribute('id', 'location-option-' + i);
+          li.textContent = location;
+          li.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            selectLocation(location);
+          });
+          list.appendChild(li);
+        });
+      }
+
+      list.removeAttribute('hidden');
+      input.setAttribute('aria-expanded', 'true');
+    }
+
+    function selectLocation(location) {
+      input.value = location;
+      list.hidden = true;
+      input.setAttribute('aria-expanded', 'false');
+      activeIndex = -1;
+    }
+
+    function updateActiveItem(newIndex) {
+      const items = list.querySelectorAll('.fcat-location-autocomplete__option');
+      if (activeIndex >= 0 && items[activeIndex]) {
+        items[activeIndex].setAttribute('aria-selected', 'false');
+      }
+      activeIndex = newIndex;
+      if (activeIndex >= 0 && items[activeIndex]) {
+        items[activeIndex].setAttribute('aria-selected', 'true');
+        input.setAttribute('aria-activedescendant', 'location-option-' + activeIndex);
+      } else {
+        input.removeAttribute('aria-activedescendant');
+      }
+    }
+
+    input.addEventListener('input', () => {
+      if (input.value.length >= 3) {
+        showSuggestions(input.value);
+      } else {
+        list.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    input.addEventListener('keydown', (e) => {
+      const items = list.querySelectorAll('.fcat-location-autocomplete__option');
+      if (list.hidden || items.length === 0) return;
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        updateActiveItem(Math.min(activeIndex + 1, items.length - 1));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        updateActiveItem(Math.max(activeIndex - 1, 0));
+      } else if (e.key === 'Enter' && activeIndex >= 0) {
+        e.preventDefault();
+        selectLocation(items[activeIndex].textContent);
+      } else if (e.key === 'Escape') {
+        list.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!input.contains(e.target) && !list.contains(e.target)) {
+        list.hidden = true;
+        input.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
+{% endblock %}
