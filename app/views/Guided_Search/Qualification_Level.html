@@ -1,10 +1,10 @@
 {% extends "layouts/main.html" %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Interests" }) }}
 {% endblock %}
 
-{% block mainClass %}fcat-course-page{% endblock %}
+{% block mainClass %}{% endblock %}
 
 {% block content %}
   <section class="fcat-course-page__hero">
@@ -24,7 +24,7 @@
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-!-padding-bottom-4">
           <p class="govuk-body">You don't always need to start at the lowest level, depending on your existing skills, experience and qualifications.</p>
-          <p class="govuk-body"><a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link" rel="noreferrer noopener" target="_blank">What qualification levels mean (opens in new tab)</a></p>
+          <p class="govuk-body"><a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" class="govuk-link" rel="noreferrer noopener" target="_blank">What qualification levels mean (opens in a new tab)</a></p>
         </div>
 
         <form method="post" action="/Guided_Search/Qualification_Level{{ '?returnTo=' + query.returnTo if query.returnTo }}">

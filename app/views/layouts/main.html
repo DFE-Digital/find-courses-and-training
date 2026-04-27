@@ -25,12 +25,13 @@
       <div class="govuk-header__container govuk-width-container">
         <div class="govuk-header__logo">
           <a href="https://www.gov.uk/government/organisations/department-for-education" class="govuk-header__homepage-link fcat-homepage__department-link">
-            <img src="https://cdn.signin.education.gov.uk/12.0.10/assets/images/department-for-education_white.png" alt="Department for Education" height="32" class="fcat-homepage__department-logo">
+            <img src="https://cdn.signin.education.gov.uk/12.0.10/assets/images/department-for-education_white.png" alt="Department for Education" height="32">
           </a>
         </div>
       </div>
     </div>
 
+    {% block serviceNav %}
     {{ govukServiceNavigation({
       serviceName: "Get careers information, advice and guidance",
       serviceUrl: "https://nationalcareers.service.gov.uk",
@@ -43,12 +44,15 @@
         { href: "https://nationalcareers.service.gov.uk/contact-us", text: "Contact us" }
       ]
     }) }}
+    {% endblock %}
 
     <div class="govuk-width-container">
+      {% block phaseBanner %}
       {{ govukPhaseBanner({
         tag: { text: "Beta" },
         html: 'This is a new service - your <a class="govuk-link" href="https://dferesearch.fra1.qualtrics.com/jfe/form/SV_4TMvchACdXh77Ya">feedback</a> will help us to improve it.'
       }) }}
+      {% endblock %}
     </div>
 
     <div class="govuk-width-container">

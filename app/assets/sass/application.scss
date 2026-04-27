@@ -12,28 +12,16 @@ $govuk-mid-grey: #b1b4b6;
 $govuk-dark-grey: #505a5f;
 $govuk-white: #ffffff;
 
+// Override GOV.UK header default black background and border
 .govuk-header {
-  font-family: "GDS Transport", arial, sans-serif;
-  font-weight: 100;
-  font-size: 14px;
-  line-height: 1;
-  border-bottom: 10px $govuk-white;
   background: $govuk-blue;
-  color: $govuk-white;
-}
-
-.govuk-template__body {
-  margin: 0;
+  border-bottom: 10px solid $govuk-white;
 }
 
 .fcat-homepage__department-link {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-}
-
-.fcat-homepage__department-logo {
-  display: block;
 }
 
 .fcat-homepage__hero {
@@ -70,13 +58,10 @@ $govuk-white: #ffffff;
 }
 
 .fcat-homepage__hero-title {
-  font-family: "GDS Transport", arial, sans-serif;
-  font-weight: 700;
   font-size: 40px;
   line-height: 1.15;
   color: $govuk-blue;
   margin: 0 0 20px;
-  text-align: left;
   align-self: flex-start;
 }
 
@@ -89,12 +74,7 @@ $govuk-white: #ffffff;
 }
 
 .fcat-homepage__hero-summary {
-  font-family: "GDS Transport", arial, sans-serif;
-  font-size: 19px;
-  line-height: 1.5;
-  color: $govuk-black;
   margin: 0;
-  text-align: left;
   align-self: flex-start;
 }
 
@@ -197,7 +177,6 @@ $govuk-white: #ffffff;
 .fcat-homepage__feature-link:link,
 .fcat-homepage__feature-link:visited {
   color: $govuk-white;
-  text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.18em;
 }
@@ -309,10 +288,6 @@ $govuk-white: #ffffff;
 
 .fcat-homepage__featured-link {
   color: $govuk-red;
-  text-decoration: underline;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
 }
 
 .fcat-homepage__featured-copy {
@@ -363,7 +338,6 @@ $govuk-white: #ffffff;
   color: $govuk-white;
   margin-bottom: 0;
   max-width: 700px;
-  font-size: 24px;
 }
 
 .fcat-course-page__hero-icon-wrap {
@@ -376,8 +350,6 @@ $govuk-white: #ffffff;
   object-fit: contain;
   display: block;
 }
-
-
 
 .fcat-course-page__search-section {
   background: #EFF5FA;
@@ -413,7 +385,6 @@ $govuk-white: #ffffff;
 }
 
 .fcat-course-page__input {
-  border: 2px solid $govuk-black;
   max-width: 100%;
 }
 
@@ -462,7 +433,6 @@ $govuk-white: #ffffff;
 .fcat-location-autocomplete__option {
   padding: 0.5rem 0.75rem;
   cursor: pointer;
-  font-family: "GDS Transport", arial, sans-serif;
   font-size: 16px;
   line-height: 1.25;
   border-top: 1px solid $govuk-mid-grey;
@@ -488,10 +458,6 @@ $govuk-white: #ffffff;
 .fcat-location-autocomplete__option--no-results:hover {
   background: $govuk-white;
   color: $govuk-dark-grey;
-}
-
-.fcat-course-page__intro-section {
-  background: $govuk-white;
 }
 
 .fcat-course-page__intro-layout {
@@ -528,7 +494,7 @@ $govuk-white: #ffffff;
   background-color: #f5f5f5;
   padding: 16px;
   border-bottom: 4px solid $govuk-mid-grey;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -548,7 +514,7 @@ $govuk-white: #ffffff;
 .fcat-course-page__adviser-aside {
   background: rgba(86, 148, 202, 0.1);
   padding: 1.5rem;
-  height: 500px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -606,7 +572,6 @@ $govuk-white: #ffffff;
 
 .fcat-course-page__support-card {
   width: 300px;
-  font-family: "GDS Transport", Arial, sans-serif;
 }
 
 .fcat-course-page__support-card-image {
@@ -620,7 +585,7 @@ $govuk-white: #ffffff;
 .fcat-course-page__support-card-body {
   background: $govuk-light-grey;
   border-bottom: 3px solid $govuk-mid-grey;
-  height: 179px;
+  min-height: 179px;
   padding: 15px 20px;
 }
 
@@ -630,7 +595,6 @@ $govuk-white: #ffffff;
   font-size: 19px;
   font-weight: 700;
   line-height: 25px;
-  text-align: left;
 }
 
 .fcat-course-page__support-card-title .govuk-link {
@@ -642,9 +606,6 @@ $govuk-white: #ffffff;
   text-decoration-thickness: 3px;
 }
 
-.fcat-course-page__support-card-text {
-  margin-bottom: 0;
-}
 
 .fcat-course-page__support-card .card-content {
   margin-top: 15px;
@@ -867,7 +828,6 @@ $govuk-white: #ffffff;
     flex-direction: column;
     align-items: flex-start;
   }
-
 }
 
 @media (max-width: 40.0525em) {

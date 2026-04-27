@@ -1,10 +1,10 @@
 {% extends "layouts/main.html" %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "javascript:history.back()" }) }}
+  {{ govukBackLink({ text: "Back", href: "/Quick_search" }) }}
 {% endblock %}
 
-{% block mainClass %}fcat-search-results{% endblock %}
+{% block mainClass %}{% endblock %}
 
 {% block content %}
   <section class="fcat-course-page__hero">
@@ -29,7 +29,7 @@
         <p class="govuk-body">By entering your location, you'll see opportunities closer to you.</p>
       </div>
 
-      <form class="fcat-course-page__search-form" action="/Search_results" method="get">
+      <form action="/Search_results" method="get">
         <div class="fcat-course-page__search-grid">
           <div class="govuk-form-group fcat-course-page__field">
             <label class="govuk-label" for="results-location">Enter a town, city or postcode in England</label>
@@ -139,7 +139,7 @@
                   { value: "skills-bootcamp", text: "Skills Bootcamp", checked: appsOrSBC == "Yes or not sure" }
                 ]
               }) }}
-              <a class="govuk-link fcat-search-results__info-link" href="https://nationalcareers.service.gov.uk/careers-advice">Learn about training options (opens in a new tab)</a>
+              <a class="govuk-link fcat-search-results__info-link" href="https://nationalcareers.service.gov.uk/careers-advice" target="_blank" rel="noopener noreferrer">Learn about training options (opens in a new tab)</a>
             </div>
           </div>
 

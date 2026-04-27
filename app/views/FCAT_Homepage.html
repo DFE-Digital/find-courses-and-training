@@ -1,20 +1,42 @@
-{% extends "layouts/fcat-homepage.html" %}
+{% extends "layouts/main.html" %}
+
+{% block serviceNav %}
+{{ govukServiceNavigation({
+  serviceName: "Get careers information, advice and guidance",
+  serviceUrl: "https://nationalcareers.service.gov.uk",
+  navigation: [
+    { href: "/FCAT_Homepage", text: "Homepage", active: true },
+    { href: "https://nationalcareers.service.gov.uk/explore-careers", text: "Explore careers" },
+    { href: "https://nationalcareers.service.gov.uk/discover-your-skills-and-careers", text: "Skills assessment" },
+    { href: "/FindCoursesandTraining", text: "Find courses and training" },
+    { href: "https://nationalcareers.service.gov.uk/careers-advice", text: "Careers advice" },
+    { href: "https://nationalcareers.service.gov.uk/contact-us", text: "Contact us" }
+  ]
+}) }}
+{% endblock %}
+
+{% block phaseBanner %}
+{{ govukPhaseBanner({
+  tag: { text: "Beta" },
+  html: 'How could we improve this service? Your <a class="govuk-link" href="https://dferesearch.fra1.qualtrics.com/jfe/form/SV_4TMvchACdXh77Ya">feedback</a> will help.'
+}) }}
+{% endblock %}
 
 {% block content %}
 <div class="fcat-homepage__hero">
-  <img src="https://cdn.nationalcareers.service.gov.uk/media/headers/homepage-desktop-header.png" alt="" class="fcat-homepage__hero-image">
-  <div class="govuk-width-container fcat-homepage__hero-content">
-    <h1 class="fcat-homepage__hero-title">
-      <span class="fcat-homepage__hero-title-text">Get careers information,<br>advice and guidance</span>
-    </h1>
-    <p class="fcat-homepage__hero-summary">
-      <span class="fcat-homepage__hero-summary-text">We provide careers information, advice and guidance. We<br>can help you make decisions at all stages in your career.</span>
-    </p>
+    <img src="https://cdn.nationalcareers.service.gov.uk/media/headers/homepage-desktop-header.png" alt="" class="fcat-homepage__hero-image">
+    <div class="govuk-width-container fcat-homepage__hero-content">
+      <h1 class="govuk-heading-xl fcat-homepage__hero-title">
+        <span class="fcat-homepage__hero-title-text">Get careers information,<br>advice and guidance</span>
+      </h1>
+      <p class="fcat-homepage__hero-summary">
+        <span class="fcat-homepage__hero-summary-text">We provide careers information, advice and guidance. We<br>can help you make decisions at all stages in your career.</span>
+      </p>
+    </div>
   </div>
-</div>
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-width-container">
+    <div class="govuk-main-wrapper">
 
     <div class="govuk-grid-row fcat-homepage__section-row">
       <div class="govuk-grid-column-full">
@@ -97,16 +119,12 @@
       </div>
       <div class="fcat-homepage__media-meta">
         <p class="govuk-body govuk-!-margin-top-2">1 minute 40 second watch</p>
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">View transcript</span>
-          </summary>
-          <div class="govuk-details__text">
-            <p class="govuk-body">My name is Katy. I am a services support assistant for Breast Cancer Now. I've done a bit of office management as well, including administrative duties for theatre.</p>
-            <p class="govuk-body">My current role involves being that first point of contact for any person diagnosed with breast cancer who wants to access our services.</p>
-            <p class="govuk-body">My favourite thing about my job is helping people do what they want to be able to do. Being able to support people to expand the service we provide is really rewarding for me.</p>
-          </div>
-        </details>
+        {% set transcriptHtml %}
+        <p class="govuk-body">My name is Katy. I am a services support assistant for Breast Cancer Now. I've done a bit of office management as well, including administrative duties for theatre.</p>
+        <p class="govuk-body">My current role involves being that first point of contact for any person diagnosed with breast cancer who wants to access our services.</p>
+        <p class="govuk-body">My favourite thing about my job is helping people do what they want to be able to do. Being able to support people to expand the service we provide is really rewarding for me.</p>
+        {% endset %}
+        {{ govukDetails({ summaryText: "View transcript", html: transcriptHtml }) }}
       </div>
     </div>
 
@@ -124,8 +142,8 @@
       </div>
     </div>
 
-  </main>
-</div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block pageScripts %}
