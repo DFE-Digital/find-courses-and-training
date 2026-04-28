@@ -486,6 +486,14 @@ $govuk-white: #ffffff;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 
 .dfe-card {
@@ -496,6 +504,16 @@ $govuk-white: #ffffff;
   border-bottom: 4px solid $govuk-mid-grey;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  @media (max-width: 600px) {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
 }
 
 .dfe-card-container h2 {
@@ -538,6 +556,38 @@ $govuk-white: #ffffff;
   flex-shrink: 0;
 }
 
+/* Mobile */
+@media (max-width: 640px) {
+  .fcat-course-page__adviser-aside {
+    min-height: auto;
+    
+    padding-top: 2rem;
+    justify-content: space-between;
+  }
+
+  .fcat-course-page__adviser-header {
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .fcat-course-page__adviser-title {
+    font-size: 1.5rem;
+    line-height: 1.15;
+    max-width: 8rem;
+  }
+
+  .fcat-course-page__adviser-icon {
+    width: 90px;
+    height: auto;
+  }
+
+  .fcat-course-page__adviser-aside p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}
 .fcat-course-page__support-section {
   background: #EFF5FA;
 }
