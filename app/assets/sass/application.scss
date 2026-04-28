@@ -76,6 +76,7 @@ $govuk-white: #ffffff;
 .fcat-homepage__hero-summary {
   margin: 0;
   align-self: flex-start;
+  line-height: 1.9;
 }
 
 .fcat-homepage__hero-summary-text {
@@ -296,6 +297,67 @@ $govuk-white: #ffffff;
   padding: 0.1rem 0.25rem;
 }
 
+@media (max-width: 640px) {
+  .fcat-homepage__hero {
+    min-height: 320px;
+  }
+
+  .fcat-homepage__hero-content {
+    height: auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .fcat-homepage__hero-title {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .fcat-homepage__hero-summary {
+    line-height: 2.2;
+  }
+
+  .fcat-homepage__advice-select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .fcat-homepage__advice-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .govuk-grid-row .govuk-grid-column-one-third + .govuk-grid-column-one-third {
+    margin-top: 20px;
+  }
+
+  .fcat-homepage__media-layout {
+    flex-direction: column;
+  }
+
+  .fcat-homepage__media-sidebar {
+    flex: none;
+    width: 100%;
+  }
+
+  .fcat-homepage__media-content {
+    width: 100%;
+  }
+
+  .fcat-homepage__media-meta {
+    padding-left: 0;
+  }
+
+  .fcat-homepage__featured-content {
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .fcat-homepage__featured-image {
+    display: none;
+  }
+}
+
 .fcat-course-page__hero {
   background: $govuk-green;
   color: $govuk-white;
@@ -364,9 +426,6 @@ $govuk-white: #ffffff;
   max-width: 760px;
 }
 
-#event-name-hint {
-  white-space: nowrap;
-}
 
 .fcat-course-page__search-grid {
   display: grid;
@@ -862,6 +921,13 @@ $govuk-white: #ffffff;
 }
 
 @media (max-width: 640px) {
+  .fcat-course-page__hero-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
   .fcat-course-page__hero-title {
     font-size: 36px;
   }
@@ -872,8 +938,8 @@ $govuk-white: #ffffff;
   }
 
   .fcat-course-page__hero-icon {
-    width: 88px;
-    height: 88px;
+    width: 72px;
+    height: 72px;
   }
 
   .fcat-course-page__actions {
