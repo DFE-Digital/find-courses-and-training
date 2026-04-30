@@ -1,12 +1,98 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}FCaT prototype – start here{% endblock %}
+
+{% block phaseBanner %}{% endblock %}
+
+{% block serviceNav %}{% endblock %}
 
 {% block content %}
+<div class="govuk-width-container govuk-!-padding-top-8 govuk-!-padding-bottom-8">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Find Courses and Training</h1>
-      {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+
+      <h1 class="govuk-heading-xl">Find Courses and Training – prototype</h1>
+      <p class="govuk-body-l">This is the FCaT prototype. Choose a starting point below.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Main journeys</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Homepage</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/FCAT_Homepage">NCS Homepage</a>
+            <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">National Careers Service homepage with hero, AI adviser panel, and featured content.</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Find courses and training</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/FindCoursesandTraining">Find Courses and Training</a>
+            <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Entry point to the quick search and guided search journeys.</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Quick search</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/Quick_search">Quick search</a>
+            <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Direct search entry with results page.</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Guided search</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/Guided_Search/Guided_search_start">Guided search start</a>
+            <p class="govuk-body-s govuk-!-margin-top-1 govuk-!-margin-bottom-0">Step-by-step journey: location → distance → interests → qualification level → age → check answers → results.</p>
+          </dd>
+        </div>
+      </dl>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Individual views</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Search results</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/Search_results">Search results</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">How we use AI</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/How_we_use_AI">How we use AI</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Course detail – Creative Writing (short course)</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/Creative_Writing_SMLH01CGP">Creative Writing SMLH01CGP</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Course detail – Creative Writing and English BA</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/Creative_Writing_and_English_(BA)_(Hons)">Creative Writing and English (BA) (Hons)</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Course detail – Digital Marketing Apprenticeship</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/Digital_Marketing_Apprenticeship_English_Specialist">Digital Marketing Apprenticeship English Specialist</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Course detail – English Skills Creative Writing</dt>
+          <dd class="govuk-summary-list__value">
+            <a class="govuk-link" href="/English_Skills_Creative_Writing">English Skills Creative Writing</a>
+          </dd>
+        </div>
+      </dl>
+
     </div>
   </div>
+</div>
 {% endblock %}

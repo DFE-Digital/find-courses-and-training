@@ -1,3 +1,5 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
@@ -11,18 +13,19 @@
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
-<link href="/public/stylesheets/application.css" rel="stylesheet" type="text/css" />
+{% block pageTitle %}Find courses and training – National Careers Service – GOV.UK{% endblock %}
 
-<div class="govuk-template__body">
-  <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/stylesheets/application.css" rel="stylesheet" type="text/css" />
+{% endblock %}
 
-  <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
-
+{% block header %}
   <header class="govuk-template__header">
     <div class="govuk-header">
       <div class="govuk-header__container govuk-width-container">
         <div class="govuk-header__logo">
-          <a href="https://www.gov.uk/government/organisations/department-for-education" class="govuk-header__homepage-link fcat-homepage__department-link">
+          <a href="https://www.gov.uk/government/organisations/department-for-education" class="fcat-homepage__department-link">
             <img src="https://cdn.signin.education.gov.uk/12.0.10/assets/images/department-for-education_white.png" alt="Department for Education" height="32">
           </a>
         </div>
@@ -52,16 +55,19 @@
       }) }}
       {% endblock %}
     </div>
-
-    <div class="govuk-width-container">
-      {% block beforeContent %}{% endblock %}
-    </div>
   </header>
+{% endblock %}
 
-  <main id="main-content" class="{% block mainClass %}{% endblock %}" role="main">
+{% block container %}
+  <div class="govuk-width-container">
+    {% block beforeContent %}{% endblock %}
+  </div>
+  <main class="govuk-main-wrapper {% block mainClass %}{% endblock %}" id="main-content">
     {% block content %}{% endblock %}
   </main>
+{% endblock %}
 
+{% block govukFooter %}
   {{ govukFooter({
     meta: {
       items: [
@@ -77,10 +83,4 @@
       ]
     }
   }) }}
-</div>
-
-<script type="module">
-  import { initAll } from '/plugin-assets/govuk-frontend/dist/govuk/govuk-frontend.min.js';
-  initAll();
-</script>
-{% block pageScripts %}{% endblock %}
+{% endblock %}
