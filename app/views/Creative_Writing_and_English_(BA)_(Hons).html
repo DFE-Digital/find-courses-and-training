@@ -1,11 +1,13 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}Creative Writing and English (BA) (Hons) – Find courses and training – GOV.UK{% endblock %}
+
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "/Search_results" }) }}
+  {{ govukBackLink({ text: "Back to search results", href: "/Search_results" }) }}
 {% endblock %}
 
 {% block content %}
-   <section class="fcat-course-page__hero">
+   <section class="fac-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner fcat-course-page__hero-inner--compact">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">Creative Writing and English (BA) (Hons)</h1>
@@ -34,7 +36,7 @@
         </dt>
         <dd class="govuk-summary-list__value">
           Degree<br>
-            <a class="govuk-link" href="https://www.skillsforcareers.education.gov.uk/pages/training-choice/higher-education" target="_blank" rel="noopener noreferrer">Learn about Degrees (opens in a new tab)</a>
+            <a class="govuk-link" href="https://www.skillsforcareers.education.gov.uk/pages/training-choice/higher-education" target="_blank" rel="noopener noreferrer">Learn about Degrees (opens in new tab)</a>
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -45,9 +47,6 @@
         </dt>
         <dd class="govuk-summary-list__value">
           6        
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"></span></a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -75,7 +74,7 @@
           Awarding organisation
         </dt>
         <dd class="govuk-summary-list__value">
-          THE UNIVERSITY OF WESTMINSTER
+          The University of Westminster
         </dd>
         <dd class="govuk-summary-list__actions">
         </dd>
@@ -107,10 +106,10 @@
           University
         </dt>
         <dd class="govuk-summary-list__value">
-          THE UNIVERSITY OF WESTMINSTER
+          The University of Westminster
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View website<span class="govuk-visually-hidden"> </span></a>
+          <a class="govuk-link" href="#">View website</a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -121,7 +120,6 @@
           Regent Campus        
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"></span></a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -132,7 +130,7 @@
           Regent campus
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">View on a map<span class="govuk-visually-hidden"> </span></a>
+          <a class="govuk-link" href="#">View on a map</a>
         </dd>
       </div>
     </dl>
@@ -166,7 +164,6 @@
           Not provided        
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"></span></a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -197,7 +194,7 @@
    
 
     <div class="fcat-course-detail__actions">
-      {{ govukButton({ text: "Go to course", href: "https://nationalcareers.service.gov.uk/find-a-course", classes: "fcat-course-detail__cta-button" }) }}
+      {{ govukButton({ text: "Go to course", href: "https://nationalcareers.service.gov.uk/find-a-course", classes: "ncs-button__primary" }) }}
     </div>
 
     <p class="govuk-body fcat-course-detail__provider-note">These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>

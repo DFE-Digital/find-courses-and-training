@@ -1,11 +1,13 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}Digital Marketing Apprenticeship - English Specialist – Find courses and training – GOV.UK{% endblock %}
+
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "/Search_results" }) }}
+  {{ govukBackLink({ text: "Back to search results", href: "/Search_results" }) }}
 {% endblock %}
 
 {% block content %}
-  <section class="fcat-course-page__hero">
+  <section class="fac-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner fcat-course-page__hero-inner--compact">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">Digital Marketing Apprenticeship - English Specialist</h1>
@@ -29,7 +31,7 @@
             <dt class="govuk-summary-list__key">Course type</dt>
             <dd class="govuk-summary-list__value">
               Apprenticeship<br>
-              <a class="govuk-link" href="https://www.skillsforcareers.education.gov.uk/pages/training-choice/apprenticeship" target="_blank" rel="noopener noreferrer">Learn about Apprenticeships (opens in a new tab)</a>
+              <a class="govuk-link" href="https://www.skillsforcareers.education.gov.uk/pages/training-choice/apprenticeship" target="_blank" rel="noopener noreferrer">Learn about Apprenticeships (opens in new tab)</a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -80,7 +82,7 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Employer</dt>
             <dd class="govuk-summary-list__value fcat-course-detail__value-with-action">
-              <span>CHILDSEY LIMITED</span>
+              <span>Childsey Limited</span>
               <a class="govuk-link fcat-course-detail__side-link" href="#" target="_blank" rel="noopener noreferrer">View website</a>
             </dd>
           </div>
@@ -97,7 +99,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Training provider</dt>
-            <dd class="govuk-summary-list__value">NOWSKILLS LIMITED</dd>
+            <dd class="govuk-summary-list__value">Nowskills Limited</dd>
           </div>
         </dl>
       </div>
@@ -134,7 +136,7 @@
     </div>
 
     <div class="fcat-course-detail__actions">
-      {{ govukButton({ text: "Go to Apprenticeship", href: "https://nationalcareers.service.gov.uk/find-a-course", classes: "fcat-course-detail__cta-button" }) }}
+      {{ govukButton({ text: "Go to Apprenticeship", href: "https://nationalcareers.service.gov.uk/find-a-course", classes: "ncs-button__primary" }) }}
     </div>
 
     <p class="govuk-body fcat-course-detail__provider-note">These details are added by the training provider. For further information or if you need support with this apprenticeship, you should contact the provider directly.</p>

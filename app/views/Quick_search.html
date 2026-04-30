@@ -1,5 +1,7 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}Quick search – Find courses and training – GOV.UK{% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/FindCoursesandTraining" }) }}
 {% endblock %}
@@ -7,7 +9,7 @@
 {% block mainClass %}fcat-quick-search{% endblock %}
 
 {% block content %}
-  <section class="fcat-course-page__hero">
+  <section class="fac-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">Find courses and training</h1>
@@ -72,10 +74,10 @@
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
               <article class="fcat-course-page__support-card">
-                <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="fcat-course-page__support-card-image" role="presentation">
+                <img src="https://cdn.nationalcareers.service.gov.uk/media/find-a-course/landing-page/desktop/get-course-support-card-desktop.png" alt="" class="fcat-course-page__support-card-image">
                 <div class="fcat-course-page__support-card-body">
                   <h2 class="fcat-course-page__support-card-title">
-                    <a href="https://nationalcareers.service.gov.uk/find-a-course/course-support">Get course or training support</a>
+                    <a href="https://nationalcareers.service.gov.uk/find-a-course/course-support" target="_blank" rel="noopener noreferrer">Get course or training support (opens in new tab)</a>
                   </h2>
                   <p class="govuk-body govuk-!-margin-bottom-0">See what support you can get with funding, childcare or disability adjustments. Or, get help to choose the course or training that best suits you.</p>
                 </div>
@@ -83,10 +85,10 @@
             </div>
             <div class="govuk-grid-column-one-half">
               <article class="fcat-course-page__support-card">
-                <img src="/public/images/UCaTT.png" alt="" class="fcat-course-page__support-card-image" role="presentation">
+                <img src="/public/images/UCaTT.png" alt="" class="fcat-course-page__support-card-image">
                 <div class="fcat-course-page__support-card-body">
                   <h2 class="fcat-course-page__support-card-title">
-                    <a href="https://nationalcareers.service.gov.uk/careers-advice">Understand course and training types</a>
+                    <a href="https://nationalcareers.service.gov.uk/careers-advice" target="_blank" rel="noopener noreferrer">Understand course and training types (opens in new tab)</a>
                   </h2>
                   <p class="govuk-body govuk-!-margin-bottom-0">Visit Skills for Careers to find out more about the different course types and training options.</p>
                 </div>

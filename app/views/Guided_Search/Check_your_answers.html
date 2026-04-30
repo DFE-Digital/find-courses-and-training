@@ -1,6 +1,8 @@
 {% extends "layouts/main.html" %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
+{% block pageTitle %}Check your answers – Find courses and training – GOV.UK{% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/Guided_Search/Age" }) }}
 {% endblock %}
@@ -8,7 +10,7 @@
 {% block mainClass %}{% endblock %}
 
 {% block content %}
-<section class="fcat-course-page__hero">
+<section class="fac-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">Check your answers</h1>

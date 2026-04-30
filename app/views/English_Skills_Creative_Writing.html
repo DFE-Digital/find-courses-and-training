@@ -1,11 +1,13 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}English Skills: Creative Writing – Find courses and training – GOV.UK{% endblock %}
+
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "/Search_results" }) }}
+  {{ govukBackLink({ text: "Back to search results", href: "/Search_results" }) }}
 {% endblock %}
 
 {% block content %}
-   <section class="fcat-course-page__hero">
+   <section class="fac-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner fcat-course-page__hero-inner--compact">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">English Skills: Creative Writing</h1>
@@ -29,7 +31,7 @@
             <dt class="govuk-summary-list__key">Course type</dt>
             <dd class="govuk-summary-list__value">
               Essential Skills<br>
-              <a class="govuk-link" href="https://nationalcareers.service.gov.uk/find-a-course/about-essential-skills" target="_blank" rel="noopener noreferrer">Learn about Essential Skills (opens in a new tab)</a>
+              <a class="govuk-link" href="https://nationalcareers.service.gov.uk/find-a-course/about-essential-skills" target="_blank" rel="noopener noreferrer">Learn about Essential Skills (opens in new tab)</a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -61,7 +63,7 @@
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Provider</dt>
             <dd class="govuk-summary-list__value fcat-course-detail__value-with-action">
-              <span>RICHMOND AND HILLCROFT ADULT AND COMMUNITY COLLEGE</span>
+              <span>Richmond and Hillcroft Adult and Community College</span>
               <a class="govuk-link fcat-course-detail__side-link" href="https://www.racc.ac.uk/" target="_blank" rel="noopener noreferrer">View website</a>
             </dd>
           </div>
@@ -107,7 +109,7 @@
     </div>
 
     <div class="fcat-course-detail__actions">
-      {{ govukButton({ text: "Go to course", href: "https://nationalcareers.service.gov.uk/find-a-course", classes: "fcat-course-detail__cta-button" }) }}
+      {{ govukButton({ text: "Go to course", href: "https://nationalcareers.service.gov.uk/find-a-course", classes: "ncs-button__primary" }) }}
     </div>
 
     <p class="govuk-body fcat-course-detail__provider-note">These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>
