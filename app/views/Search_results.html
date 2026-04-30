@@ -1,5 +1,7 @@
 {% extends "layouts/main.html" %}
 
+{% block pageTitle %}Search results – Find courses and training – GOV.UK{% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/Quick_search" }) }}
 {% endblock %}
@@ -7,7 +9,7 @@
 {% block mainClass %}{% endblock %}
 
 {% block content %}
-  <section class="fcat-course-page__hero">
+  <section class="fac-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">Find courses and training</h1>
