@@ -36,6 +36,12 @@ router.post('/Search_results', function (req, res) {
 // normalises sector label differences). Also reads and clears the fromGuidedSearch
 // flag so filters only open automatically on the first load from the guided journey.
 router.get('/Search_results', function (req, res) {
+  // When the search form re-submits via GET, pull the edited field values
+  // from query params into session so the render reflects the user's changes.
+  ;['location', 'searchTerm1', 'searchTerm2', 'searchTerm3'].forEach(field => {
+    if (req.query[field] !== undefined) req.session.data[field] = req.query[field]
+  })
+
   const d = req.session.data
   const toArray = v => [].concat(v || []).filter(Boolean)
 
