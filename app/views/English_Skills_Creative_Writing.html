@@ -16,11 +16,13 @@
     </div>
   </section>
   <div class="govuk-width-container">
-    {% set eligibilityHtml %}<h2 class="govuk-heading-m">Eligibility and funding</h2><p class="govuk-body">All information shown within these results is taken from a third party. You can check with the course or training provider for rules about funding and eligibility.</p>{% endset %}
-    {{ govukInsetText({ html: eligibilityHtml }) }}
+  <div class="govuk-inset-text">
+    <h2 class="govuk-heading-m">Eligibility and funding</h2>
+    <div class="govuk-!-padding-bottom-1"></div>
+      All information shown within these results is taken from a third party. You can check with the course or training provider for rules about funding and eligibility
+    </div>
   </div>
-  <div class="govuk-width-container fcat-course-detail__content">
-
+  <div class="govuk-width-container">
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">About the course</h2>
@@ -62,16 +64,20 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Provider</dt>
-            <dd class="govuk-summary-list__value fcat-course-detail__value-with-action">
+            <dd class="govuk-summary-list__value">
               <span>Richmond and Hillcroft Adult and Community College</span>
-              <a class="govuk-link fcat-course-detail__side-link" href="https://www.racc.ac.uk/" target="_blank" rel="noopener noreferrer">View website</a>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="https://www.racc.ac.uk/" target="_blank" rel="noopener noreferrer">View website</a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Provider location</dt>
-            <dd class="govuk-summary-list__value fcat-course-detail__value-with-action">
+            <dd class="govuk-summary-list__value">
               <span>Parkshot,<br>Richmond,<br>Surrey,<br>TW9 2RE</span>
-              <a class="govuk-link fcat-course-detail__side-link" href="https://maps.google.com/?q=Parkshot,Richmond,Surrey,TW9+2RE" target="_blank" rel="noopener noreferrer">View on a map</a>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="https://maps.google.com/?q=Parkshot,Richmond,Surrey,TW9+2RE" target="_blank" rel="noopener noreferrer">View on a map</a>
             </dd>
           </div>
         </dl>
@@ -108,11 +114,13 @@
       </div>
     </div>
 
-    <div class="fcat-course-detail__actions">
-      {{ govukButton({ text: "Go to course", href: "https://nationalcareers.service.gov.uk/find-a-course" }) }}
-    </div>
+    
+      <button type="submit" href="#"class="govuk-button" data-module="govuk-button">
+       Go to course
+      </button>
+    
 
-    <p class="govuk-body fcat-course-detail__provider-note">These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>
+    <p>These details are added by the course provider. For further information or if you need support with this course, you should contact the provider directly.</p>
 
   </div>
 {% endblock %}
