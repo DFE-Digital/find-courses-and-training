@@ -1,20 +1,6 @@
-// Colour aliases sourced from the GOV.UK Frontend v6 palette via govuk-colour().
-// Values stay in sync with upstream — do not hardcode hex here.
-$govuk-blue:          govuk-colour("blue");
-$govuk-dark-blue:     govuk-colour("blue", $variant: "shade-50");
-$govuk-green:         govuk-colour("green");
-$govuk-dark-green:    govuk-colour("green", $variant: "shade-50");
-$govuk-bright-purple: govuk-colour("magenta", $variant: "shade-25");
-$govuk-red:           govuk-colour("red");
-$govuk-black:         govuk-colour("black");
-$govuk-light-grey:    govuk-colour("black", $variant: "tint-95");
-$govuk-mid-grey:      govuk-colour("black", $variant: "tint-80");
-$govuk-dark-grey:     govuk-colour("black", $variant: "tint-25");
-$govuk-white:         govuk-colour("white");
-
 // Bespoke prototype colour — blue tints used for backgrounds and panels.
-$fcat-hero-fallback-background: #c8d8e8;
-$fcat-adviser-panel-background: #dde8f5;
+
+
 $fcat-section-background:       #EFF5FA;
 $fcat-featured-banner-background: #d0cfc8;
 
@@ -29,7 +15,7 @@ $fcat-featured-banner-background: #d0cfc8;
   min-height: 280px;
   display: flex;
   align-items: center;
-  background: $fcat-hero-fallback-background;
+ 
 }
 
 .fcat-homepage__hero-image {
@@ -90,7 +76,7 @@ $fcat-featured-banner-background: #d0cfc8;
 }
 
 .fcat-homepage__advice-panel {
-  background: $govuk-light-grey;
+  background:govuk-colour("black", $variant: "tint-95");
   padding: 2rem;
 }
 
@@ -125,7 +111,7 @@ $fcat-featured-banner-background: #d0cfc8;
 .fcat-homepage__feature-card {
   border: 1px solid govuk-colour("black", $variant: "tint-80");
   border-bottom-width: 5px;
-  background-color: $govuk-light-grey;
+  background-color: govuk-colour("black", $variant: "tint-95");
 }
 
 .fcat-homepage__feature-card--purple {
@@ -199,9 +185,9 @@ $fcat-featured-banner-background: #d0cfc8;
 }
 
 .fcat-homepage__adviser-panel {
-  background: $fcat-adviser-panel-background;
   padding: 1.5rem;
   box-sizing: border-box;
+  background: govuk-colour("blue", $variant: "tint-80");
 }
 
 .fcat-homepage__adviser-header {
@@ -284,7 +270,7 @@ $fcat-featured-banner-background: #d0cfc8;
 }
 
 .fcat-homepage__featured-copy {
-  background: rgba(255, 255, 255, 0.85);
+  background: govuk-colour("black", $variant: "tint-95");
   display: inline;
   padding: 0.1rem 0.25rem;
 }
@@ -663,7 +649,7 @@ $fcat-featured-banner-background: #d0cfc8;
 }
 
 .fcat-course-page__support-card-body {
-  background: $govuk-light-grey;
+  background: govuk-colour("black", $variant: "tint-95");
   border-bottom: 3px solid govuk-colour("black", $variant: "tint-80");
   min-height: 179px;
   padding: 15px 20px;
@@ -755,7 +741,7 @@ $fcat-featured-banner-background: #d0cfc8;
 .fcat-search-results__filter-heading {
   margin: 0;
   padding: 1.5rem 1.25rem;
-  background: $govuk-light-grey;
+  background:govuk-colour("black", $variant: "tint-95");
   @include govuk-font-size(24);
 }
 
