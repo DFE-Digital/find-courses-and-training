@@ -1,15 +1,17 @@
 {% extends "layouts/main.html" %}
 
+{% set pageName = "Where would you like to do your course or training?" %}
+
 {% block pageTitle %}Where would you like to do your course or training? – Find courses and training – GOV.UK{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/Guided_Search/Guided_search_start" }) }}
 {% endblock %}
 
-{% block mainClass %}{% endblock %}
+{% block mainClass %}govuk-!-padding-top-0{% endblock %}
 
 {% block content %}
-  <section class="fac-course-details-hero">
+  <section class="fcat-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">Where would you like to do your course or training?</h1>
@@ -37,11 +39,11 @@
             <label class="govuk-label govuk-label--m" for="location">
               Enter a town, city or postcode in England (optional)
             </label>
-            <div id="event-name-hint" class="govuk-hint">
+            <div id="location-hint" class="govuk-hint">
               Start typing a town or postcode in England. After 3 characters, choose from a location on the list.
             </div>
             <div class="fcat-location-autocomplete">
-              <input class="govuk-input" id="location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox" value="{{ data['location'] }}">
+              <input class="govuk-input" id="location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox" aria-describedby="location-hint" value="{{ data['location'] }}">
               <ul class="fcat-location-autocomplete__list" id="location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
             </div>
           </div>

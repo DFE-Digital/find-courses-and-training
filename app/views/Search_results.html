@@ -1,393 +1,714 @@
 {% extends "layouts/main.html" %}
 
+{% set pageName = "Search results" %}
+
 {% block pageTitle %}Search results – Find courses and training – GOV.UK{% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "/Quick_search" }) }}
+{{ govukBackLink({ text: "Back", href: "/Quick_search" }) }}
 {% endblock %}
 
-{% block mainClass %}{% endblock %}
+{% block mainClass %}govuk-!-padding-top-0{% endblock %}
 
 {% block content %}
-  <section class="fac-course-details-hero">
-    <div class="govuk-width-container fcat-course-page__hero-inner">
-      <div class="fcat-course-page__hero-copy">
-        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Find courses and training</h1>
-        <p class="govuk-body-l fcat-course-page__hero-text">Search for courses and training, including apprenticeships and get support with your choices.</p>
-      </div>
-      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
-        <img src="/public/images/FCat_Logo_large.png" alt="" class="fcat-course-page__hero-icon">
-      </div>
+<section class="fcat-course-details-hero">
+  <div class="govuk-width-container fcat-course-page__hero-inner">
+    <div class="fcat-course-page__hero-copy">
+      <h1 class="govuk-heading-xl fcat-course-page__hero-title">Find courses and training</h1>
+      <p class="govuk-body-l fcat-course-page__hero-text">Search for courses and training, including apprenticeships and
+        get support with your choices.</p>
     </div>
-  </section>
+    <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+      <img src="/public/images/FCat_Logo_large.png" alt="" class="fcat-course-page__hero-icon">
+    </div>
+  </div>
+</section>
 
-  <section class="fcat-course-page__search-section">
-    <div class="govuk-width-container">
-      <div class="fcat-course-page__search-intro">
-        <h2 class="govuk-heading-l">Edit search</h2>
-        <p class="govuk-body">Search for things like school subjects, practical skills, hobbies and interests to find courses and training that could be right for you.</p>
-        <p class="govuk-body">Be as specific or as broad as you like. The terms do not have to link to each other, they can all be totally different things if you'd prefer.</p>
-        <p class="govuk-body">By entering search terms, you'll filter the courses and training to those you'll enjoy most.<br>Enter words or phrases of things that interest you, such as "working with animals" or "maths".</p>
-        <p class="govuk-body">By entering your location, you'll see opportunities closer to you.</p>
-      </div>
+<section class="fcat-course-page__search-section">
+  <div class="govuk-width-container">
+    <div class="fcat-course-page__search-intro">
+      <h2 class="govuk-heading-l">Edit search</h2>
+      <p class="govuk-body">Search for things like school subjects, practical skills, hobbies and interests to find
+        courses and training that could be right for you.</p>
+      <p class="govuk-body">Be as specific or as broad as you like. The terms do not have to link to each other, they
+        can all be totally different things if you'd prefer.</p>
+      <p class="govuk-body">By entering search terms, you'll filter the courses and training to those you'll enjoy
+        most.<br>Enter words or phrases of things that interest you, such as "working with animals" or "maths".</p>
+      <p class="govuk-body">By entering your location, you'll see opportunities closer to you.</p>
+    </div>
 
-      <form action="/Search_results" method="get">
-        <div class="fcat-course-page__search-grid">
-          <div class="govuk-form-group fcat-course-page__field">
+    <form action="/Search_results" method="get">
+      <div class="govuk-grid-row govuk-!-padding-top-4">
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-form-group">
             <label class="govuk-label" for="results-location">Enter a town, city or postcode in England</label>
             <div class="fcat-location-autocomplete">
-              <input class="govuk-input fcat-course-page__input" id="results-location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="results-location-suggestions" aria-haspopup="listbox" value="{{ data['location'] }}">
-              <ul class="fcat-location-autocomplete__list" id="results-location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
-            </div>
-          </div>
-
-          <div class="fcat-course-page__term-fields">
-            <div class="govuk-form-group fcat-course-page__field">
-              <label class="govuk-label" for="results-term-1">Search term 1</label>
-              <input class="govuk-input fcat-course-page__input" id="results-term-1" name="searchTerm1" type="text" value="{{ data['searchTerm1'] or data['interest1'] }}">
-            </div>
-
-            <div class="govuk-form-group fcat-course-page__field">
-              <label class="govuk-label" for="results-term-2">Search term 2</label>
-              <input class="govuk-input fcat-course-page__input" id="results-term-2" name="searchTerm2" type="text" value="{{ data['searchTerm2'] or data['interest2'] }}">
-            </div>
-
-            <div class="govuk-form-group fcat-course-page__field">
-              <label class="govuk-label" for="results-term-3">Search term 3</label>
-              <input class="govuk-input fcat-course-page__input" id="results-term-3" name="searchTerm3" type="text" value="{{ data['searchTerm3'] or data['interest3'] }}">
-            </div>
-
-            <div class="fcat-course-page__actions">
-              <button class="govuk-button fcat-course-page__button" data-module="govuk-button" type="submit">Search</button>
-              <button type="button" class="govuk-button govuk-button--secondary fcat-course-page__clear-button" id="clear-search-terms">Clear search terms</button>
-              <a class="govuk-link fcat-course-page__guided-link" href="/How_we_use_AI">How we use AI</a>
+              <input class="govuk-input" id="results-location" name="location" type="text" autocomplete="off"
+                role="combobox" aria-autocomplete="list" aria-expanded="false"
+                aria-controls="results-location-suggestions" aria-haspopup="listbox" value="{{ data['location'] }}">
+              <ul class="fcat-location-autocomplete__list" id="results-location-suggestions" role="listbox"
+                aria-label="Suggested locations" hidden></ul>
             </div>
           </div>
         </div>
-      </form>
-    </div>
-  </section>
+        <div class="govuk-grid-column-one-half">
+          {{ govukInput({ label: { text: "Search term 1" }, id: "results-term-1", name: "searchTerm1", value:
+          data['searchTerm1'] or data['interest1'] }) }}
+          {{ govukInput({ label: { text: "Search term 2" }, id: "results-term-2", name: "searchTerm2", value:
+          data['searchTerm2'] or data['interest2'] }) }}
+          {{ govukInput({ label: { text: "Search term 3" }, id: "results-term-3", name: "searchTerm3", value:
+          data['searchTerm3'] or data['interest3'] }) }}
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button" type="submit">Search</button>
+            <button type="button" class="govuk-button govuk-button--secondary" id="clear-search-terms">Clear search
+              terms</button>
+            <a class="govuk-link" href="/How_we_use_AI">How we use AI</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
 
 
-  <section class="fcat-search-results__content">
-    <div class="govuk-width-container" id="results-grid">
-      <h2 class="govuk-heading-l govuk-!-margin-top-4">Your search results</h2>
-      <div class="fcat-search-results__layout">
-        <button class="fcat-search-results__mobile-filter-toggle govuk-button govuk-button--secondary" type="button" aria-expanded="false" aria-controls="filters-panel">
+<section>
+  <div class="govuk-width-container govuk-!-padding-top-3 govuk-!-padding-bottom-8" id="results-grid">
+    <h2 class="govuk-heading-l govuk-!-margin-top-4">Your search results</h2>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <button class="fcat-search-results__mobile-filter-toggle govuk-button govuk-button--secondary" type="button"
+          aria-expanded="false" aria-controls="filters-panel">
           <span class="fcat-search-results__mobile-filter-toggle-text">Show filters</span>
         </button>
-        <aside class="fcat-search-results__filters" id="filters-panel" aria-label="Filters">
-          <div class="fcat-search-results__filter-box">
-            <h2 class="govuk-heading-m fcat-search-results__filter-heading">Filter</h2>
-            <div class="fcat-search-results__filter-actions">
-              {{ govukButton({ text: "Apply filters", classes: "govuk-button--secondary", type: "button" }) }}
-              <p class="govuk-body"><a class="govuk-link" href="/Search_results">Clear all filters</a></p>
-            </div>
-          </div>
-
-          <div class="fcat-search-results__filter-box">
-            <button class="govuk-accordion__show-all fcat-search-results__toggle-button fcat-search-results__toggle-button--all" type="button" aria-expanded="{{ 'true' if fromGuidedSearch else 'false' }}">
-              <span class="govuk-accordion-nav__chevron" aria-hidden="true"></span>
-              <span class="govuk-accordion__show-all-text">{{ 'Hide all sections' if fromGuidedSearch else 'Show all sections' }}</span>
-            </button>
-            <h3 class="govuk-heading-s fcat-search-results__section-heading">Distance</h3>
-            <button class="govuk-accordion__show-all fcat-search-results__toggle-button" type="button" aria-expanded="{{ 'true' if fromGuidedSearch else 'false' }}" aria-controls="filter-distance-content">
-              <span class="govuk-accordion-nav__chevron {% if not fromGuidedSearch %}govuk-accordion-nav__chevron--down{% endif %}" aria-hidden="true"></span>
-              <span class="govuk-accordion__show-all-text">{{ 'Hide' if fromGuidedSearch else 'Show' }}</span>
-            </button>
-            <div class="fcat-search-results__section-content" id="filter-distance-content" {% if not fromGuidedSearch %}hidden{% endif %}>
-              {{ govukSelect({
-                id: "distance-filter",
-                name: "distance",
-                label: { text: "Select distance" },
-                formGroup: { classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-0" },
-                items: [
-                  { value: "", text: "Select distance" },
-                  { value: "Up to 2 miles", text: "Up to 2 miles", selected: distanceFilter == "Up to 2 miles" },
-                  { value: "Up to 5 miles", text: "Up to 5 miles", selected: distanceFilter == "Up to 5 miles" },
-                  { value: "Up to 10 miles", text: "Up to 10 miles", selected: distanceFilter == "Up to 10 miles" },
-                  { value: "Up to 15 miles", text: "Up to 15 miles", selected: distanceFilter == "Up to 15 miles" },
-                  { value: "Up to 30 miles", text: "Up to 30 miles", selected: distanceFilter == "Up to 30 miles" },
-                  { value: "Search anywhere in England", text: "Search anywhere in England", selected: distanceFilter == "Search anywhere in England" }
-                ]
-              }) }}
-            </div>
-          </div>
-
-          <div class="fcat-search-results__filter-box">
-            <h3 class="govuk-heading-s fcat-search-results__section-heading">Course type</h3>
-            <button class="govuk-accordion__show-all fcat-search-results__toggle-button" type="button" aria-expanded="{{ 'true' if fromGuidedSearch else 'false' }}" aria-controls="filter-course-type-content">
-              <span class="govuk-accordion-nav__chevron {% if not fromGuidedSearch %}govuk-accordion-nav__chevron--down{% endif %}" aria-hidden="true"></span>
-              <span class="govuk-accordion__show-all-text">{{ 'Hide' if fromGuidedSearch else 'Show' }}</span>
-            </button>
-            <div class="fcat-search-results__section-content" id="filter-course-type-content" {% if not fromGuidedSearch %}hidden{% endif %}>
-              {{ govukCheckboxes({
-                name: "course-type",
-                classes: "govuk-checkboxes--small fcat-search-results__checkboxes",
-                formGroup: { classes: "govuk-!-margin-bottom-0" },
-                fieldset: {
-                  legend: { text: "Course type", classes: "govuk-visually-hidden" }
-                },
-                items: [
-                  { value: "a-level", text: "A Level" },
-                  { value: "apprenticeship", text: "Apprenticeship", checked: appsOrSBC == "Yes or not sure" },
-                  { value: "degree", text: "Degree" },
-                  { value: "diploma", text: "Diploma" },
-                  { value: "essential-skills", text: "Essential Skills" },
-                  { value: "free-courses-for-jobs", text: "Free Courses For Jobs" },
-                  { value: "gcse", text: "GCSE" },
-                  { value: "htq", text: "HTQ" },
-                  { value: "multiply", text: "Multiply" },
-                  { value: "skills-bootcamp", text: "Skills Bootcamp", checked: appsOrSBC == "Yes or not sure" }
-                ]
-              }) }}
-              <a class="govuk-link fcat-search-results__info-link" href="https://nationalcareers.service.gov.uk/careers-advice" target="_blank" rel="noopener noreferrer">Learn about training options (opens in a new tab)</a>
-            </div>
-          </div>
-
-          <div class="fcat-search-results__filter-box" id="filter-sector-box" hidden>
-            <h3 class="govuk-heading-s fcat-search-results__section-heading">Sector</h3>
-            <button class="govuk-accordion__show-all fcat-search-results__toggle-button" type="button" aria-expanded="{{ 'true' if fromGuidedSearch else 'false' }}" aria-controls="filter-sector-content">
-              <span class="govuk-accordion-nav__chevron {% if not fromGuidedSearch %}govuk-accordion-nav__chevron--down{% endif %}" aria-hidden="true"></span>
-              <span class="govuk-accordion__show-all-text">{{ 'Hide' if fromGuidedSearch else 'Show' }}</span>
-            </button>
-            <div class="fcat-search-results__section-content" id="filter-sector-content" {% if not fromGuidedSearch %}hidden{% endif %}>
-              <p class="govuk-body-s fcat-search-results__sector-hint">These sectors will filter any Skills Bootcamps or Apprenticeships in your results.</p>
-              {{ govukCheckboxes({
-                name: "sector",
-                classes: "govuk-checkboxes--small fcat-search-results__checkboxes",
-                formGroup: { classes: "govuk-!-margin-bottom-0" },
-                fieldset: {
-                  legend: { text: "Sector", classes: "govuk-visually-hidden" }
-                },
-                items: [
-                  { value: "agriculture", text: "Agriculture, environmental and animal care", checked: "Agriculture, environmental and animal care" in sectors },
-                  { value: "business", text: "Business and administration", checked: "Business and administration" in sectors },
-                  { value: "care", text: "Care services", checked: "Care services" in sectors },
-                  { value: "construction", text: "Construction and the built environment", checked: "Construction and the built environment" in sectors },
-                  { value: "creative", text: "Creative and design", checked: "Creative and design" in sectors },
-                  { value: "education", text: "Education and early years", checked: "Education and early years" in sectors },
-                  { value: "engineering", text: "Engineering and manufacturing", checked: "Engineering and manufacturing" in sectors },
-                  { value: "health", text: "Health and science", checked: "Health and science" in sectors },
-                  { value: "legal", text: "Legal, finance and accounting", checked: "Legal, finance and accounting" in sectors },
-                  { value: "protective", text: "Protective services", checked: "Protective services" in sectors },
-                  { value: "sales", text: "Sales, marketing and procurement", checked: "Sales, marketing and procurement" in sectors },
-                  { value: "transport", text: "Transport and logistics", checked: "Transport and logistics" in sectors }
-                ]
-              }) }}
-            </div>
-          </div>
-
-          <div class="fcat-search-results__filter-box">
-            <h3 class="govuk-heading-s fcat-search-results__section-heading">Qualification level</h3>
-            <button class="govuk-accordion__show-all fcat-search-results__toggle-button" type="button" aria-expanded="{{ 'true' if fromGuidedSearch else 'false' }}" aria-controls="filter-qualification-content">
-              <span class="govuk-accordion-nav__chevron {% if not fromGuidedSearch %}govuk-accordion-nav__chevron--down{% endif %}" aria-hidden="true"></span>
-              <span class="govuk-accordion__show-all-text">{{ 'Hide' if fromGuidedSearch else 'Show' }}</span>
-            </button>
-            <div class="fcat-search-results__section-content" id="filter-qualification-content" {% if not fromGuidedSearch %}hidden{% endif %}>
-              {{ govukCheckboxes({
-                name: "qualification-level",
-                classes: "govuk-checkboxes--small fcat-search-results__checkboxes",
-                formGroup: { classes: "govuk-!-margin-bottom-0" },
-                fieldset: {
-                  legend: { text: "Qualification level", classes: "govuk-visually-hidden" }
-                },
-                items: [
-                  { value: "skills-and-experience", text: "Gain skills and experience (without a qualification)", checked: "Gain skills and experience (without a qualification)" in qualifications },
-                  { value: "entry-level", text: "Entry level (like entry level functional skills)", checked: "Entry level (like entry level functional skills)" in qualifications },
-                  { value: "level-1", text: "Level 1 (like first certificate)", checked: "Level 1 (like first certificate)" in qualifications },
-                  { value: "level-2", text: "Level 2 (like GCSEs)", checked: "Level 2 (like GCSEs)" in qualifications },
-                  { value: "level-3", text: "Level 3 (like A levels)", checked: "Level 3 (like A levels)" in qualifications },
-                  { value: "level-4", text: "Level 4 (like higher national certificate)", checked: "Level 4 (like higher national certificate)" in qualifications },
-                  { value: "level-5", text: "Level 5 (like diplomas)", checked: "Level 5 (like diplomas)" in qualifications },
-                  { value: "level-6", text: "Level 6 (like degrees)", checked: "Level 6 (like degrees)" in qualifications },
-                  { value: "level-7", text: "Level 7 (like masters degree)", checked: "Level 7 (like masters degree)" in qualifications },
-                  { value: "level-8", text: "Level 8 (like a PhD)", checked: "Level 8 (like a PhD)" in qualifications }
-                ]
-              }) }}
-            </div>
-          </div>
-
-          <div class="fcat-search-results__filter-box">
-            <h3 class="govuk-heading-s fcat-search-results__section-heading">Learning method</h3>
-            <button class="govuk-accordion__show-all fcat-search-results__toggle-button" type="button" aria-expanded="{{ 'true' if fromGuidedSearch else 'false' }}" aria-controls="filter-method-content">
-              <span class="govuk-accordion-nav__chevron {% if not fromGuidedSearch %}govuk-accordion-nav__chevron--down{% endif %}" aria-hidden="true"></span>
-              <span class="govuk-accordion__show-all-text">{{ 'Hide' if fromGuidedSearch else 'Show' }}</span>
-            </button>
-            <div class="fcat-search-results__section-content" id="filter-method-content" {% if not fromGuidedSearch %}hidden{% endif %}>
-              {{ govukCheckboxes({
-                name: "learning-method",
-                classes: "govuk-checkboxes--small fcat-search-results__checkboxes",
-                formGroup: { classes: "govuk-!-margin-bottom-0" },
-                fieldset: {
-                  legend: { text: "Learning method", classes: "govuk-visually-hidden" }
-                },
-                items: [
-                  { value: "online", text: "Online" },
-                  { value: "classroom", text: "Classroom based" },
-                  { value: "work-based", text: "Work based" },
-                  { value: "hybrid", text: "Hybrid" }
-                ]
-              }) }}
-            </div>
-          </div>
-
-          <div class="fcat-search-results__filter-box">
-            <h3 class="govuk-heading-s fcat-search-results__section-heading">Age</h3>
-            <button class="govuk-accordion__show-all fcat-search-results__toggle-button" type="button" aria-expanded="{{ 'true' if fromGuidedSearch else 'false' }}" aria-controls="filter-age-content">
-              <span class="govuk-accordion-nav__chevron {% if not fromGuidedSearch %}govuk-accordion-nav__chevron--down{% endif %}" aria-hidden="true"></span>
-              <span class="govuk-accordion__show-all-text">{{ 'Hide' if fromGuidedSearch else 'Show' }}</span>
-            </button>
-            <div class="fcat-search-results__section-content" id="filter-age-content" {% if not fromGuidedSearch %}hidden{% endif %}>
-              {{ govukCheckboxes({
-                name: "age-filter",
-                classes: "govuk-checkboxes--small fcat-search-results__checkboxes",
-                formGroup: { classes: "govuk-!-margin-bottom-0" },
-                fieldset: {
-                  legend: { text: "Age", classes: "govuk-visually-hidden" }
-                },
-                items: [
-                  { value: "16-17", text: "16 or 17", checked: age == "16 or 17" },
-                  { value: "18", text: "18", checked: age == "18" },
-                  { value: "19", text: "19", checked: age == "19" },
-                  { value: "20-24", text: "20 - 24", checked: age == "20 - 24" },
-                  { value: "25-plus", text: "25 or older", checked: age == "25 or older" }
-                ]
-              }) }}
-            </div>
-          </div>
-
-          <div class="fcat-search-results__filter-box">
-            <h3 class="govuk-heading-s fcat-search-results__section-heading">Course hours</h3>
-            <button class="govuk-accordion__show-all fcat-search-results__toggle-button" type="button" aria-expanded="false" aria-controls="filter-hours-content">
-              <span class="govuk-accordion-nav__chevron govuk-accordion-nav__chevron--down" aria-hidden="true"></span>
-              <span class="govuk-accordion__show-all-text">Show</span>
-            </button>
-            <div class="fcat-search-results__section-content" id="filter-hours-content" hidden>
-              {{ govukCheckboxes({
-                name: "course-hours",
-                classes: "govuk-checkboxes--small fcat-search-results__checkboxes",
-                formGroup: { classes: "govuk-!-margin-bottom-0" },
-                fieldset: {
-                  legend: { text: "Course hours", classes: "govuk-visually-hidden" }
-                },
-                items: [
-                  { value: "full-time", text: "Full time" },
-                  { value: "part-time", text: "Part time" },
-                  { value: "flexible", text: "Flexible" },
-                  { value: "day-time", text: "Day time" },
-                  { value: "evening", text: "Evening" },
-                  { value: "weekend", text: "Weekend" }
-                ]
-              }) }}
-            </div>
-          </div>
-
-          <div class="fcat-search-results__filter-box fcat-search-results__filter-box--footer">
-            {{ govukButton({ text: "Apply filters", classes: "govuk-button--secondary", type: "button" }) }}
-            <a class="govuk-link" href="/Search_results">Clear all filters</a>
-          </div>
-        </aside>
-
-        <section class="fcat-search-results__results" aria-label="Search results">
-          <div class="fcat-search-results__results-toolbar">
-            <h2 class="govuk-heading-m fcat-search-results__results-count">Showing 1 to 20 of 100 courses</h2>
-            <div class="fcat-search-results__sort-wrap">
-              {{ govukSelect({
-                id: "sort-results",
-                name: "sort",
-                label: { text: "Sort by" },
-                items: [
-                  { value: "distance", text: "Distance", selected: true },
-                  { value: "relevance", text: "Relevance" }
-                ]
-              }) }}
-            </div>
-          </div>
-
-          <article class="govuk-summary-card fcat-search-results__result-card">
-            <div class="govuk-summary-card__title-wrapper">
-              <h3 class="govuk-summary-card__title fcat-search-results__result-title"><a class="govuk-link govuk-link--no-visited-state" href="/English_Skills_Creative_Writing">English Skills: Creative Writing</a></h3>
-            </div>
-            <div class="govuk-summary-card__content">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Provider</dt><dd class="govuk-summary-list__value">RICHMOND AND HILLCROFT ADULT AND COMMUNITY COLLEGE</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Location</dt><dd class="govuk-summary-list__value">Richmond</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Course type</dt><dd class="govuk-summary-list__value">Essential Skills</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Cost</dt><dd class="govuk-summary-list__value">£204.60</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Entry requirements</dt><dd class="govuk-summary-list__value">You will need to be working at Entry 3 or above and will need to do an English initial assessment to check your level.</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Duration</dt><dd class="govuk-summary-list__value">2 months</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Overview</dt><dd class="govuk-summary-list__value">Are you looking for inspiration to write your own poems or stories? Would you like to know more about how poetry and fiction work, and receive feedback on your drafts in a supportive workshop environment? If your English lets you down and gets in the way of your creativity, this is the course for you.</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="govuk-summary-card fcat-search-results__result-card">
-            <div class="govuk-summary-card__title-wrapper">
-              <h3 class="govuk-summary-card__title fcat-search-results__result-title"><a class="govuk-link govuk-link--no-visited-state" href="/Creative_Writing_SMLH01CGP.html">Creative writing SMLH01CGP</a></h3>
-            </div>
-            <div class="govuk-summary-card__content">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Provider</dt><dd class="govuk-summary-list__value">LEWISHAM LONDON BOROUGH COUNCIL</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Location</dt><dd class="govuk-summary-list__value">London</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Course type</dt><dd class="govuk-summary-list__value">Not provided</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Cost</dt><dd class="govuk-summary-list__value">£75.00</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Entry requirements</dt><dd class="govuk-summary-list__value">A Pre Course Assessment is required before joining this class.</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Duration</dt><dd class="govuk-summary-list__value">2 months</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Overview</dt><dd class="govuk-summary-list__value">Fluency in written and spoken English is needed for this course as well as an existing interest in fiction, poetry and/or drama. Some IT skills would be of benefit.</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <article class="govuk-summary-card fcat-search-results__result-card">
-            <div class="govuk-summary-card__title-wrapper">
-              <h3 class="govuk-summary-card__title fcat-search-results__result-title"><a class="govuk-link govuk-link--no-visited-state" href="/Creative_Writing_and_English_(BA)_(Hons).html">Creative Writing and English (BA) (Hons)</a></h3>
-            </div>
-            <div class="govuk-summary-card__content">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Provider</dt><dd class="govuk-summary-list__value">THE UNIVERSITY OF WESTMINSTER</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Location</dt><dd class="govuk-summary-list__value">Regent Campus</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Course type</dt><dd class="govuk-summary-list__value">Degree</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Tuition fee</dt><dd class="govuk-summary-list__value">Not provided</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Entry requirements</dt><dd class="govuk-summary-list__value">Not provided</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Duration</dt><dd class="govuk-summary-list__value">3 years</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Overview</dt><dd class="govuk-summary-list__value">You will need to visit the institution's website for information about this course.</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          <p class="govuk-body fcat-search-results__divider-copy">The following results are outside of your selected distance, but match the rest of your search criteria.</p>
-
-          <article class="govuk-summary-card fcat-search-results__result-card">
-            <div class="govuk-summary-card__title-wrapper">
-              <h3 class="govuk-summary-card__title fcat-search-results__result-title"><a class="govuk-link govuk-link--no-visited-state" href="/Digital_Marketing_Apprenticeship_English_Specialist.html">Digital Marketing Apprentice - English Specialist</a></h3>
-            </div>
-            <div class="govuk-summary-card__content">
-              <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Provider</dt><dd class="govuk-summary-list__value">NOWSKILLS LIMITED</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Location</dt><dd class="govuk-summary-list__value">Nantwich</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Course type</dt><dd class="govuk-summary-list__value">Apprenticeship</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Wage</dt><dd class="govuk-summary-list__value">£14,722.50 a year</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Entry requirements</dt><dd class="govuk-summary-list__value">Essential: GCSE English Grade 4, GCSE Maths Grade 4</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Duration</dt><dd class="govuk-summary-list__value">1 year 4 months</dd></div>
-                <div class="govuk-summary-list__row"><dt class="govuk-summary-list__key">Overview</dt><dd class="govuk-summary-list__value">We're looking for a Digital Marketing Apprentice to join our team and complete the Multi-Channel Marketer Apprenticeship with NowSkills. You'll work closely with our digital team, supporting blog writing, case study creation, landing page writing, social media support across Meta, TikTok, Linkedin and more.</dd></div>
-              </dl>
-            </div>
-          </article>
-
-          {{ govukPagination({
-            items: [
-              { number: 1, href: "/Search_results", current: true },
-              { number: 2, href: "/Search_results" },
-              { ellipsis: true },
-              { number: 42, href: "/Search_results" }
-            ],
-            next: { href: "/Search_results" }
-          }) }}
-        </section>
       </div>
+      <aside class="govuk-grid-column-one-third fcat-search-results__filters" id="filters-panel" aria-label="Filters">
+        {% set distanceFilterHtml %}
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <label class="govuk-label" for="distance-filter">Select distance</label>
+          <select class="govuk-select" id="distance-filter" name="distance">
+            <option value="">Select distance</option>
+            <option value="Up to 2 miles" {% if distanceFilter=="Up to 2 miles" %}selected{% endif %}>Up to 2 miles
+            </option>
+            <option value="Up to 5 miles" {% if distanceFilter=="Up to 5 miles" %}selected{% endif %}>Up to 5 miles
+            </option>
+            <option value="Up to 10 miles" {% if distanceFilter=="Up to 10 miles" %}selected{% endif %}>Up to 10 miles
+            </option>
+            <option value="Up to 15 miles" {% if distanceFilter=="Up to 15 miles" %}selected{% endif %}>Up to 15 miles
+            </option>
+            <option value="Up to 30 miles" {% if distanceFilter=="Up to 30 miles" %}selected{% endif %}>Up to 30 miles
+            </option>
+            <option value="Search anywhere in England" {% if distanceFilter=="Search anywhere in England" %}selected{% endif %}>Search anywhere in England</option>
+          </select>
+        </div>
+        {% endset %}
+
+        {% set courseTypeFilterHtml %}
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">Course type</legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type" name="course-type" type="checkbox"
+                  value="a-level">
+                <label class="govuk-label govuk-checkboxes__label" for="course-type">A Level</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type-2" name="course-type" type="checkbox"
+                  value="apprenticeship" {% if appsOrSBC=="Yes or not sure" %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="course-type-2">Apprenticeship</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type-3" name="course-type" type="checkbox"
+                  value="degree">
+                <label class="govuk-label govuk-checkboxes__label" for="course-type-3">Degree</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type-4" name="course-type" type="checkbox"
+                  value="diploma">
+                <label class="govuk-label govuk-checkboxes__label" for="course-type-4">Diploma</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type-5" name="course-type" type="checkbox"
+                  value="essential-skills">
+                <label class="govuk-label govuk-checkboxes__label" for="course-type-5">Essential Skills</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type-6" name="course-type" type="checkbox"
+                  value="free-courses-for-jobs">
+                <label class="govuk-label govuk-checkboxes__label" for="course-type-6">Free Courses For Jobs</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type-7" name="course-type" type="checkbox"
+                  value="gcse">
+                <label class="govuk-label govuk-checkboxes__label" for="course-type-7">GCSE</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type-8" name="course-type" type="checkbox"
+                  value="htq">
+                <label class="govuk-label govuk-checkboxes__label" for="course-type-8">HTQ</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type-9" name="course-type" type="checkbox"
+                  value="multiply">
+                <label class="govuk-label govuk-checkboxes__label" for="course-type-9">Multiply</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-type-10" name="course-type" type="checkbox"
+                  value="skills-bootcamp" {% if appsOrSBC=="Yes or not sure" %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="course-type-10">Skills Bootcamp</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-0"><a class="govuk-link"
+            href="https://nationalcareers.service.gov.uk/careers-advice" target="_blank" rel="noopener noreferrer">Learn
+            about training options (opens in a new tab)</a></p>
+        {% endset %}
+
+        {% set sectorFilterHtml %}
+        <p class="govuk-hint govuk-!-margin-bottom-3">These sectors will filter any Skills Bootcamps or Apprenticeships
+          in your results.</p>
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">Sector</legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector" name="sector" type="checkbox" value="agriculture" {% if "Agriculture, environmental and animal care" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector">Agriculture, environmental and animal
+                  care</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-2" name="sector" type="checkbox" value="business" {% if "Business and administration" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-2">Business and administration</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-3" name="sector" type="checkbox" value="care" {% if "Care services" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-3">Care services</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-4" name="sector" type="checkbox" value="construction"
+                  {% if "Construction and the built environment" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-4">Construction and the built
+                  environment</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-5" name="sector" type="checkbox" value="creative" {% if "Creative and design" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-5">Creative and design</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-6" name="sector" type="checkbox" value="education" {% if "Education and early years" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-6">Education and early years</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-7" name="sector" type="checkbox" value="engineering"
+                  {% if "Engineering and manufacturing" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-7">Engineering and manufacturing</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-8" name="sector" type="checkbox" value="health" {% if "Health and science" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-8">Health and science</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-9" name="sector" type="checkbox" value="legal" {% if "Legal, finance and accounting" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-9">Legal, finance and accounting</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-10" name="sector" type="checkbox" value="protective"
+                  {% if "Protective services" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-10">Protective services</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-11" name="sector" type="checkbox" value="sales" {% if "Sales, marketing and procurement" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-11">Sales, marketing and
+                  procurement</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-12" name="sector" type="checkbox" value="transport"
+                  {% if "Transport and logistics" in sectors %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="sector-12">Transport and logistics</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        {% endset %}
+
+        {% set qualificationFilterHtml %}
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">Qualification level</legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level" name="qualification-level"
+                  type="checkbox" value="skills-and-experience" {% if "Gain skills and experience (without a qualification)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level">Gain skills and experience
+                  (without a qualification)</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level-2" name="qualification-level"
+                  type="checkbox" value="entry-level" {% if "Entry level (like entry level functional skills)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level-2">Entry level (like entry
+                  level functional skills)</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level-3" name="qualification-level"
+                  type="checkbox" value="level-1" {% if "Level 1 (like first certificate)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level-3">Level 1 (like first
+                  certificate)</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level-4" name="qualification-level"
+                  type="checkbox" value="level-2" {% if "Level 2 (like GCSEs)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level-4">Level 2 (like
+                  GCSEs)</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level-5" name="qualification-level"
+                  type="checkbox" value="level-3" {% if "Level 3 (like A levels)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level-5">Level 3 (like A
+                  levels)</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level-6" name="qualification-level"
+                  type="checkbox" value="level-4" {% if "Level 4 (like higher national certificate)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level-6">Level 4 (like higher
+                  national certificate)</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level-7" name="qualification-level"
+                  type="checkbox" value="level-5" {% if "Level 5 (like diplomas)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level-7">Level 5 (like
+                  diplomas)</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level-8" name="qualification-level"
+                  type="checkbox" value="level-6" {% if "Level 6 (like degrees)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level-8">Level 6 (like
+                  degrees)</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level-9" name="qualification-level"
+                  type="checkbox" value="level-7" {% if "Level 7 (like masters degree)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level-9">Level 7 (like masters
+                  degree)</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level-10" name="qualification-level"
+                  type="checkbox" value="level-8" {% if "Level 8 (like a PhD)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level-10">Level 8 (like a
+                  PhD)</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        {% endset %}
+
+        {% set methodFilterHtml %}
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">Learning method</legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="learning-method" name="learning-method" type="checkbox"
+                  value="online">
+                <label class="govuk-label govuk-checkboxes__label" for="learning-method">Online</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="learning-method-2" name="learning-method" type="checkbox"
+                  value="classroom">
+                <label class="govuk-label govuk-checkboxes__label" for="learning-method-2">Classroom based</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="learning-method-3" name="learning-method" type="checkbox"
+                  value="work-based">
+                <label class="govuk-label govuk-checkboxes__label" for="learning-method-3">Work based</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="learning-method-4" name="learning-method" type="checkbox"
+                  value="hybrid">
+                <label class="govuk-label govuk-checkboxes__label" for="learning-method-4">Hybrid</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        {% endset %}
+
+        {% set ageFilterHtml %}
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">Age</legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="age-filter" name="age-filter" type="checkbox" value="16-17"
+                  {% if age=="16 or 17" %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="age-filter">16 or 17</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="age-filter-2" name="age-filter" type="checkbox" value="18" {% if age=="18" %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="age-filter-2">18</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="age-filter-3" name="age-filter" type="checkbox" value="19" {% if age=="19" %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="age-filter-3">19</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="age-filter-4" name="age-filter" type="checkbox" value="20-24"
+                  {% if age=="20 - 24" %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="age-filter-4">20 - 24</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="age-filter-5" name="age-filter" type="checkbox"
+                  value="25-plus" {% if age=="25 or older" %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="age-filter-5">25 or older</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        {% endset %}
+
+        {% set hoursFilterHtml %}
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">Course hours</legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-hours" name="course-hours" type="checkbox"
+                  value="full-time">
+                <label class="govuk-label govuk-checkboxes__label" for="course-hours">Full time</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-hours-2" name="course-hours" type="checkbox"
+                  value="part-time">
+                <label class="govuk-label govuk-checkboxes__label" for="course-hours-2">Part time</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-hours-3" name="course-hours" type="checkbox"
+                  value="flexible">
+                <label class="govuk-label govuk-checkboxes__label" for="course-hours-3">Flexible</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-hours-4" name="course-hours" type="checkbox"
+                  value="day-time">
+                <label class="govuk-label govuk-checkboxes__label" for="course-hours-4">Day time</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-hours-5" name="course-hours" type="checkbox"
+                  value="evening">
+                <label class="govuk-label govuk-checkboxes__label" for="course-hours-5">Evening</label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="course-hours-6" name="course-hours" type="checkbox"
+                  value="weekend">
+                <label class="govuk-label govuk-checkboxes__label" for="course-hours-6">Weekend</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        {% endset %}
+
+        {% set filterOptionsHtml %}
+        <p class="govuk-body"><a class="govuk-link" href="/Search_results">Clear all filters</a></p>
+
+        <div class="govuk-accordion" data-module="govuk-accordion" id="filter-accordion" data-remember-expanded="false">
+          <div class="govuk-accordion__section{% if fromGuidedSearch %} govuk-accordion__section--expanded{% endif %}">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="filter-accordion-heading-1">Distance</span>
+              </h3>
+            </div>
+            <div id="filter-accordion-content-1" class="govuk-accordion__section-content">
+              {{ distanceFilterHtml | safe }}
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section{% if fromGuidedSearch %} govuk-accordion__section--expanded{% endif %}">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="filter-accordion-heading-2">Course type</span>
+              </h3>
+            </div>
+            <div id="filter-accordion-content-2" class="govuk-accordion__section-content">
+              {{ courseTypeFilterHtml | safe }}
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section{% if fromGuidedSearch %} govuk-accordion__section--expanded{% endif %}">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="filter-accordion-heading-3">Sector</span>
+              </h3>
+            </div>
+            <div id="filter-accordion-content-3" class="govuk-accordion__section-content">
+              {{ sectorFilterHtml | safe }}
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section{% if fromGuidedSearch %} govuk-accordion__section--expanded{% endif %}">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="filter-accordion-heading-4">Qualification level</span>
+              </h3>
+            </div>
+            <div id="filter-accordion-content-4" class="govuk-accordion__section-content">
+              {{ qualificationFilterHtml | safe }}
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section{% if fromGuidedSearch %} govuk-accordion__section--expanded{% endif %}">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="filter-accordion-heading-5">Learning method</span>
+              </h3>
+            </div>
+            <div id="filter-accordion-content-5" class="govuk-accordion__section-content">
+              {{ methodFilterHtml | safe }}
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section{% if fromGuidedSearch %} govuk-accordion__section--expanded{% endif %}">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="filter-accordion-heading-6">Age</span>
+              </h3>
+            </div>
+            <div id="filter-accordion-content-6" class="govuk-accordion__section-content">
+              {{ ageFilterHtml | safe }}
+            </div>
+          </div>
+
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h3 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="filter-accordion-heading-7">Course hours</span>
+              </h3>
+            </div>
+            <div id="filter-accordion-content-7" class="govuk-accordion__section-content">
+              {{ hoursFilterHtml | safe }}
+            </div>
+          </div>
+        </div>
+
+        {{ govukButton({ text: "Apply filters", classes: "govuk-button--secondary", type: "button" }) }}
+        <p class="govuk-body govuk-!-margin-bottom-0"><a class="govuk-link" href="/Search_results">Clear all filters</a>
+        </p>
+        {% endset %}
+
+        {{ mojFilter({
+        heading: {
+        text: "Filter"
+        },
+        submit: {
+        text: "Apply filters",
+        attributes: {
+        id: "apply-filters-top"
+        }
+        },
+        optionsHtml: filterOptionsHtml
+        }) }}
+      </aside>
+
+      <section class="govuk-grid-column-two-thirds fcat-search-results__results" aria-label="Search results">
+        <div class="fcat-search-results__results-toolbar">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-0">Showing 1 to 20 of 100 courses</h2>
+          <div class="fcat-search-results__sort-wrap">
+            {{ govukSelect({
+            id: "sort-results",
+            name: "sort",
+            label: { text: "Sort by" },
+            items: [
+            { value: "distance", text: "Distance", selected: true },
+            { value: "relevance", text: "Relevance" }
+            ]
+            }) }}
+          </div>
+        </div>
+
+        <article class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card__title-wrapper">
+            <h3 class="govuk-summary-card__title"><a
+                class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold"
+                href="/English_Skills_Creative_Writing">English Skills: Creative Writing</a></h3>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Provider</dt>
+                <dd class="govuk-summary-list__value">RICHMOND AND HILLCROFT ADULT AND COMMUNITY COLLEGE</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Location</dt>
+                <dd class="govuk-summary-list__value">Richmond</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Course type</dt>
+                <dd class="govuk-summary-list__value">Essential Skills</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Cost</dt>
+                <dd class="govuk-summary-list__value">£204.60</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Entry requirements</dt>
+                <dd class="govuk-summary-list__value">You will need to be working at Entry 3 or above and will need to
+                  do an English initial assessment to check your level.</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Duration</dt>
+                <dd class="govuk-summary-list__value">2 months</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Overview</dt>
+                <dd class="govuk-summary-list__value">Are you looking for inspiration to write your own poems or
+                  stories? Would you like to know more about how poetry and fiction work, and receive feedback on your
+                  drafts in a supportive workshop environment? If your English lets you down and gets in the way of your
+                  creativity, this is the course for you.</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card__title-wrapper">
+            <h3 class="govuk-summary-card__title"><a
+                class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold"
+                href="/Creative_Writing_SMLH01CGP.html">Creative writing SMLH01CGP</a></h3>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Provider</dt>
+                <dd class="govuk-summary-list__value">LEWISHAM LONDON BOROUGH COUNCIL</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Location</dt>
+                <dd class="govuk-summary-list__value">London</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Course type</dt>
+                <dd class="govuk-summary-list__value">Not provided</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Cost</dt>
+                <dd class="govuk-summary-list__value">£75.00</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Entry requirements</dt>
+                <dd class="govuk-summary-list__value">A Pre Course Assessment is required before joining this class.
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Duration</dt>
+                <dd class="govuk-summary-list__value">2 months</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Overview</dt>
+                <dd class="govuk-summary-list__value">Fluency in written and spoken English is needed for this course as
+                  well as an existing interest in fiction, poetry and/or drama. Some IT skills would be of benefit.</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card__title-wrapper">
+            <h3 class="govuk-summary-card__title"><a
+                class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold"
+                href="/Creative_Writing_and_English_(BA)_(Hons).html">Creative Writing and English (BA) (Hons)</a></h3>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Provider</dt>
+                <dd class="govuk-summary-list__value">THE UNIVERSITY OF WESTMINSTER</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Location</dt>
+                <dd class="govuk-summary-list__value">Regent Campus</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Course type</dt>
+                <dd class="govuk-summary-list__value">Degree</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Tuition fee</dt>
+                <dd class="govuk-summary-list__value">Not provided</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Entry requirements</dt>
+                <dd class="govuk-summary-list__value">Not provided</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Duration</dt>
+                <dd class="govuk-summary-list__value">3 years</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Overview</dt>
+                <dd class="govuk-summary-list__value">You will need to visit the institution's website for information
+                  about this course.</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+        <p class="govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-4">The following results are outside of your
+          selected distance, but match the rest of your search criteria.</p>
+
+        <article class="govuk-summary-card govuk-!-margin-bottom-4">
+          <div class="govuk-summary-card__title-wrapper">
+            <h3 class="govuk-summary-card__title"><a
+                class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold"
+                href="/Digital_Marketing_Apprenticeship_English_Specialist.html">Digital Marketing Apprentice - English
+                Specialist</a></h3>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Provider</dt>
+                <dd class="govuk-summary-list__value">NOWSKILLS LIMITED</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Location</dt>
+                <dd class="govuk-summary-list__value">Nantwich</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Course type</dt>
+                <dd class="govuk-summary-list__value">Apprenticeship</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Wage</dt>
+                <dd class="govuk-summary-list__value">£14,722.50 a year</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Entry requirements</dt>
+                <dd class="govuk-summary-list__value">Essential: GCSE English Grade 4, GCSE Maths Grade 4</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Duration</dt>
+                <dd class="govuk-summary-list__value">1 year 4 months</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Overview</dt>
+                <dd class="govuk-summary-list__value">We're looking for a Digital Marketing Apprentice to join our team
+                  and complete the Multi-Channel Marketer Apprenticeship with NowSkills. You'll work closely with our
+                  digital team, supporting blog writing, case study creation, landing page writing, social media support
+                  across Meta, TikTok, Linkedin and more.</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+
+        {{ govukPagination({
+        items: [
+        { number: 1, href: "/Search_results", current: true },
+        { number: 2, href: "/Search_results" },
+        { ellipsis: true },
+        { number: 42, href: "/Search_results" }
+        ],
+        next: { href: "/Search_results" }
+        }) }}
+      </section>
     </div>
-  </section>
+  </div>
+</section>
 {% endblock %}
 
 {% block pageScripts %}
@@ -517,57 +838,17 @@
     });
   })();
 
-  const filterButtons = Array.from(document.querySelectorAll('.fcat-search-results__toggle-button:not(.fcat-search-results__toggle-button--all)'));
-  const allSectionsButton = document.querySelector('.fcat-search-results__toggle-button--all');
   const apprenticeshipCheckbox = document.getElementById('course-type-2');
   const skillsBootcampCheckbox = document.getElementById('course-type-10');
-  const sectorFilterBox = document.getElementById('filter-sector-box');
-  const sectorInputs = sectorFilterBox ? Array.from(sectorFilterBox.querySelectorAll('input[type="checkbox"]')) : [];
-
-  function setButtonState(button, expanded) {
-    button.setAttribute('aria-expanded', String(expanded));
-    button.querySelector('.govuk-accordion__show-all-text').textContent = expanded ? 'Hide' : 'Show';
-    button.querySelector('.govuk-accordion-nav__chevron').classList.toggle('govuk-accordion-nav__chevron--down', !expanded);
-  }
-
-  function setSectionState(button, expanded) {
-    const content = document.getElementById(button.getAttribute('aria-controls'));
-    if (!content) return;
-    content.hidden = !expanded;
-    setButtonState(button, expanded);
-  }
-
-  function syncAllButton() {
-    const visibleButtons = filterButtons.filter((button) => !button.closest('[hidden]'));
-    const allExpanded = visibleButtons.every((button) => button.getAttribute('aria-expanded') === 'true');
-    allSectionsButton.setAttribute('aria-expanded', String(allExpanded));
-    allSectionsButton.querySelector('.govuk-accordion__show-all-text').textContent = allExpanded ? 'Hide all sections' : 'Show all sections';
-    allSectionsButton.querySelector('.govuk-accordion-nav__chevron').classList.toggle('govuk-accordion-nav__chevron--down', !allExpanded);
-  }
+  const sectorFilterSection = document.getElementById('filter-accordion-content-3')?.closest('.govuk-accordion__section');
+  const sectorInputs = sectorFilterSection ? Array.from(sectorFilterSection.querySelectorAll('input[type="checkbox"]')) : [];
 
   function updateSectorVisibility() {
-    if (!sectorFilterBox || !apprenticeshipCheckbox || !skillsBootcampCheckbox) return;
+    if (!sectorFilterSection || !apprenticeshipCheckbox || !skillsBootcampCheckbox) return;
     const shouldShowSector = apprenticeshipCheckbox.checked || skillsBootcampCheckbox.checked;
-    sectorFilterBox.hidden = !shouldShowSector;
+    sectorFilterSection.hidden = !shouldShowSector;
     if (!shouldShowSector) sectorInputs.forEach((input) => { input.checked = false; });
-    syncAllButton();
   }
-
-  filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const expanded = button.getAttribute('aria-expanded') !== 'true';
-      setSectionState(button, expanded);
-      syncAllButton();
-    });
-  });
-
-  allSectionsButton.addEventListener('click', () => {
-    const shouldExpand = allSectionsButton.getAttribute('aria-expanded') !== 'true';
-    filterButtons
-      .filter((button) => !button.closest('[hidden]'))
-      .forEach((button) => setSectionState(button, shouldExpand));
-    syncAllButton();
-  });
 
   if (apprenticeshipCheckbox) apprenticeshipCheckbox.addEventListener('change', updateSectorVisibility);
   if (skillsBootcampCheckbox) skillsBootcampCheckbox.addEventListener('change', updateSectorVisibility);

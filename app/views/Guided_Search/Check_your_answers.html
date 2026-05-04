@@ -1,16 +1,18 @@
 {% extends "layouts/main.html" %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
+{% set pageName = "Check your answers" %}
+
 {% block pageTitle %}Check your answers – Find courses and training – GOV.UK{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/Guided_Search/Age" }) }}
 {% endblock %}
 
-{% block mainClass %}{% endblock %}
+{% block mainClass %}govuk-!-padding-top-0{% endblock %}
 
 {% block content %}
-<section class="fac-course-details-hero">
+<section class="fcat-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">Check your answers</h1>
@@ -24,7 +26,7 @@
   </section>
   <div class="govuk-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-full-width">
+      <div class="govuk-grid-column-full">
         {{ govukSummaryList({ rows: summaryRows }) }}
         <p class="govuk-body">Find out <a class="govuk-link" href="/How_we_use_AI">how we use AI</a> to bring you results.</p>
         <form action="/Search_results" method="post" novalidate>

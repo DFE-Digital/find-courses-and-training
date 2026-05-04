@@ -1,15 +1,17 @@
 {% extends "layouts/main.html" %}
 
+{% set pageName = "How far would you be able to travel?" %}
+
 {% block pageTitle %}How far would you be able to travel? – Find courses and training – GOV.UK{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/Guided_Search/Location" }) }}
 {% endblock %}
 
-{% block mainClass %}{% endblock %}
+{% block mainClass %}govuk-!-padding-top-0{% endblock %}
 
 {% block content %}
-  <section class="fac-course-details-hero">
+  <section class="fcat-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">How far would you be able to travel?</h1>
