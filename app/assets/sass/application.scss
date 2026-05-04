@@ -1,905 +1,661 @@
-// Bespoke prototype colour — blue tints used for backgrounds and panels.
-
-
-$fcat-section-background:       #EFF5FA;
-$fcat-featured-banner-background: #d0cfc8;
-
-
-
-
-
+// NCS Homepage (FCAT_Homepage.html)
 
 .fcat-homepage__hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 280px;
-  display: flex;
-  align-items: center;
- 
+	position: relative;
+	overflow: hidden;
+	min-height: 280px;
+	display: flex;
+	align-items: center;
 }
 
 .fcat-homepage__hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
 }
 
 .fcat-homepage__hero-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  height: 344px;
-  width: 100%;
-  padding-top: 74px;
-  padding-bottom: 68px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  box-sizing: border-box;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	height: 344px;
+	width: 100%;
+	padding-top: 74px;
+	padding-bottom: 68px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+	box-sizing: border-box;
 }
 
 .fcat-homepage__hero-title {
-  @include govuk-font-size(36);
-  color: govuk-colour("blue");
-  margin: 0 0 20px;
-  align-self: flex-start;
+	@include govuk-font-size(36);
+	color: govuk-colour("blue");
+	margin: 0 0 20px;
+	align-self: flex-start;
 }
 
 .fcat-homepage__hero-title-text {
-  background: govuk-colour("white");
-  display: inline;
-  padding: 0.3rem 0.5rem;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+	background: govuk-colour("white");
+	display: inline;
+	padding: 0.3rem 0.5rem;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
 }
 
 .fcat-homepage__hero-summary {
-  margin: 0;
-  align-self: flex-start;
-  line-height: 1.9;
+	margin: 0;
+	align-self: flex-start;
+	line-height: 1.9;
 }
 
 .fcat-homepage__hero-summary-text {
-  background: govuk-colour("white");
-  display: inline;
-  padding: 0.4rem 0.6rem;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
-.fcat-homepage__section-row {
-  margin-bottom: 2rem;
+	background: govuk-colour("white");
+	display: inline;
+	padding: 0.4rem 0.6rem;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
 }
 
 .fcat-homepage__advice-panel {
-  background:govuk-colour("black", $variant: "tint-95");
-  padding: 2rem;
-}
-
-.fcat-homepage__advice-heading {
-  margin-bottom: 0.5rem;
-}
-
-.fcat-homepage__advice-copy {
-  margin-bottom: 1.5rem;
+	background: govuk-colour("black", $variant: "tint-95");
+	padding: 2rem;
 }
 
 .fcat-homepage__advice-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	margin-bottom: 1.5rem;
 }
 
 .fcat-homepage__advice-label {
-  margin-bottom: 0;
-  font-weight: 700;
-  white-space: nowrap;
+	margin-bottom: 0;
+	font-weight: 700;
+	white-space: nowrap;
 }
 
 .fcat-homepage__advice-select {
-  margin-bottom: 0;
-  width: auto;
-  min-width: 280px;
+	margin-bottom: 0;
+	width: auto;
+	min-width: 280px;
 }
 
 .fcat-homepage__feature-card {
-  border: 1px solid govuk-colour("black", $variant: "tint-80");
-  border-bottom-width: 5px;
-  background-color: govuk-colour("black", $variant: "tint-95");
+	border: 1px solid govuk-colour("black", $variant: "tint-80");
+	border-bottom-width: 5px;
+	background-color: govuk-colour("black", $variant: "tint-95");
 }
 
 .fcat-homepage__feature-card--purple {
-  border-bottom-color: govuk-colour("magenta", $variant: "shade-25");
+	border-bottom-color: govuk-colour("magenta", $variant: "shade-25");
 }
 
 .fcat-homepage__feature-card--blue {
-  border-bottom-color: govuk-colour("blue");
+	border-bottom-color: govuk-colour("blue");
 }
 
 .fcat-homepage__feature-card--green {
-  border-bottom-color: govuk-colour("green");
+	border-bottom-color: govuk-colour("green");
 }
 
 .fcat-homepage__feature-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 96px;
-  padding: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	min-height: 96px;
+	padding: 1.25rem;
 }
 
 .fcat-homepage__feature-header--purple {
-  background: govuk-colour("magenta", $variant: "shade-25");
+	background: govuk-colour("magenta", $variant: "shade-25");
 }
 
 .fcat-homepage__feature-header--blue {
-  background: govuk-colour("blue");
+	background: govuk-colour("blue");
 }
 
 .fcat-homepage__feature-header--green {
-  background: govuk-colour("green");
-}
-
-.fcat-homepage__feature-title {
-  margin: 0;
-  @include govuk-font-size(24);
+	background: govuk-colour("green");
 }
 
 .fcat-homepage__feature-link,
 .fcat-homepage__feature-link:link,
 .fcat-homepage__feature-link:visited {
-  color: govuk-colour("white");
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.18em;
+	color: govuk-colour("white");
+	text-decoration-thickness: max(1px, 0.0625rem);
+	text-underline-offset: 0.18em;
+}
+
+.fcat-homepage__feature-link:hover {
+	text-decoration-thickness: 3px;
 }
 
 .fcat-homepage__feature-icon {
-  flex-shrink: 0;
-  width: 56px;
-  height: 56px;
+	flex-shrink: 0;
+	width: 56px;
+	height: 56px;
 }
 
 .fcat-homepage__feature-copy {
-  margin-bottom: 0;
-  padding: 1.25rem;
-  font-size: 19px;
-  line-height: 1.45;
-}
-
-.fcat-homepage__media-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-}
-
-.fcat-homepage__media-sidebar {
-  flex: 0 0 33.333%;
-  box-sizing: border-box;
+	margin-bottom: 0;
+	padding: 1.25rem;
+	font-size: 19px;
+	line-height: 1.45;
 }
 
 .fcat-homepage__adviser-panel {
-  padding: 1.5rem;
-  box-sizing: border-box;
-  background: govuk-colour("blue", $variant: "tint-80");
+	padding: 1.5rem;
+	box-sizing: border-box;
+	background: govuk-colour("blue", $variant: "tint-80");
 }
 
 .fcat-homepage__adviser-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	margin-bottom: 1rem;
 }
 
 .fcat-homepage__adviser-title {
-  margin: 0;
-  color: govuk-colour("blue", $variant: "shade-50");
+	margin: 0;
+	color: govuk-colour("blue", $variant: "shade-50");
 }
 
 .fcat-homepage__adviser-icon {
-  flex-shrink: 0;
-}
-
-.fcat-homepage__adviser-copy {
-  margin-bottom: 0;
-}
-
-.fcat-homepage__media-content {
-  flex: 1;
-  min-width: 0;
+	flex-shrink: 0;
 }
 
 .fcat-homepage__video-frame {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
 }
 
 .fcat-homepage__video-embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.fcat-homepage__media-meta {
-  margin-top: 0.5rem;
-  padding-left: calc(33.333% + 30px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .fcat-homepage__featured-banner {
-  position: relative;
-  overflow: hidden;
-  background: $fcat-featured-banner-background;
-  min-height: 200px;
-  display: flex;
-  align-items: flex-end;
+	position: relative;
+	overflow: hidden;
+	background: govuk-colour("black", $variant: "tint-80");
+	min-height: 200px;
+	display: flex;
+	align-items: flex-end;
 }
 
 .fcat-homepage__featured-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 60%;
-  object-fit: cover;
-  object-position: center top;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 60%;
+	object-fit: cover;
+	object-position: center top;
 }
 
 .fcat-homepage__featured-content {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-  max-width: 50%;
-}
-
-.fcat-homepage__featured-heading {
-  margin-bottom: 0.5rem;
-}
-
-.fcat-homepage__featured-link {
-  color: govuk-colour("blue");
+	position: relative;
+	z-index: 1;
+	padding: 2rem;
+	max-width: 50%;
 }
 
 .fcat-homepage__featured-copy {
-  background: govuk-colour("black", $variant: "tint-95");
-  display: inline;
-  padding: 0.1rem 0.25rem;
+	background: govuk-colour("black", $variant: "tint-95");
+	display: inline;
+	padding: 0.1rem 0.25rem;
 }
 
 @include govuk-media-query($until: tablet) {
-  .fcat-homepage__hero {
-    min-height: 320px;
-  }
+	.fcat-homepage__hero {
+		min-height: 320px;
+	}
 
-  .fcat-homepage__hero-content {
-    height: auto;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
+	.fcat-homepage__hero-content {
+		height: auto;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
 
-  .fcat-homepage__hero-title {
-    margin-bottom: 16px;
-  }
+	.fcat-homepage__hero-title {
+		margin-bottom: 16px;
+	}
 
-  .fcat-homepage__hero-summary {
-    line-height: 2.2;
-  }
+	.fcat-homepage__hero-summary {
+		line-height: 2.2;
+	}
 
-  .fcat-homepage__advice-select {
-    min-width: 0;
-    width: 100%;
-  }
+	.fcat-homepage__advice-select {
+		min-width: 0;
+		width: 100%;
+	}
 
-  .fcat-homepage__advice-controls {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+	.fcat-homepage__advice-controls {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 
-  
+	.fcat-homepage__featured-content {
+		max-width: 100%;
+		background: rgba(255, 255, 255, 0.85);
+	}
 
-  .fcat-homepage__media-layout {
-    flex-direction: column;
-  }
-
-  .fcat-homepage__media-sidebar {
-    flex: none;
-    width: 100%;
-  }
-
-  .fcat-homepage__media-content {
-    width: 100%;
-  }
-
-  .fcat-homepage__media-meta {
-    padding-left: 0;
-  }
-
-  .fcat-homepage__featured-content {
-    max-width: 100%;
-    background: rgba(255, 255, 255, 0.85);
-  }
-
-  .fcat-homepage__featured-image {
-    display: none;
-  }
+	.fcat-homepage__featured-image {
+		display: none;
+	}
 }
 
-.fac-course-details-hero {
-  background: govuk-colour("green");
-  color: govuk-colour("white");
+// =========================================================
+// Green hero banner (used across most pages)
+// =========================================================
+
+.fcat-course-details-hero {
+	background: govuk-colour("green");
+	color: govuk-colour("white");
 }
 
 .fcat-course-page__hero-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+	padding-top: 4.5rem;
+	padding-bottom: 4.5rem;
 }
 
 .fcat-course-page__hero-copy {
-  max-width: 760px;
+	max-width: 760px;
 }
 
 .fcat-course-page__hero-inner--compact {
-  padding-top: 70px;
-  padding-bottom: 55px;
+	padding-top: 70px;
+	padding-bottom: 55px;
 }
 
 .fcat-course-page__hero-inner--compact .fcat-course-page__hero-copy {
-  max-width: 100%;
-  flex: 1;
+	max-width: 100%;
+	flex: 1;
 }
 
 .fcat-course-page__hero-copy--wide {
-  max-width: 780px;
+	max-width: 780px;
 }
 
 .fcat-course-page__hero-title {
-  color: govuk-colour("white");
-  margin-bottom: 1.25rem;
-  @include govuk-font-size(48);
+	color: govuk-colour("white");
+	margin-bottom: 1.25rem;
+	@include govuk-font-size(48);
 }
 
 .fcat-course-page__hero-text {
-  color: govuk-colour("white");
-  margin-bottom: 0;
-  max-width: 700px;
+	color: govuk-colour("white");
+	margin-bottom: 0;
+	max-width: 700px;
 }
 
 .fcat-course-page__hero-icon-wrap {
-  flex-shrink: 0;
+	flex-shrink: 0;
 }
 
 .fcat-course-page__hero-icon {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-  display: block;
+	width: 110px;
+	height: 110px;
+	object-fit: contain;
+	display: block;
 }
 
+// =========================================================
+// Search form (Quick_search.html, Search_results.html)
+// =========================================================
+
 .fcat-course-page__search-section {
-  background: $fcat-section-background;
+	background: govuk-colour("blue", $variant: "tint-95");
 }
 
 .fcat-course-page__search-section .govuk-width-container {
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
+	padding-top: 1.75rem;
+	padding-bottom: 1.75rem;
 }
 
 .fcat-course-page__search-intro {
-  max-width: 760px;
+	max-width: 760px;
 }
 
-
-.fcat-course-page__search-grid {
-  display: grid;
-  grid-template-columns: minmax(250px, 360px) minmax(320px, 470px);
-  gap: 2.5rem 4.25rem;
-  align-items: start;
-}
-
-.fcat-course-page__term-fields {
-  display: flex;
-  flex-direction: column;
-}
-
-.fcat-course-page__field {
-  margin-bottom: 1rem;
-}
-
-.fcat-course-page__input {
-  max-width: 100%;
-}
-
-.fcat-course-page__actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-.fcat-course-page__button,
-.fcat-course-page__clear-button {
-  margin-bottom: 0;
-}
-
-.fcat-course-page__button {
-  background: govuk-colour("green");
-  box-shadow: 0 2px 0 govuk-colour("green", $variant: "shade-50");
-}
-
-.fcat-course-page__guided-link {
-  @include govuk-font-size(19);
-}
+// =========================================================
+// Location autocomplete (Quick_search, Guided_Search/Location)
+// =========================================================
 
 .fcat-location-autocomplete {
-  position: relative;
+	position: relative;
 }
 
 .fcat-location-autocomplete__list {
-  position: absolute;
-  z-index: 100;
-  top: 100%;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border: 2px solid govuk-colour("black");
-  border-top: none;
-  background: govuk-colour("white");
-  max-height: 300px;
-  overflow-y: auto;
+	position: absolute;
+	z-index: 100;
+	top: 100%;
+	left: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 2px solid govuk-colour("black");
+	border-top: none;
+	background: govuk-colour("white");
+	max-height: 300px;
+	overflow-y: auto;
 }
 
 .fcat-location-autocomplete__option {
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 1.25;
-  border-top: 1px solid govuk-colour("black", $variant: "tint-80");
-  color: govuk-colour("black");
+	padding: 0.5rem 0.75rem;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 1.25;
+	border-top: 1px solid govuk-colour("black", $variant: "tint-80");
+	color: govuk-colour("black");
 }
 
 .fcat-location-autocomplete__option:first-child {
-  border-top: none;
+	border-top: none;
 }
 
 .fcat-location-autocomplete__option:hover,
 .fcat-location-autocomplete__option[aria-selected="true"] {
-  background: govuk-colour("blue");
-  color: govuk-colour("white");
+	background: govuk-colour("blue");
+	color: govuk-colour("white");
 }
 
 .fcat-location-autocomplete__option--no-results {
-  color: govuk-colour("black", $variant: "tint-25");
-  pointer-events: none;
-  font-style: italic;
+	color: govuk-colour("black", $variant: "tint-25");
+	pointer-events: none;
+	font-style: italic;
 }
 
 .fcat-location-autocomplete__option--no-results:hover {
-  background: govuk-colour("white");
-  color: govuk-colour("black", $variant: "tint-25");
+	background: govuk-colour("white");
+	color: govuk-colour("black", $variant: "tint-25");
 }
 
 .fcat-course-page__intro-image {
-  width: 100%;
-  max-width: 630px;
-  height: auto;
-  aspect-ratio: 630 / 212;
-  display: block;
-  margin-bottom: 25px;
-  object-fit: cover;
+	width: 100%;
+	max-width: 630px;
+	height: auto;
+	aspect-ratio: 630 / 212;
+	display: block;
+	margin-bottom: 25px;
+	object-fit: cover;
 }
 
+// =========================================================
+// DfE card pattern (FindCoursesandTraining)
+// =========================================================
+
 .dfe-card {
-  box-sizing: border-box;
-  background-color: #f5f5f5;
-  padding: 15px;
-  border-bottom: 4px solid govuk-colour("black", $variant: "tint-80");
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-  width: 100%;
+	box-sizing: border-box;
+	background-color: govuk-colour("black", $variant: "tint-95");
+	padding: 15px;
+	border-bottom: 4px solid govuk-colour("black", $variant: "tint-80");
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+	position: relative;
+	width: 100%;
 }
 
 @include govuk-media-query($until: tablet) {
-  .fcat-course-page__cards-row .govuk-grid-column-one-half:first-child {
-    margin-bottom: 30px;
-  }
-}
-
-.dfe-card-container h2 {
-  margin-bottom: 10px;
+	.fcat-course-page__cards-row .govuk-grid-column-one-half:first-child {
+		margin-bottom: 30px;
+	}
 }
 
 .dfe-card-link--header::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .fcat-course-page__main-row {
-  display: flex;
-  align-items: stretch;
+	display: flex;
+	align-items: stretch;
 
-  > :last-child {
-    display: flex;
-    flex-direction: column;
-  }
+	> :last-child {
+		display: flex;
+		flex-direction: column;
+	}
 
-  @include govuk-media-query($until: tablet) {
-    flex-direction: column;
+	@include govuk-media-query($until: tablet) {
+		flex-direction: column;
 
-    > * {
-      width: 100%;
-    }
-  }
+		> * {
+			width: 100%;
+		}
+	}
 }
 
 .fcat-course-page__adviser-aside {
-  background: rgba(86, 148, 202, 0.1);
-  padding: 20px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
+	background: rgba(86, 148, 202, 0.1);
+	padding: 20px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	text-align: left;
 }
 
 .fcat-course-page__adviser-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 15px;
-  margin-bottom: 15px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 15px;
+	margin-bottom: 15px;
 }
 
 .fcat-course-page__adviser-title {
-  margin: 0;
-  color: govuk-colour("blue", $variant: "shade-50");
+	margin: 0;
+	color: govuk-colour("blue", $variant: "shade-50");
 }
 
 .fcat-course-page__adviser-icon {
-  flex-shrink: 0;
+	flex-shrink: 0;
 }
 
 @include govuk-media-query($until: tablet) {
-  .fcat-course-page__adviser-aside {
-    margin-top: 30px;
-    padding-top: 30px;
-    justify-content: space-between;
-  }
+	.fcat-course-page__adviser-aside {
+		margin-top: 30px;
+		padding-top: 30px;
+		justify-content: space-between;
+	}
 
-  .fcat-course-page__adviser-header {
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 15px;
-  }
+	.fcat-course-page__adviser-header {
+		align-items: center;
+		justify-content: space-between;
+		gap: 15px;
+		margin-bottom: 15px;
+	}
 
-  .fcat-course-page__adviser-title {
-    @include govuk-font-size(24);
-    max-width: 130px;
-  }
+	.fcat-course-page__adviser-title {
+		@include govuk-font-size(24);
+		max-width: 130px;
+	}
 
-  .fcat-course-page__adviser-icon {
-    width: 90px;
-    height: auto;
-  }
+	.fcat-course-page__adviser-icon {
+		width: 90px;
+		height: auto;
+	}
 
-  .fcat-course-page__adviser-aside p {
-    margin-top: 0;
-    margin-bottom: 15px;
-  }
+	.fcat-course-page__adviser-aside p {
+		margin-top: 0;
+		margin-bottom: 15px;
+	}
 }
+// =========================================================
+// Support cards section
+// =========================================================
+
 .fcat-course-page__support-section {
-  background: $fcat-section-background;
+	background: govuk-colour("blue", $variant: "tint-95");
 }
 
 .fcat-course-page__support-section .govuk-width-container {
-  padding-top: 40px;
-  padding-bottom: 40px;
+	padding-top: 40px;
+	padding-bottom: 40px;
 }
 
 .fcat-course-page__support-section .govuk-grid-column-one-half {
-  padding-left: 0;
-  padding-right: 15px;
+	padding-left: 0;
+	padding-right: 15px;
 
-  &:last-child {
-    padding-left: 15px;
-    padding-right: 0;
-  }
+	&:last-child {
+		padding-left: 15px;
+		padding-right: 0;
+	}
 
-  @include govuk-media-query($until: tablet) {
-    padding: 0;
-    margin-bottom: 30px;
+	@include govuk-media-query($until: tablet) {
+		padding: 0;
+		margin-bottom: 30px;
 
-    &:last-child {
-      padding: 0;
-      margin-bottom: 0;
-    }
-  }
-}
-
-.fcat-course-page__support-card {
-  width: 100%;
+		&:last-child {
+			padding: 0;
+			margin-bottom: 0;
+		}
+	}
 }
 
 .fcat-course-page__support-card-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0;
-  padding: 0;
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0;
+	padding: 0;
 }
 
 .fcat-course-page__support-card-body {
-  background: govuk-colour("black", $variant: "tint-95");
-  border-bottom: 3px solid govuk-colour("black", $variant: "tint-80");
-  min-height: 179px;
-  padding: 15px 20px;
+	background: govuk-colour("black", $variant: "tint-95");
+	border-bottom: 3px solid govuk-colour("black", $variant: "tint-80");
+	min-height: 179px;
+	padding: 15px 20px;
 }
-
-.fcat-course-page__support-card-title {
-  margin-bottom: 0;
-  color: govuk-colour("blue");
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 25px;
-}
-
-.fcat-course-page__support-card-title .govuk-link {
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.3em;
-}
-
-.fcat-course-page__support-card-title .govuk-link:hover {
-  text-decoration-thickness: 3px;
-}
-
-
 
 .fcat-quick-search .fcat-course-page__search-section {
-  background: govuk-colour("white");
+	background: govuk-colour("white");
 }
 
 .fcat-quick-search .fcat-course-page__search-section .govuk-width-container {
-  padding-top: 1.75rem;
-  padding-bottom: 2rem;
+	padding-top: 1.75rem;
+	padding-bottom: 2rem;
 }
 
-.fcat-quick-search .fcat-course-page__search-section .govuk-grid-row + .govuk-grid-row {
-  margin-top: 1.25rem;
+.fcat-quick-search
+	.fcat-course-page__search-section
+	.govuk-grid-row
+	+ .govuk-grid-row {
+	margin-top: 1.25rem;
 }
 
 .fcat-quick-search .fcat-course-page__search-section .govuk-form-group {
-  margin-bottom: 1.25rem;
+	margin-bottom: 1.25rem;
 }
 
 .fcat-quick-search .fcat-course-page__search-section .govuk-input {
-  max-width: 500px;
+	max-width: 500px;
 }
 
 .fcat-quick-search .fcat-course-page__support-section .govuk-width-container {
-  padding-top: 3.75rem;
-  padding-bottom: 4.25rem;
+	padding-top: 3.75rem;
+	padding-bottom: 4.25rem;
 }
 
 .fcat-quick-search .fcat-course-page__support-section .card-container {
-  gap: 30px;
+	gap: 30px;
 }
 
-.fcat-search-results__content .govuk-width-container {
-  padding-top: 1rem;
-  padding-bottom: 3rem;
-}
+// Search results page (Search_results.html)
 
-.fcat-search-results__layout {
-  display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
-  gap: 1.75rem;
-  align-items: start;
-}
-
-.fcat-search-results__filters {
-  min-width: 0;
-}
-
-.fcat-search-results__filter-box {
-  border: 1px solid govuk-colour("black", $variant: "tint-80");
-  background: govuk-colour("white");
-  padding: 1.25rem;
-  margin-bottom: -1px;
-}
-
-.fcat-search-results__filter-box:first-child {
-  padding: 0;
-}
-
-.fcat-search-results__filter-box--footer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.fcat-search-results__filter-heading {
-  margin: 0;
-  padding: 1.5rem 1.25rem;
-  background:govuk-colour("black", $variant: "tint-95");
-  @include govuk-font-size(24);
-}
-
-.fcat-search-results__filter-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem 1.25rem 1.75rem;
-}
-
-.fcat-search-results__toggle-button {
-  margin-bottom: 1rem;
-}
-
-.fcat-search-results__toggle-button--all {
-  margin-bottom: 1.25rem;
-}
-
-.fcat-search-results__section-content[hidden] {
-  display: none;
-}
-
-.fcat-search-results__section-heading {
-  margin-bottom: 0.75rem;
-  @include govuk-font-size(24);
-}
-
-.fcat-search-results__checkboxes .govuk-checkboxes__item {
-  margin-bottom: 0.75rem;
-}
-
-.fcat-search-results__checkboxes .govuk-checkboxes__label {
-  font-size: 19px;
-}
-
-.fcat-search-results__info-link {
-  display: inline-block;
-  margin-top: 1rem;
-}
-
-.fcat-search-results__sector-hint {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: govuk-colour("black", $variant: "tint-25");
-}
-
-.fcat-search-results__results {
-  min-width: 0;
+#apply-filters-top {
+	@extend .govuk-button--secondary;
 }
 
 .fcat-search-results__results-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.25rem 0 1rem;
-  border-bottom: 1px solid govuk-colour("black", $variant: "tint-80");
-  margin-bottom: 1.5rem;
-}
-
-.fcat-search-results__results-count {
-  margin-bottom: 0;
-  @include govuk-font-size(19);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.25rem 0 1rem;
+	border-bottom: 1px solid govuk-colour("black", $variant: "tint-80");
+	margin-bottom: 1.5rem;
 }
 
 .fcat-search-results__sort-wrap {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
 }
 
-.fcat-search-results__result-card {
-  margin-bottom: 1.5rem;
-}
+// =========================================================
+// Course detail pages
+// =========================================================
 
-.fcat-search-results__result-title {
-  margin-bottom: 0;
-}
-
-.fcat-search-results__result-title a {
-  font-weight: 700;
-}
-
-.fcat-search-results__divider-copy {
-  margin: 1.5rem 0;
-}
-
-// Course detail page
-
-
-
-
-
+// =========================================================
+// Responsive overrides
+// =========================================================
 
 @include govuk-media-query($until: desktop) {
-  .fcat-course-page__hero-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+	.fcat-course-page__hero-inner {
+		flex-direction: column;
+		align-items: flex-start;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
 
-  .fcat-course-page__search-grid,
-  .fcat-search-results__layout {
-    grid-template-columns: 1fr;
-  }
-
-  .fcat-search-results__results-toolbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+	.fcat-search-results__results-toolbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 
 @include govuk-media-query($until: tablet) {
-  .fcat-course-page__hero-inner {
-    flex-direction: row;
-    align-items: flex-start;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
+	.fcat-course-page__hero-inner {
+		flex-direction: row;
+		align-items: flex-start;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
 
-  .fcat-course-page__hero-text,
-  .fcat-course-page__guided-link {
-    font-size: 1rem;
-  }
+	.fcat-course-page__hero-text {
+		font-size: 1rem;
+	}
 
-  
+	.fcat-search-results__mobile-filter-toggle {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin-bottom: 1rem;
+	}
 
-  .fcat-course-page__actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
+	.fcat-search-results__filters {
+		display: none;
+	}
 
-  .fcat-search-results__mobile-filter-toggle {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 1rem;
-    grid-column: 1;
-  }
-
-  .fcat-search-results__layout {
-    grid-template-columns: 1fr;
-  }
-
-  .fcat-search-results__filters {
-    display: none;
-  }
-
-  .fcat-search-results__filters.is-visible {
-    display: block;
-  }
+	.fcat-search-results__filters.is-visible {
+		display: block;
+	}
 }
 
 @include govuk-media-query($from: tablet) {
-  .fcat-search-results__mobile-filter-toggle {
-    display: none;
-  }
+	.fcat-search-results__mobile-filter-toggle {
+		display: none;
+	}
 }

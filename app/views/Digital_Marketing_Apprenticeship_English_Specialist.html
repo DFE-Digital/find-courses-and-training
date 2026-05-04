@@ -1,13 +1,17 @@
 {% extends "layouts/main.html" %}
 
+{% set pageName = "Digital Marketing Apprenticeship - English Specialist" %}
+
 {% block pageTitle %}Digital Marketing Apprenticeship - English Specialist – Find courses and training – GOV.UK{% endblock %}
+
+{% block mainClass %}govuk-!-padding-top-0{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back to search results", href: "/Search_results" }) }}
 {% endblock %}
 
 {% block content %}
-  <section class="fac-course-details-hero">
+  <section class="fcat-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner fcat-course-page__hero-inner--compact">
       <div class="fcat-course-page__hero-copy">
         <h1 class="govuk-heading-xl fcat-course-page__hero-title">Digital Marketing Apprenticeship - English Specialist</h1>
