@@ -73,6 +73,22 @@ router.get('/Search_results', function (req, res) {
   // Map the numeric distance value stored in session to the label shown in the filter dropdown
   const distanceMap = { '2': 'Up to 2 miles', '5': 'Up to 5 miles', '10': 'Up to 10 miles', '15': 'Up to 15 miles', '30': 'Up to 30 miles', 'anywhere': 'Search anywhere in England' }
 
+  // Map guided search learning method labels to the values used by the results filter checkboxes
+  const learningMethodMap = { 'Classroom based': 'classroom', 'Work based': 'work-based', 'Online': 'online', 'Hybrid': 'hybrid' }
+  const learningMethods = toArray(d['learning-method'])
+    .filter(m => m !== "I'm not sure")
+    .map(m => learningMethodMap[m] || m)
+
+  // Map guided search course hours labels to the values used by the results filter checkboxes
+  const courseHoursMap = { 'Full time': 'full-time', 'Part time': 'part-time', 'Flexible': 'flexible', 'Daytime': 'day-time', 'Evening': 'evening', 'Weekend': 'weekend' }
+  const courseHours = toArray(d['course-hours'])
+    .filter(h => h !== "I'm not sure")
+    .map(h => courseHoursMap[h] || h)
+
+  // Normalise age value — guided search saves "20 to 24" but the filter checks "20 - 24"
+  const ageMap = { '20 to 24': '20 - 24' }
+  const age = ageMap[d['age']] || d['age'] || ''
+
   const fromGuidedSearch = !!d['fromGuidedSearch']
   delete req.session.data['fromGuidedSearch']
 
@@ -80,7 +96,9 @@ router.get('/Search_results', function (req, res) {
     distanceFilter: distanceMap[d['distance']] || '',
     sectors,
     qualifications,
-    age: d['age'] || '',
+    learningMethods,
+    courseHours,
+    age,
     appsOrSBC: d['apps-or-sbc'] || '',
     fromGuidedSearch
   })
@@ -117,7 +135,9 @@ router.get('/Guided_Search/Check_your_answers', function (req, res) {
     { key: { text: 'Location' }, value: { text: d['location'] || 'Not answered' }, actions: change('/Guided_Search/Location', 'location') },
     { key: { text: 'Travel distance' }, value: { text: d['distance'] || 'Not answered' }, actions: change('/Guided_Search/Distance', 'travel distance') },
     { key: { text: 'Search terms' }, value: { text: [d['interest1'], d['interest2'], d['interest3']].filter(Boolean).join(', ') || 'Not answered' }, actions: change('/Guided_Search/Interests', 'search terms') },
-    { key: { text: 'Qualification level' }, value: { text: toArray(d['qualification']).join(', ') || 'Not answered' }, actions: change('/Guided_Search/Qualification_Level', 'qualification level') },
+    { key: { text: 'Level' }, value: { text: toArray(d['qualification']).join(', ') || 'Not answered' }, actions: change('/Guided_Search/Qualification_Level', 'qualification level') },
+    { key: { text: 'Learning method' }, value: { text: toArray(d['learning-method']).join(', ') || 'Not answered' }, actions: change('/Guided_Search/Learning_method', 'learning method') },
+    { key: { text: 'Course hours' }, value: { text: toArray(d['course-hours']).join(', ') || 'Not answered' }, actions: change('/Guided_Search/Course_hours', 'course hours') },
     { key: { text: 'Age' }, value: { text: d['age'] || 'Not answered' }, actions: change('/Guided_Search/Age', 'age') }
   ]
 
@@ -126,7 +146,8 @@ router.get('/Guided_Search/Check_your_answers', function (req, res) {
 
 // Saves the selected sectors and moves to the Age step (or back to Check your answers).
 router.post('/Guided_Search/Sectors', function (req, res) {
-  req.session.data['sector'] = req.body['sector'] || []
+  const checked = v => [].concat(v || []).filter(x => x && x !== '_unchecked')
+  req.session.data['sector'] = checked(req.body['sector'])
   redirectOrReturn(req, res, '/Guided_Search/Age')
 })
 
@@ -149,8 +170,23 @@ router.post('/Guided_Search/Apps_or_SBC', function (req, res) {
   }
 })
 
-// Saves the selected qualification levels and always moves to Age.
+// Saves the selected qualification levels and moves to the Learning method step.
 router.post('/Guided_Search/Qualification_Level', function (req, res) {
-  req.session.data['qualification'] = req.body['qualification'] || []
+  const checked = v => [].concat(v || []).filter(x => x && x !== '_unchecked')
+  req.session.data['qualification'] = checked(req.body['qualification'])
+  redirectOrReturn(req, res, '/Guided_Search/Learning_method')
+})
+
+// Saves the selected learning methods and moves to the Course hours step.
+router.post('/Guided_Search/Learning_method', function (req, res) {
+  const checked = v => [].concat(v || []).filter(x => x && x !== '_unchecked')
+  req.session.data['learning-method'] = checked(req.body['learning-method'])
+  redirectOrReturn(req, res, '/Guided_Search/Course_hours')
+})
+
+// Saves the selected course hours and moves to the Age step.
+router.post('/Guided_Search/Course_hours', function (req, res) {
+  const checked = v => [].concat(v || []).filter(x => x && x !== '_unchecked')
+  req.session.data['course-hours'] = checked(req.body['course-hours'])
   redirectOrReturn(req, res, '/Guided_Search/Age')
 })

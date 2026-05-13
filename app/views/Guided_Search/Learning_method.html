@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "How would you prefer to learn?" %}
+
+{% block pageTitle %}How would you prefer to learn? – Find courses and training – GOV.UK{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Qualification_Level" }) }}
+{% endblock %}
+
+{% block mainClass %}govuk-!-padding-top-0{% endblock %}
+
+{% block content %}
+  <section class="fcat-course-details-hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">How would you prefer to learn?</h1>
+        <p class="govuk-body-l fcat-course-page__hero-text">Select the learning methods that suit your situation</p>
+      </div>
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="" class="fcat-course-page__hero-icon">
+      </div>
+    </div>
+  </section>
+
+  <div class="govuk-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-!-padding-bottom-4">
+          <p class="govuk-body">Some courses or training must be undertaken in a classroom, 
+            some may be carried out at a place of work, others may be online. </p>
+            <p class="govuk-body">Hybrid means the course or training is offered as a 
+              combination of both online and attending in person.  </p>
+            <p class="govuk-body">If you’re not sure, we’ll show all learning methods in your results.</p>
+        </div>
+
+        <form method="post" action="/Guided_Search/Learning_method{{ '?returnTo=' + query.returnTo if query.returnTo }}">
+          <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+          {{ govukCheckboxes({
+            name: "learning-method",
+            fieldset: {
+              legend: {
+                text: "Learning method",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: { text: "Select all that apply" },
+            items: [
+              { value: "Classroom based", text: "Classroom based", checked: data['learning-method'] and (data['learning-method'] == "Classroom based" or "Classroom based" in data['learning-method']) },
+              { value: "Work based", text: "Work based", checked: data['learning-method'] and (data['learning-method'] == "Work based" or "Work based" in data['learning-method']) },
+              { value: "Online", text: "Online", checked: data['learning-method'] and (data['learning-method'] == "Online" or "Online" in data['learning-method']) },
+              { value: "Hybrid", text: "Classroom and online mix (Hybrid)", checked: data['learning-method'] and (data['learning-method'] == "Hybrid" or "Hybrid" in data['learning-method']) },
+              { divider: "or" },
+              { value: "I'm not sure", 
+              text: "I'm not sure", 
+              behaviour: "exclusive",
+              checked: data['learning-method'] and (data['learning-method'] == "I'm not sure" or "I'm not sure" in data['learning-method']) }
+            ]
+          }) }}
+          {{ govukButton({ text: "Continue" }) }}
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

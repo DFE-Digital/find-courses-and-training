@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "What course hours would you prefer?" %}
+
+{% block pageTitle %}What course hours would you prefer? – Find courses and training – GOV.UK{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Learning_method" }) }}
+{% endblock %}
+
+{% block mainClass %}govuk-!-padding-top-0{% endblock %}
+
+{% block content %}
+  <section class="fcat-course-details-hero">
+    <div class="govuk-width-container fcat-course-page__hero-inner">
+      <div class="fcat-course-page__hero-copy">
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">What course hours would you prefer?</h1>
+        <p class="govuk-body-l fcat-course-page__hero-text">Select the course hours that suit your situation</p>
+      </div>
+      <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
+        <img src="/public/images/FCat_Logo_large.png" alt="" class="fcat-course-page__hero-icon">
+      </div>
+    </div>
+  </section>
+
+  <div class="govuk-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-!-padding-bottom-4">
+          <p class="govuk-body">Some courses may be offered as full time, part time or flexible.</p>
+            <p class="govuk-body">Part time hours can differ depending on the specific course and training provider, 
+              for more information you should reach out to the provider.</p>
+            <p class="govuk-body">Although many courses will be offered during the daytime, 
+              to fit around your current situation, some courses may also offer evening or weekend courses.</p>
+        </div>
+
+        <form method="post" action="/Guided_Search/Course_hours{{ '?returnTo=' + query.returnTo if query.returnTo }}">
+          <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+          {{ govukCheckboxes({
+            name: "course-hours",
+            fieldset: {
+              legend: {
+                text: "Course hours",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: { text: "Select all that apply" },
+            items: [
+              { value: "Full time", text: "Full time", checked: data['course-hours'] and (data['course-hours'] == "Full time" or "Full time" in data['course-hours']) },
+              { value: "Part time", text: "Part time", checked: data['course-hours'] and (data['course-hours'] == "Part time" or "Part time" in data['course-hours']) },
+              { value: "Flexible", text: "Flexible", checked: data['course-hours'] and (data['course-hours'] == "Flexible" or "Flexible" in data['course-hours']) },
+              { value: "Daytime", text: "Daytime", checked: data['course-hours'] and (data['course-hours'] == "Daytime" or "Daytime" in data['course-hours']) },
+              { value: "Evening", text: "Evening", checked: data['course-hours'] and (data['course-hours'] == "Evening" or "Evening" in data['course-hours']) },
+              { value: "Weekend", text: "Weekend", checked: data['course-hours'] and (data['course-hours'] == "Weekend" or "Weekend" in data['course-hours']) },
+              { divider: "or" },
+              { value: "I'm not sure", 
+              text: "I'm not sure", 
+              behaviour: "exclusive",
+              checked: data['course-hours'] and (data['course-hours'] == "I'm not sure" or "I'm not sure" in data['course-hours']) }
+            ]
+          }) }}
+          {{ govukButton({ text: "Continue" }) }}
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

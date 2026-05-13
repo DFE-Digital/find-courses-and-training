@@ -5,7 +5,7 @@
 {% block pageTitle %}What age will you be when starting? – Find courses and training – GOV.UK{% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Qualification_Level" }) }}
+  {{ govukBackLink({ text: "Back", href: "/Guided_Search/Course_hours" }) }}
 {% endblock %}
 
 {% block mainClass %}govuk-!-padding-top-0{% endblock %}
@@ -28,7 +28,7 @@
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-!-padding-bottom-4">
           <p class="govuk-body">Not all education and training courses are available to everyone.</p>
-          <p class="govuk-body">This is often linked to age. As well as what qualifications you already have or your employment status.</p>
+          <p class="govuk-body">This is often linked to age, as well as what qualifications you already have or your employment status.</p>
           <p class="govuk-body">This is optional but telling us means you will see more relevant results.</p>
           <p class="govuk-body"><a href="https://www.skillsforcareers.education.gov.uk/your-training-options" class="govuk-link" rel="noreferrer noopener" target="_blank">Discover the different training options (opens in a new tab)</a></p>
         </div>
@@ -47,7 +47,7 @@
               { value: "16 or 17", text: "16 or 17", checked: data['age'] == "16 or 17" },
               { value: "18", text: "18", checked: data['age'] == "18" },
               { value: "19", text: "19", checked: data['age'] == "19" },
-              { value: "20 - 24", text: "20 - 24", checked: data['age'] == "20 - 24" },
+              { value: "20 to 24", text: "20 to 24", checked: data['age'] == "20 to 24" },
               { value: "25 or older", text: "25 or older", checked: data['age'] == "25 or older" }
             ]
           }) }}

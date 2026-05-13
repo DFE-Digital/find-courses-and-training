@@ -1,8 +1,8 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = "What qualification level are you looking for?" %}
+{% set pageName = "What level of course or training would you like to do?" %}
 
-{% block pageTitle %}What qualification level are you looking for? – Find courses and training – GOV.UK{% endblock %}
+{% block pageTitle %}What level of course or training would you like to do? – Find courses and training – GOV.UK{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/Guided_Search/Interests" }) }}
@@ -14,7 +14,7 @@
   <section class="fcat-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner">
       <div class="fcat-course-page__hero-copy">
-        <h1 class="govuk-heading-xl fcat-course-page__hero-title">What qualification level are you looking for?</h1>
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">What level of course or training would you like to do?</h1>
         <p class="govuk-body-l fcat-course-page__hero-text">You can look for courses to gain a specific qualification, or you can get skills and experience without a qualification.</p>
       </div>
       <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
@@ -49,7 +49,10 @@
               { value: "Level 3 (like BTECs and A levels)", text: "Level 3 (like BTECs and A levels)", checked: data['qualification'] and (data['qualification'] == "Level 3 (like BTECs and A levels)" or "Level 3 (like BTECs and A levels)" in data['qualification']) },
               { value: "Level 4 to 8 (like diplomas and degrees)", text: "Level 4 to 8 (like diplomas and degrees)", checked: data['qualification'] and (data['qualification'] == "Level 4 to 8 (like diplomas and degrees)" or "Level 4 to 8 (like diplomas and degrees)" in data['qualification']) },
               { divider: "or" },
-              { value: "I'm not sure", text: "I'm not sure", checked: data['qualification'] and (data['qualification'] == "I'm not sure" or "I'm not sure" in data['qualification']) }
+              { value: "I'm not sure", 
+              text: "I'm not sure", 
+              behaviour: "exclusive",
+              checked: data['qualification'] and (data['qualification'] == "I'm not sure" or "I'm not sure" in data['qualification']) }
             ]
           }) }}
           {{ govukButton({ text: "Continue" }) }}

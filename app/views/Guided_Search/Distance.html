@@ -14,7 +14,7 @@
   <section class="fcat-course-details-hero">
     <div class="govuk-width-container fcat-course-page__hero-inner">
       <div class="fcat-course-page__hero-copy">
-        <h1 class="govuk-heading-xl fcat-course-page__hero-title">How far would you be able to travel?</h1>
+        <h1 class="govuk-heading-xl fcat-course-page__hero-title">Select travel distance</h1>
       </div>
       <div class="fcat-course-page__hero-icon-wrap" aria-hidden="true">
         <img src="/public/images/FCat_Logo_large.png" alt="" class="fcat-course-page__hero-icon">
@@ -23,8 +23,12 @@
   </section>
 
   <div class="govuk-width-container govuk-!-margin-top-6">
-    <p class="govuk-body">How far do you want to travel from <strong>{{ data['location'] }}</strong>?</p>
-
+    <p class="govuk-body">Once you get to your results, 
+      you'll find the postcode of any in-person course or training opportunities.</p>
+    <p class="govuk-body">If you're not sure how far it might take to travel, you could open a new browser and 
+      look at the travel time between your location and the postcode, including public transport.</p>
+    <p class="govuk-body">This could make it easier for you to decide 
+      if a course or training opportunity is right for you.</p>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
         <form method="post" action="/Guided_Search/Distance{{ '?returnTo=' + query.returnTo if query.returnTo }}">
@@ -33,8 +37,8 @@
             name: "distance",
             fieldset: {
               legend: {
-                text: "How far would you be able to travel?",
-                classes: "govuk-visually-hidden"
+                text: "How far would you be able to travel from " + (data['location'] or "your chosen location") + "?",
+                classes: "govuk-fieldset__legend--m"
               }
             },
             items: [
@@ -43,6 +47,9 @@
               { value: "10", text: "Up to 10 miles", checked: data['distance'] == "10" },
               { value: "15", text: "Up to 15 miles", checked: data['distance'] == "15" },
               { value: "30", text: "Up to 30 miles", checked: data['distance'] == "30" },
+              {
+                divider: "or"
+            },
               { value: "anywhere", text: "Search anywhere in England", checked: data['distance'] == "anywhere" }
             ]
           }) }}
