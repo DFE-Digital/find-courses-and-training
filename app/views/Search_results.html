@@ -77,7 +77,7 @@
         <div class="govuk-form-group govuk-!-margin-bottom-0">
           <label class="govuk-label" for="distance-filter">Select distance</label>
           <select class="govuk-select" id="distance-filter" name="distance">
-            <option value="">Select distance</option>
+            <option value="">Choose distance</option>
             <option value="Up to 2 miles" {% if distanceFilter=="Up to 2 miles" %}selected{% endif %}>Up to 2 miles
             </option>
             <option value="Up to 5 miles" {% if distanceFilter=="Up to 5 miles" %}selected{% endif %}>Up to 5 miles
@@ -235,12 +235,6 @@
             <legend class="govuk-fieldset__legend govuk-visually-hidden">Qualification level</legend>
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="qualification-level" name="qualification-level"
-                  type="checkbox" value="skills-and-experience" {% if "Gain skills and experience (without a qualification)" in qualifications %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="qualification-level">Gain skills and experience
-                  (without a qualification)</label>
-              </div>
-              <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="qualification-level-2" name="qualification-level"
                   type="checkbox" value="entry-level" {% if "Entry level (like entry level functional skills)" in qualifications %}checked{% endif %}>
                 <label class="govuk-label govuk-checkboxes__label" for="qualification-level-2">Entry level (like entry
@@ -294,6 +288,12 @@
                 <label class="govuk-label govuk-checkboxes__label" for="qualification-level-10">Level 8 (like a
                   PhD)</label>
               </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level" name="qualification-level"
+                  type="checkbox" value="skills-and-experience" {% if "Gain skills and experience (without a qualification)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level">Gain skills and experience
+                  (without a qualification)</label>
+              </div>
             </div>
           </fieldset>
         </div>
@@ -322,7 +322,7 @@
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="learning-method-4" name="learning-method" type="checkbox"
                   value="hybrid" {% if "hybrid" in learningMethods %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="learning-method-4">Hybrid</label>
+                <label class="govuk-label govuk-checkboxes__label" for="learning-method-4">Classroom and online mix (Hybrid)</label>
               </div>
             </div>
           </fieldset>
@@ -517,7 +517,7 @@
             label: { text: "Sort by" },
             items: [
             { value: "distance", text: "Distance", selected: true },
-            { value: "relevance", text: "Relevance" }
+            { value: "duration", text: "Duration" }
             ]
             }) }}
           </div>
@@ -585,7 +585,7 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Course type</dt>
-                <dd class="govuk-summary-list__value">Not provided</dd>
+                <dd class="govuk-summary-list__value">Contact provider</dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Cost</dt>
@@ -631,11 +631,11 @@
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Tuition fee</dt>
-                <dd class="govuk-summary-list__value">Not provided</dd>
+                <dd class="govuk-summary-list__value">Contact provider</dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Entry requirements</dt>
-                <dd class="govuk-summary-list__value">Not provided</dd>
+                <dd class="govuk-summary-list__value">Contact provider</dd>
               </div>
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">Duration</dt>
