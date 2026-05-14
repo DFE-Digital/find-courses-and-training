@@ -2,7 +2,7 @@
 
 {% set pageName = "Add search terms" %}
 
-{% block pageTitle %}Add search terms – Find courses and training – GOV.UK{% endblock %}
+{% block pageTitle %}{{ "Error: " if errors }}Add search terms – Find courses and training – GOV.UK{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/Guided_Search/Distance" }) }}
@@ -24,6 +24,16 @@
   </section>
 
   <div class="govuk-width-container">
+    {% if errors %}
+      <div class="govuk-!-margin-top-6">
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            { text: errors.interest1, href: "#interest-1" }
+          ]
+        }) }}
+      </div>
+    {% endif %}
     <div class="govuk-grid-row govuk-!-padding-top-6 govuk-!-padding-bottom-4">
       <div class="govuk-grid-column-two-thirds">
         <p class="govuk-body">You can search by things like school subjects, practical skills, hobbies and interests to find courses and training that could be right for you.</p>
@@ -42,9 +52,9 @@
       <div class="govuk-grid-column-one-half">
         <form method="post" action="/Guided_Search/Interests{{ '?returnTo=' + query.returnTo if query.returnTo }}">
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-          {{ govukInput({ label: { text: "Search term 1", classes: "govuk-label--m" }, id: "interest-1", name: "interest1", value: data['interest1'] }) }}
-          {{ govukInput({ label: { text: "Search term 2 (optional)", classes: "govuk-label--m" }, id: "interest-2", name: "interest2", value: data['interest2'] }) }}
-          {{ govukInput({ label: { text: "Search term 3 (optional)", classes: "govuk-label--m" }, id: "interest-3", name: "interest3", value: data['interest3'] }) }}
+          {{ govukInput({ label: { text: "Search term 1", classes: "govuk-label--m" }, id: "interest-1", name: "interest1", value: data['interest1'], errorMessage: { text: errors.interest1 } if errors }) }}
+          {{ govukInput({ label: { text: "Search term 2 (optional)", classes: "govuk-label--m" }, id: "interest-2", name: "interest2", value: data['interest2'] or values.interest2 }) }}
+          {{ govukInput({ label: { text: "Search term 3 (optional)", classes: "govuk-label--m" }, id: "interest-3", name: "interest3", value: data['interest3'] or values.interest3 }) }}
           {{ govukButton({ text: "Continue", isStartButton: false }) }}
            <p class="govuk-body">Find out <a class="govuk-link" href="/How_we_use_AI">how we use AI</a> to bring you results.</p>
         </form>

@@ -2,7 +2,7 @@
 
 {% set pageName = "What level of course or training would you like to do?" %}
 
-{% block pageTitle %}What level of course or training would you like to do? – Find courses and training – GOV.UK{% endblock %}
+{% block pageTitle %}{{ "Error: " if errors }}What level of course or training would you like to do? – Find courses and training – GOV.UK{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/Guided_Search/Interests" }) }}
@@ -24,6 +24,14 @@
   </section>
 
   <div class="govuk-width-container govuk-!-margin-top-6">
+    {% if errors %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          { text: errors.qualification, href: "#qualification" }
+        ]
+      }) }}
+    {% endif %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-!-padding-bottom-4">
@@ -35,6 +43,8 @@
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
           {{ govukCheckboxes({
             name: "qualification",
+            idPrefix: "qualification",
+            errorMessage: { text: errors.qualification } if errors,
             fieldset: {
               legend: {
                 text: "Select level",

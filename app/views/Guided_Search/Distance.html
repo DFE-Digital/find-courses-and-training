@@ -2,7 +2,7 @@
 
 {% set pageName = "How far would you be able to travel?" %}
 
-{% block pageTitle %}How far would you be able to travel? – Find courses and training – GOV.UK{% endblock %}
+{% block pageTitle %}{{ "Error: " if errors }}How far would you be able to travel? – Find courses and training – GOV.UK{% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({ text: "Back", href: "/Guided_Search/Location" }) }}
@@ -23,6 +23,14 @@
   </section>
 
   <div class="govuk-width-container govuk-!-margin-top-6">
+    {% if errors %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          { text: errors.distance, href: "#distance" }
+        ]
+      }) }}
+    {% endif %}
     <p class="govuk-body">Once you get to your results, 
       you'll find the postcode of any in-person course or training opportunities.</p>
     <p class="govuk-body">If you're not sure how long it might take to travel, you could open a new browser and 
@@ -35,6 +43,8 @@
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
           {{ govukRadios({
             name: "distance",
+            idPrefix: "distance",
+            errorMessage: { text: errors.distance } if errors,
             fieldset: {
               legend: {
                 text: "Select how far you want to travel from " + (data['location'] or "your chosen location"),

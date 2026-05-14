@@ -105,21 +105,37 @@ router.get('/Search_results', function (req, res) {
 })
 
 // Saves the user's location and moves to the Distance step (or back to Check your answers).
+// If no location was entered, skips Distance and goes straight to Interests.
 router.post('/Guided_Search/Location', function (req, res) {
-  req.session.data['location'] = req.body['location'] || ''
-  redirectOrReturn(req, res, '/Guided_Search/Distance')
+  const location = req.body['location'] || ''
+  req.session.data['location'] = location
+  const nextPage = location.trim() ? '/Guided_Search/Distance' : '/Guided_Search/Interests'
+  redirectOrReturn(req, res, nextPage)
 })
 
 // Saves the user's travel distance and moves to the Interests step (or back to Check your answers).
+// Re-renders with a validation error if no option is selected.
 router.post('/Guided_Search/Distance', function (req, res) {
-  req.session.data['distance'] = req.body['distance'] || ''
+  const distance = req.body['distance']
+  if (!distance) {
+    return res.render('Guided_Search/Distance', {
+      errors: { distance: 'Select a distance' }
+    })
+  }
+  req.session.data['distance'] = distance
   redirectOrReturn(req, res, '/Guided_Search/Interests')
 })
 
 // Saves up to three search interest keywords and moves to the Qualification Level step
-// (or back to Check your answers).
+// (or back to Check your answers). Requires at least search term 1 to be filled in.
 router.post('/Guided_Search/Interests', function (req, res) {
-  req.session.data['interest1'] = req.body['interest1'] || ''
+  if (!req.body['interest1'] || !req.body['interest1'].trim()) {
+    return res.render('Guided_Search/Interests', {
+      errors: { interest1: 'Enter at least 1 search term' },
+      values: { interest2: req.body['interest2'], interest3: req.body['interest3'] }
+    })
+  }
+  req.session.data['interest1'] = req.body['interest1'].trim()
   req.session.data['interest2'] = req.body['interest2'] || ''
   req.session.data['interest3'] = req.body['interest3'] || ''
   redirectOrReturn(req, res, '/Guided_Search/Qualification_Level')
@@ -171,22 +187,43 @@ router.post('/Guided_Search/Apps_or_SBC', function (req, res) {
 })
 
 // Saves the selected qualification levels and moves to the Learning method step.
+// Re-renders with a validation error if no option is selected.
 router.post('/Guided_Search/Qualification_Level', function (req, res) {
   const checked = v => [].concat(v || []).filter(x => x && x !== '_unchecked')
-  req.session.data['qualification'] = checked(req.body['qualification'])
+  const qualification = checked(req.body['qualification'])
+  if (!qualification.length) {
+    return res.render('Guided_Search/Qualification_Level', {
+      errors: { qualification: 'Select a level' }
+    })
+  }
+  req.session.data['qualification'] = qualification
   redirectOrReturn(req, res, '/Guided_Search/Learning_method')
 })
 
 // Saves the selected learning methods and moves to the Course hours step.
+// Re-renders with a validation error if no option is selected.
 router.post('/Guided_Search/Learning_method', function (req, res) {
   const checked = v => [].concat(v || []).filter(x => x && x !== '_unchecked')
-  req.session.data['learning-method'] = checked(req.body['learning-method'])
+  const learningMethod = checked(req.body['learning-method'])
+  if (!learningMethod.length) {
+    return res.render('Guided_Search/Learning_method', {
+      errors: { learningMethod: 'Select a learning method' }
+    })
+  }
+  req.session.data['learning-method'] = learningMethod
   redirectOrReturn(req, res, '/Guided_Search/Course_hours')
 })
 
 // Saves the selected course hours and moves to the Age step.
+// Re-renders with a validation error if no option is selected.
 router.post('/Guided_Search/Course_hours', function (req, res) {
   const checked = v => [].concat(v || []).filter(x => x && x !== '_unchecked')
-  req.session.data['course-hours'] = checked(req.body['course-hours'])
+  const courseHours = checked(req.body['course-hours'])
+  if (!courseHours.length) {
+    return res.render('Guided_Search/Course_hours', {
+      errors: { courseHours: 'Select course hours' }
+    })
+  }
+  req.session.data['course-hours'] = courseHours
   redirectOrReturn(req, res, '/Guided_Search/Age')
 })
