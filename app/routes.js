@@ -168,8 +168,15 @@ router.post('/Guided_Search/Sectors', function (req, res) {
 })
 
 // Saves the user's age and moves to Check your answers (or back to it if returning via Change).
+// Re-renders with a validation error if no option is selected.
 router.post('/Guided_Search/Age', function (req, res) {
-  req.session.data['age'] = req.body['age'] || ''
+  const age = req.body['age']
+  if (!age) {
+    return res.render('Guided_Search/Age', {
+      errors: { age: 'Select age' }
+    })
+  }
+  req.session.data['age'] = age
   redirectOrReturn(req, res, '/Guided_Search/Check_your_answers')
 })
 
