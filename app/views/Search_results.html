@@ -305,24 +305,25 @@
             <legend class="govuk-fieldset__legend govuk-visually-hidden">Learning method</legend>
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="learning-method" name="learning-method" type="checkbox"
-                  value="online" {% if "online" in learningMethods %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="learning-method">Online</label>
-              </div>
-              <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="learning-method-2" name="learning-method" type="checkbox"
                   value="classroom" {% if "classroom" in learningMethods %}checked{% endif %}>
                 <label class="govuk-label govuk-checkboxes__label" for="learning-method-2">Classroom based</label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="learning-method-3" name="learning-method" type="checkbox"
-                  value="work-based" {% if "work-based" in learningMethods %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="learning-method-3">Work based</label>
+                <input class="govuk-checkboxes__input" id="learning-method" name="learning-method" type="checkbox"
+                  value="online" {% if "online" in learningMethods %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="learning-method">Online</label>
               </div>
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="learning-method-4" name="learning-method" type="checkbox"
                   value="hybrid" {% if "hybrid" in learningMethods %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="learning-method-4">Classroom and online mix (Hybrid)</label>
+                <label class="govuk-label govuk-checkboxes__label" for="learning-method-4">Hybrid</label>
+                 <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint"> A mix of in-person and online learning</div>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="learning-method-3" name="learning-method" type="checkbox"
+                  value="work-based" {% if "work-based" in learningMethods %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="learning-method-3">Work based</label>
               </div>
             </div>
           </fieldset>
@@ -350,7 +351,7 @@
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="age-filter-4" name="age-filter" type="checkbox" value="20-24"
                   {% if age=="20 - 24" %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="age-filter-4">20 - 24</label>
+                <label class="govuk-label govuk-checkboxes__label" for="age-filter-4">20 to 24</label>
               </div>
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="age-filter-5" name="age-filter" type="checkbox"
