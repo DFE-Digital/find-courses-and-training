@@ -232,8 +232,14 @@
         {% set qualificationFilterHtml %}
         <div class="govuk-form-group govuk-!-margin-bottom-0">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-visually-hidden">Qualification level</legend>
+            <legend class="govuk-fieldset__legend govuk-visually-hidden">Level</legend>
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="qualification-level" name="qualification-level"
+                  type="checkbox" value="skills-and-experience" {% if "Gain skills and experience (without a qualification)" in qualifications %}checked{% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="qualification-level">Gain skills and experience
+                  (without a qualification)</label>
+              </div>
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="qualification-level-2" name="qualification-level"
                   type="checkbox" value="entry-level" {% if "Entry level (like entry level functional skills)" in qualifications %}checked{% endif %}>
@@ -288,12 +294,7 @@
                 <label class="govuk-label govuk-checkboxes__label" for="qualification-level-10">Level 8 (like a
                   PhD)</label>
               </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="qualification-level" name="qualification-level"
-                  type="checkbox" value="skills-and-experience" {% if "Gain skills and experience (without a qualification)" in qualifications %}checked{% endif %}>
-                <label class="govuk-label govuk-checkboxes__label" for="qualification-level">Gain skills and experience
-                  (without a qualification)</label>
-              </div>
+              
             </div>
           </fieldset>
         </div>
@@ -447,7 +448,7 @@
           <div class="govuk-accordion__section govuk-accordion__section--expanded">
             <div class="govuk-accordion__section-header">
               <h3 class="govuk-accordion__section-heading">
-                <span class="govuk-accordion__section-button" id="filter-accordion-heading-4">Qualification level</span>
+                <span class="govuk-accordion__section-button" id="filter-accordion-heading-4">Level</span>
               </h3>
             </div>
             <div id="filter-accordion-content-4" class="govuk-accordion__section-content">
