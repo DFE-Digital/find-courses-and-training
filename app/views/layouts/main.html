@@ -114,3 +114,33 @@
   {% block content %}{% endblock %}
 </main>
 {% endblock %}
+
+{% block bodyEnd %}
+{{ super() }}
+<script>
+  (function () {
+    var banner = document.querySelector('[data-module="govuk-cookie-banner"]');
+    if (!banner) return;
+    var panels = banner.querySelectorAll('.govuk-cookie-banner__message');
+    var questionPanel = panels[0];
+    var acceptPanel = panels[1];
+    var rejectPanel = panels[2];
+
+    questionPanel.querySelector('[value="accept"]').addEventListener('click', function () {
+      questionPanel.setAttribute('hidden', '');
+      acceptPanel.removeAttribute('hidden');
+    });
+
+    questionPanel.querySelector('[value="reject"]').addEventListener('click', function () {
+      questionPanel.setAttribute('hidden', '');
+      rejectPanel.removeAttribute('hidden');
+    });
+
+    banner.querySelectorAll('.govuk-cookie-banner__message + .govuk-cookie-banner__message .govuk-button, .govuk-cookie-banner__message ~ .govuk-cookie-banner__message .govuk-button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        banner.setAttribute('hidden', '');
+      });
+    });
+  })();
+</script>
+{% endblock %}
