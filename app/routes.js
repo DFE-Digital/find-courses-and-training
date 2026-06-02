@@ -61,12 +61,11 @@ router.get('/Search_results', function (req, res) {
     if (q.includes('Entry level')) qualifications.push('Entry level (like entry level functional skills)')
     if (q.includes('Level 1 or 2')) { qualifications.push('Level 1 (like first certificate)'); qualifications.push('Level 2 (like GCSEs)') }
     if (q.includes('Level 3')) qualifications.push('Level 3 (like A levels)')
-    if (q.includes('Level 4 to 8')) {
+    if (q.includes('Level 4 to 7')) {
       qualifications.push('Level 4 (like higher national certificate)')
       qualifications.push('Level 5 (like diplomas)')
       qualifications.push('Level 6 (like degrees)')
       qualifications.push('Level 7 (like masters degree)')
-      qualifications.push('Level 8 (like a PhD)')
     }
   })
 
