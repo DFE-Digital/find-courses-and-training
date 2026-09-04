@@ -33,13 +33,17 @@
       }) }}
     {% endif %}
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-three-quarters">
         <div class="govuk-!-padding-bottom-4">
           <p class="govuk-body">Not all training and courses are available to everyone.</p>
           <p class="govuk-body">Telling us your age can help to filter your results to those most suitable for you.</p>
           <p class="govuk-body"><a href="https://www.skillsforcareers.education.gov.uk/your-training-options" class="govuk-link" rel="noreferrer noopener" target="_blank">Discover the different training options (opens in a new tab)</a></p>
         </div>
+     </div>
+       </div>   
 
+        <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
         <form method="post" action="/Guided_Search/Age{{ '?returnTo=' + query.returnTo if query.returnTo }}">
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
           {{ govukRadios({

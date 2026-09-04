@@ -23,6 +23,7 @@
   </section>
 
   <div class="govuk-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
     {% if errors %}
       {{ govukErrorSummary({
         titleText: "There is a problem",
@@ -31,12 +32,15 @@
         ]
       }) }}
     {% endif %}
+          <div class="govuk-grid-column-three-quarters">
     <p class="govuk-body">Once you get to your results, 
       you'll find the postcode of any in-person course or training opportunities.</p>
     <p class="govuk-body">If you're not sure how long it might take to travel, you could open a new browser and 
       look at the travel time between your location and the postcode, including public transport.</p>
     <p class="govuk-body">This could make it easier for you to decide 
       if a course or training opportunity is right for you.</p>
+      </div>
+      </div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
         <form method="post" action="/Guided_Search/Distance{{ '?returnTo=' + query.returnTo if query.returnTo }}">
@@ -64,8 +68,12 @@
             ]
           }) }}
           {{ govukButton({ text: "Continue" }) }}
+          
         </form>
+        
       </div>
+      
     </div>
+    
   </div>
 {% endblock %}

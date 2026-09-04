@@ -33,7 +33,7 @@
       }) }}
     {% endif %}
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-three-quarters">
         <div class="govuk-!-padding-bottom-4">
           <p class="govuk-body">Some courses or training must be taken in a classroom, 
             some may be carried out at a place of work, others may be online. </p>
@@ -41,7 +41,10 @@
               combination of both online and attending in person.  </p>
             <p class="govuk-body">If you’re not sure, we’ll show all learning methods in your results.</p>
         </div>
-
+    </div>
+      </div>    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
         <form method="post" action="/Guided_Search/Learning_method{{ '?returnTo=' + query.returnTo if query.returnTo }}">
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
           {{ govukCheckboxes({
@@ -56,10 +59,29 @@
             },
             hint: { text: "Select all that apply" },
             items: [
-              { value: "Classroom based", text: "Classroom based", checked: data['learning-method'] and (data['learning-method'] == "Classroom based" or "Classroom based" in data['learning-method']) },
-              { value: "Online", text: "Online", checked: data['learning-method'] and (data['learning-method'] == "Online" or "Online" in data['learning-method']) },
-              { value: "Hybrid", text: "Hybrid", hint: { text: "A mix of in-person and online learning" }, checked: data['learning-method'] and (data['learning-method'] == "Hybrid" or "Hybrid" in data['learning-method']) },
-              { value: "Work based", text: "Work based", checked: data['learning-method'] and (data['learning-method'] == "Work based" or "Work based" in data['learning-method']) },
+              { 
+                value: "Classroom based", 
+                text: "Classroom based",
+                hint: { text: "In person in a venue" }, 
+                checked: data['learning-method'] and (data['learning-method'] == "Classroom based" or "Classroom based" in data['learning-method']) },
+              { 
+                value: "Online", 
+                text: "Online",
+                hint: { text: "Remotely using digital platforms" }, 
+                checked: data['learning-method'] and (data['learning-method'] == "Online" or "Online" in data['learning-method']) 
+              },
+              { 
+                value: "Hybrid", 
+                text: "Hybrid", 
+                hint: { text: "A mix of in-person and online learning" }, 
+                checked: data['learning-method'] and (data['learning-method'] == "Hybrid" or "Hybrid" in data['learning-method']) 
+              },
+              { 
+                value: "Work based", 
+                text: "Work based",
+                hint: { text: "In a workplace" }, 
+                checked: data['learning-method'] and (data['learning-method'] == "Work based" or "Work based" in data['learning-method']) 
+              },
               { divider: "or" },
               { value: "I'm not sure", 
               text: "I'm not sure", 

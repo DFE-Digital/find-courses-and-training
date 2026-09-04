@@ -25,14 +25,14 @@
 
   <div class="govuk-width-container govuk-!-padding-top-6">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-three-quarters">
         <p class="govuk-body">You can search a town, city or postcode anywhere in England.</p>
         <p class="govuk-body govuk-!-margin-bottom-6">You'll then be able to set a distance you can travel on the next page. This will mean the courses you're shown are more relevant to you.</p>
       </div>
     </div>
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
+      <div class="govuk-grid-column-two-thirds">
         <form method="post" action="/Guided_Search/Location{{ '?returnTo=' + query.returnTo if query.returnTo }}">
           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
           <div class="govuk-form-group">
@@ -40,25 +40,20 @@
               Enter a town, city or postcode in England (optional)
             </label>
             <div id="location-hint" class="govuk-hint">
-              Start typing a town or postcode in England. After 3 characters, choose from a location on the list.
-            </div>
+               Enter a postcode for more accurate results.<br>Once a location is entered, select from the dropdown list.            </div>
             <div class="fcat-location-autocomplete">
               <input class="govuk-input" id="location" name="location" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location-suggestions" aria-haspopup="listbox" aria-describedby="location-hint" value="{{ data['location'] }}">
               <ul class="fcat-location-autocomplete__list" id="location-suggestions" role="listbox" aria-label="Suggested locations" hidden></ul>
             </div>
           </div>
+          <p class="govuk-body">In some cases, courses or funding may only be available to learners who live within a specified area. This can include online courses and training.</p>
+        <p class="govuk-body">For more information, you should speak to the course provider.</p>
           {{ govukButton({ text: "Continue", isStartButton: false }) }}
         </form>
       </div>
     </div>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body">In some cases, courses or funding may only be available to learners who live within a specified area. This can include online courses and training.</p>
-        <p class="govuk-body">For more information, you should speak to the course provider.</p>
-      </div>
-    </div>
-  </div>
+   
 {% endblock %}
 
 {% block pageScripts %}
